@@ -10,25 +10,11 @@ http:
     type: json
     data: |-
       {
-        "code": "CUS-000001",
-        "name": "Aung Aung Update",
-        "company_name": "Innerworks Trading Co.,Ltd",
-        "phone_number": "09-123456789",
-        "country": "Myanmar",
-        "town": "Yangon",
-        "township": "Hlaing",
-        "address": "No.123, Main Road, Hlaing Township, Yangon",
-        "bank_acc": "KBZ-001122334455",
-        "branch_id": 1,
-        "credit_limit": 5000000.00,
-        "opening": 150000.00,
-        "type": "Retail",
-        "birthday": "1995-08-20",
-        "payment_terms": "Net 30",
-        "payment_due": "30",
-        "status": "Active",
-        "created_by": 1,
-        "updated_by": 1
+        "name": "Aung Aung Updated",
+        "phone_number": "09-999999999",
+        "credit_limit": 7000000,
+        "status": "Inactive",
+        "updated_by": 2
       }
   auth: inherit
 
