@@ -1,0 +1,125 @@
+info:
+  name: single
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/roles/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/roles/:id"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: id
+          value: "2"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Wed, 18 Mar 2026 09:15:00 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "role"
+            },
+            "data": {
+              "id": 2,
+              "name": "Manager",
+              "parent_role_id": 1,
+              "branch_id": 1,
+              "department_id": 1,
+              "status": "active",
+              "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "salary": null,
+                "sale_incentive": null,
+                "status": "active",
+                "created_at": "2026-03-18 08:49:50",
+                "updated_at": "2026-03-18 08:49:50"
+              },
+              "updated_by": null,
+              "created_at": "2026-03-18 09:11:49",
+              "updated_at": "2026-03-18 09:11:49",
+              "parent_role": {
+                "id": 1,
+                "name": "Super Admin",
+                "parent_role_id": null,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_by": null,
+                "updated_by": null,
+                "created_at": "2026-03-18 08:49:49",
+                "updated_at": "2026-03-18 08:49:49"
+              },
+              "children": [],
+              "branch": {
+                "id": 1,
+                "prefix": "MDY",
+                "name": "Mandalay Branch",
+                "location": "Mandalay, 77*65",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-18 08:54:54",
+                "updated_at": "2026-03-18 08:54:54"
+              },
+              "department": {
+                "id": 1,
+                "code": "ITD",
+                "name": "IT Department",
+                "branch_id": 1,
+                "description": "For software development",
+                "status": "inactive",
+                "created_at": "2026-03-18 08:54:59",
+                "updated_at": "2026-03-18 08:54:59"
+              },
+              "features": []
+            }
+          }
