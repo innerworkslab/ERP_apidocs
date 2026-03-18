@@ -5,7 +5,32 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/"
+  url: "{{baseUrl}}/v1/suppliers"
+  params:
+    - name: status
+      value: "Active "
+      type: query
+      disabled: true
+    - name: status
+      value: "Inactive "
+      type: query
+      disabled: true
+    - name: search
+      value: code
+      type: query
+      disabled: true
+    - name: search
+      value: name
+      type: query
+      disabled: true
+    - name: search
+      value: company_name
+      type: query
+      disabled: true
+    - name: search
+      value: phone_number
+      type: query
+      disabled: true
   auth: inherit
 
 settings:
