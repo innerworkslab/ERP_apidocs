@@ -1,0 +1,470 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/features/all?page=1&per_page=10&status=active"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: per_page
+      value: "10"
+      type: query
+    - name: status
+      value: active
+      type: query
+    - name: search
+      value: depart
+      type: query
+      disabled: true
+    - name: branch_id
+      value: "1"
+      type: query
+      disabled: true
+    - name: department_id
+      value: "1"
+      type: query
+      disabled: true
+    - name: role_id
+      value: "1"
+      type: query
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/features/all?page=1&per_page=10&status=active"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: per_page
+          value: "10"
+          type: query
+        - name: status
+          value: active
+          type: query
+        - name: search
+          value: depart
+          type: query
+          disabled: true
+        - name: branch_id
+          value: "1"
+          type: query
+          disabled: true
+        - name: department_id
+          value: "1"
+          type: query
+          disabled: true
+        - name: role_id
+          value: "1"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 19 Mar 2026 05:51:59 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Feature Lists"
+            },
+            "data": [
+              {
+                "id": 1,
+                "name": "Branch",
+                "key": "branch_feature",
+                "module": "Organization",
+                "description": "This is a feature of branch",
+                "status": "active",
+                "created_at": "2026-03-19T05:48:18.000000Z",
+                "updated_at": "2026-03-19T05:48:18.000000Z",
+                "roles": [
+                  {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "parent_role_id": null,
+                    "branch_id": 1,
+                    "department_id": 1,
+                    "status": "active",
+                    "created_by": null,
+                    "updated_by": null,
+                    "created_at": "2026-03-19 05:48:18",
+                    "updated_at": "2026-03-19 05:48:18",
+                    "pivot": {
+                      "feature_id": 1,
+                      "role_id": 1
+                    },
+                    "branch": {
+                      "id": 1,
+                      "prefix": "MDY",
+                      "name": "Mandalay Branch",
+                      "location": "Mandalay, 77*65",
+                      "status": "active",
+                      "created_by": 1,
+                      "updated_by": null,
+                      "created_at": "2026-03-19 05:50:12",
+                      "updated_at": "2026-03-19 05:50:12"
+                    },
+                    "department": {
+                      "id": 1,
+                      "code": "ITD",
+                      "name": "IT Department",
+                      "branch_id": 1,
+                      "description": "For software development",
+                      "status": "inactive",
+                      "created_at": "2026-03-19 05:50:18",
+                      "updated_at": "2026-03-19 05:50:18"
+                    }
+                  }
+                ],
+                "permissions": [
+                  {
+                    "id": 1,
+                    "feature_id": 1,
+                    "name": "View Branch",
+                    "key": "view_branch",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 2,
+                    "feature_id": 1,
+                    "name": "Create Branch",
+                    "key": "create_branch",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 3,
+                    "feature_id": 1,
+                    "name": "Update Branch",
+                    "key": "update_branch",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 4,
+                    "feature_id": 1,
+                    "name": "Delete Branch",
+                    "key": "delete_branch",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "name": "Department",
+                "key": "department_feature",
+                "module": "Organization",
+                "description": "This is a feature of department",
+                "status": "active",
+                "created_at": "2026-03-19T05:48:18.000000Z",
+                "updated_at": "2026-03-19T05:48:18.000000Z",
+                "roles": [
+                  {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "parent_role_id": null,
+                    "branch_id": 1,
+                    "department_id": 1,
+                    "status": "active",
+                    "created_by": null,
+                    "updated_by": null,
+                    "created_at": "2026-03-19 05:48:18",
+                    "updated_at": "2026-03-19 05:48:18",
+                    "pivot": {
+                      "feature_id": 2,
+                      "role_id": 1
+                    },
+                    "branch": {
+                      "id": 1,
+                      "prefix": "MDY",
+                      "name": "Mandalay Branch",
+                      "location": "Mandalay, 77*65",
+                      "status": "active",
+                      "created_by": 1,
+                      "updated_by": null,
+                      "created_at": "2026-03-19 05:50:12",
+                      "updated_at": "2026-03-19 05:50:12"
+                    },
+                    "department": {
+                      "id": 1,
+                      "code": "ITD",
+                      "name": "IT Department",
+                      "branch_id": 1,
+                      "description": "For software development",
+                      "status": "inactive",
+                      "created_at": "2026-03-19 05:50:18",
+                      "updated_at": "2026-03-19 05:50:18"
+                    }
+                  }
+                ],
+                "permissions": [
+                  {
+                    "id": 5,
+                    "feature_id": 2,
+                    "name": "View Department",
+                    "key": "view_department",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 6,
+                    "feature_id": 2,
+                    "name": "Create Department",
+                    "key": "create_department",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 7,
+                    "feature_id": 2,
+                    "name": "Update Department",
+                    "key": "update_department",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 8,
+                    "feature_id": 2,
+                    "name": "Delete Department",
+                    "key": "delete_department",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  }
+                ]
+              },
+              {
+                "id": 3,
+                "name": "Role",
+                "key": "role_feature",
+                "module": "AccessControl",
+                "description": "This is a feature of role",
+                "status": "active",
+                "created_at": "2026-03-19T05:48:18.000000Z",
+                "updated_at": "2026-03-19T05:48:18.000000Z",
+                "roles": [
+                  {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "parent_role_id": null,
+                    "branch_id": 1,
+                    "department_id": 1,
+                    "status": "active",
+                    "created_by": null,
+                    "updated_by": null,
+                    "created_at": "2026-03-19 05:48:18",
+                    "updated_at": "2026-03-19 05:48:18",
+                    "pivot": {
+                      "feature_id": 3,
+                      "role_id": 1
+                    },
+                    "branch": {
+                      "id": 1,
+                      "prefix": "MDY",
+                      "name": "Mandalay Branch",
+                      "location": "Mandalay, 77*65",
+                      "status": "active",
+                      "created_by": 1,
+                      "updated_by": null,
+                      "created_at": "2026-03-19 05:50:12",
+                      "updated_at": "2026-03-19 05:50:12"
+                    },
+                    "department": {
+                      "id": 1,
+                      "code": "ITD",
+                      "name": "IT Department",
+                      "branch_id": 1,
+                      "description": "For software development",
+                      "status": "inactive",
+                      "created_at": "2026-03-19 05:50:18",
+                      "updated_at": "2026-03-19 05:50:18"
+                    }
+                  }
+                ],
+                "permissions": [
+                  {
+                    "id": 9,
+                    "feature_id": 3,
+                    "name": "View Role",
+                    "key": "view_role",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 10,
+                    "feature_id": 3,
+                    "name": "Create Role",
+                    "key": "create_role",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 11,
+                    "feature_id": 3,
+                    "name": "Update Role",
+                    "key": "update_role",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 12,
+                    "feature_id": 3,
+                    "name": "Delete Role",
+                    "key": "delete_role",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  }
+                ]
+              },
+              {
+                "id": 4,
+                "name": "Feature",
+                "key": "feature_feature",
+                "module": "AccessControl",
+                "description": "This is a feature of feature",
+                "status": "active",
+                "created_at": "2026-03-19T05:48:18.000000Z",
+                "updated_at": "2026-03-19T05:48:18.000000Z",
+                "roles": [
+                  {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "parent_role_id": null,
+                    "branch_id": 1,
+                    "department_id": 1,
+                    "status": "active",
+                    "created_by": null,
+                    "updated_by": null,
+                    "created_at": "2026-03-19 05:48:18",
+                    "updated_at": "2026-03-19 05:48:18",
+                    "pivot": {
+                      "feature_id": 4,
+                      "role_id": 1
+                    },
+                    "branch": {
+                      "id": 1,
+                      "prefix": "MDY",
+                      "name": "Mandalay Branch",
+                      "location": "Mandalay, 77*65",
+                      "status": "active",
+                      "created_by": 1,
+                      "updated_by": null,
+                      "created_at": "2026-03-19 05:50:12",
+                      "updated_at": "2026-03-19 05:50:12"
+                    },
+                    "department": {
+                      "id": 1,
+                      "code": "ITD",
+                      "name": "IT Department",
+                      "branch_id": 1,
+                      "description": "For software development",
+                      "status": "inactive",
+                      "created_at": "2026-03-19 05:50:18",
+                      "updated_at": "2026-03-19 05:50:18"
+                    }
+                  }
+                ],
+                "permissions": [
+                  {
+                    "id": 13,
+                    "feature_id": 4,
+                    "name": "View Feature",
+                    "key": "view_feature",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 14,
+                    "feature_id": 4,
+                    "name": "Update Feature",
+                    "key": "update_feature",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  },
+                  {
+                    "id": 15,
+                    "feature_id": 4,
+                    "name": "Assign Role To Feature",
+                    "key": "assing_role_to_feature",
+                    "description": null,
+                    "status": "active",
+                    "created_at": "2026-03-19T05:48:18.000000Z",
+                    "updated_at": "2026-03-19T05:48:18.000000Z"
+                  }
+                ]
+              }
+            ],
+            "meta": {
+              "total": 4,
+              "per_page": 10,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }
