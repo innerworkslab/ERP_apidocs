@@ -1,0 +1,25 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/v1/customers/1"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Aung Aung Updated",
+        "phone_number": "09-999999999",
+        "credit_limit": 7000000,
+        "status": "Inactive",
+        "updated_by": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

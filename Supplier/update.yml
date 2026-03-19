@@ -1,0 +1,25 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/v1/suppliers/2"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Updated Supply Co.",
+        "phone_number": "09-444555666",
+        "credit_limit": 2000000,
+        "status": "Inactive",
+        "updated_by": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
