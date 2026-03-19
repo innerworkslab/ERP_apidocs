@@ -1,0 +1,107 @@
+info:
+  name: list without pagination
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/roles/no-pagination?status=active"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: status
+      value: active
+      type: query
+    - name: search
+      value: manager
+      type: query
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/roles/no-pagination?status=active"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: status
+          value: active
+          type: query
+        - name: search
+          value: manager
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 19 Mar 2026 06:24:40 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Role Lists Without Pagination"
+            },
+            "data": [
+              {
+                "id": 2,
+                "name": "Manager",
+                "parent_role_id": 1,
+                "branch_id": 1,
+                "department_id": 1,
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-19 06:23:30",
+                "updated_at": "2026-03-19 06:23:30",
+                "branch": {
+                  "id": 1,
+                  "prefix": "MDY",
+                  "name": "Mandalay Branch",
+                  "location": "Mandalay, 77*65",
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-03-19 05:50:12",
+                  "updated_at": "2026-03-19 05:50:12"
+                },
+                "department": {
+                  "id": 1,
+                  "code": "ITD",
+                  "name": "IT Department",
+                  "branch_id": 1,
+                  "description": "For software development",
+                  "status": "inactive",
+                  "created_at": "2026-03-19 05:50:18",
+                  "updated_at": "2026-03-19 05:50:18"
+                }
+              }
+            ]
+          }
