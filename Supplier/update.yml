@@ -13,8 +13,7 @@ http:
         "name": "Updated Supply Co.",
         "phone_number": "09-444555666",
         "credit_limit": 2000000,
-        "status": "Inactive",
-        "updated_by": 2
+        "status": "Inactive"
       }
   auth: inherit
 
