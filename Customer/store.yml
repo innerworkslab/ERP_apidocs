@@ -10,7 +10,7 @@ http:
     type: json
     data: |-
       {
-        "name": "Aung Aung",
+        "name": "mg mg ",
         "company_name": "AAA Trading Co.,Ltd",
         "phone_number": "09-777777777",
         "country": "Myanmar",
@@ -26,8 +26,6 @@ http:
         "payment_terms": "Net 30",
         "payment_due": "30 days",
         "status": "Active",
-        "created_by": 1,
-        "updated_by": 1
       }
   auth: inherit
 
