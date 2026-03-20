@@ -25,9 +25,7 @@ http:
         "birthday": "1990-08-15",
         "payment_terms": "Net 60",
         "payment_due": "2026-05-18",
-        "status": "Active",
-        "created_by": 1,
-        "updated_by": 1
+        "status": "Active"
       }
   auth: inherit
 
