@@ -23,3 +23,25 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/customers/1"
+      method: PUT
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Aung Aung Updated",
+            "phone_number": "09-999999999",
+            "credit_limit": 7000000,
+            "status": "Inactive",
+            "updated_by": 2
+          }
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""
