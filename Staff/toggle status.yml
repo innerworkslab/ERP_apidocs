@@ -1,14 +1,14 @@
 info:
-  name: destory
+  name: toggle status
   type: http
-  seq: 5
+  seq: 7
 
 http:
-  method: DELETE
-  url: "{{baseUrl}}/v1/staffs/:id"
+  method: PATCH
+  url: "{{baseUrl}}/v1/staffs/:id/toggle-status"
   params:
     - name: id
-      value: "3"
+      value: "2"
       type: path
   auth: inherit
 

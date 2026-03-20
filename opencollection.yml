@@ -18,6 +18,9 @@ request:
   headers:
     - name: Accept
       value: application/json
+  auth:
+    type: bearer
+    token: 1|ORgKEtkrcKmZNcMDGfS7FzY8NFoVD1qRiBkMnFDz230f8191
   variables:
     - name: baseUrl
       value: http://localhost:8000/api

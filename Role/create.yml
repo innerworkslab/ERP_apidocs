@@ -19,9 +19,7 @@ http:
         "branch_id": 1,
         "department_id": 1 // fetch departments of selected branch
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true

@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: ""
+  url: "{{baseUrl}}/v1/staffs"
   auth: inherit
 
 settings:
