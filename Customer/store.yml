@@ -36,3 +36,38 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/customers"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Aung Aung",
+            "company_name": "AAA Trading Co.,Ltd",
+            "phone_number": "09-777777777",
+            "country": "Myanmar",
+            "town": "Yangon",
+            "township": "Hlaing",
+            "address": "No.123, Hlaing Township",
+            "bank_acc": "KBZ-0011223344",
+            "branch_id": 1,
+            "credit_limit": 5000000,
+            "opening": 0,
+            "type": "Retail",
+            "birthday": "1995-08-15",
+            "payment_terms": "Net 30",
+            "payment_due": "30 days",
+            "status": "Active",
+            "created_by": 1,
+            "updated_by": 1
+          }
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""
