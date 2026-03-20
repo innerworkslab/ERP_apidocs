@@ -1,14 +1,14 @@
 info:
-  name: destory
+  name: delete
   type: http
   seq: 5
 
 http:
   method: DELETE
-  url: "{{baseUrl}}/v1/staffs/:id"
+  url: "{{baseUrl}}/v1/feature-recommendation-rules/:id"
   params:
     - name: id
-      value: "3"
+      value: "2"
       type: path
   auth: inherit
 

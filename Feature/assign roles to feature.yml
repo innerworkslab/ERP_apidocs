@@ -16,9 +16,7 @@ http:
         "feature_id": 1,
         "role_ids": [1,2]
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true

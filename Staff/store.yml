@@ -4,8 +4,103 @@ info:
   seq: 2
 
 http:
-  method: GET
-  url: ""
+  method: POST
+  url: "{{baseUrl}}/v1/staffs"
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: zin win htun
+      - name: email
+        type: text
+        value: zwh1@gmail.com
+      - name: phone_number
+        type: text
+        value: "09977166510"
+      - name: password
+        type: text
+        value: password123
+      - name: role_id
+        type: text
+        value: "1"
+      - name: branch_id
+        type: text
+        value: "1"
+      - name: department_id
+        type: text
+        value: "1"
+      - name: status
+        type: text
+        value: active
+      - name: personal_information[date_of_birth]
+        type: text
+        value: 1998-05-10
+      - name: personal_information[nrc_number]
+        type: text
+        value: 12/ABC(N)146136
+      - name: personal_information[father_name]
+        type: text
+        value: U Aung
+      - name: personal_information[mother_name]
+        type: text
+        value: Daw Mya
+      - name: personal_information[town]
+        type: text
+        value: Yangon
+      - name: personal_information[township]
+        type: text
+        value: Hlaing
+      - name: personal_information[address]
+        type: text
+        value: No.123, Hlaing
+      - name: personal_information[nrc_image]
+        type: file
+        value:
+          - C:\Users\DELL\OneDrive\Pictures\Screenshots\Screenshot 2026-03-16 155513.png
+      - name: personal_information[house_hold_information_image]
+        type: file
+        value:
+          - C:\Users\DELL\OneDrive\Pictures\Screenshots\Screenshot (46).png
+      - name: employment_information[join_date]
+        type: text
+        value: 2026-03-01
+      - name: employment_information[is_contract]
+        type: text
+        value: "0"
+      - name: employment_information[off_day]
+        type: text
+        value: Sunday
+      - name: employment_information[overtime_fee_type]
+        type: text
+        value: hourly
+      - name: employment_information[salary]
+        type: text
+        value: "500000"
+      - name: employment_information[sale_incentive_amount]
+        type: text
+        value: "50000"
+      - name: employment_information[sale_commission]
+        type: text
+        value: "2.5"
+      - name: banking_information[bank_name]
+        type: text
+        value: KBZ Bank
+      - name: banking_information[account_number]
+        type: text
+        value: "1234567890"
+      - name: authorized_features[0][feature_id]
+        type: text
+        value: "1"
+      - name: authorized_features[0][recommended_by_rule]
+        type: text
+        value: rule
+      - name: authorized_features[0][access_type]
+        type: text
+        value: manual
+      - name: authorized_features[0][permission_level]
+        type: text
+        value: write
   auth: inherit
 
 settings:

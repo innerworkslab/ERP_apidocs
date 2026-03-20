@@ -13,14 +13,12 @@ http:
     type: json
     data: |-
       {
-        "prefix": "MDY",
-        "name": "Mandalay Branch",
-        "location": "Mandalay, 77*65",
+        "prefix": "YGN",
+        "name": "Yangon Branch",
+        "location": "Yangon, 130st",
         "status": "active" // or inactive
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true
