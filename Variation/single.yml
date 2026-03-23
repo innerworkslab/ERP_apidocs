@@ -1,0 +1,99 @@
+info:
+  name: single
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/variations/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/variations/:id"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 23 Mar 2026 14:58:56 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "variation"
+            },
+            "data": {
+              "id": 1,
+              "name": "Color",
+              "value_data_type": "String",
+              "status": "active",
+              "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-03-23 14:56:12",
+                "updated_at": "2026-03-23 14:56:12"
+              },
+              "updated_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-03-23 14:56:12",
+                "updated_at": "2026-03-23 14:56:12"
+              },
+              "deleted_at": null,
+              "created_at": "2026-03-23 14:56:35",
+              "updated_at": "2026-03-23 14:58:27"
+            }
+          }
