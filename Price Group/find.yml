@@ -1,0 +1,82 @@
+info:
+  name: find
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/price-groups/:id"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/price-groups/:id"
+      method: GET
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 23 Mar 2026 10:55:00 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Price group detail"
+            },
+            "data": {
+              "id": 1,
+              "name": "Retail MM",
+              "customer_type_id": 1,
+              "branch_id": 1,
+              "is_active": true,
+              "created_at": "2026-03-23T10:54:04.000000Z",
+              "updated_at": "2026-03-23T10:54:04.000000Z",
+              "customer_type": {
+                "id": 1,
+                "name": "Retail",
+                "created_at": "2026-03-23T10:51:50.000000Z",
+                "updated_at": "2026-03-23T10:51:50.000000Z"
+              },
+              "branch": {
+                "id": 1,
+                "prefix": "YGN",
+                "name": "Yangon Branch",
+                "location": "Yangon, 130st",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-23 10:53:52",
+                "updated_at": "2026-03-23 10:53:52"
+              }
+            }
+          }
