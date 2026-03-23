@@ -13,8 +13,8 @@ http:
     type: json
     data: |-
       {
-        "feature_id": 2,
-        "role_ids": [2]
+        "feature_id": 1,
+        "role_ids": [3]
       }
   auth: inherit
 

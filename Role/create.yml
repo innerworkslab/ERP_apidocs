@@ -13,7 +13,7 @@ http:
     type: json
     data: |-
       {
-        "name": "Super",
+        "name":"staff",
         "parent_role_id": 1, // optional
         "status": "active", // or inactive
         "branch_id": 1,
