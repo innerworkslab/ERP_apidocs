@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}/v1/staffs/:id"
   params:
     - name: id
-      value: ""
+      value: "4"
       type: path
   auth: inherit
 
@@ -25,11 +25,932 @@ examples:
       method: GET
       params:
         - name: id
-          value: ""
+          value: "2"
           type: path
     response:
       status: 200
       statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 23 Mar 2026 05:11:54 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
       body:
-        type: text
-        data: ""
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "staff"
+            },
+            "data": {
+              "id": 2,
+              "name": "zin win htun",
+              "email": "zwh@gmail.com",
+              "email_verified_at": null,
+              "phone_number": "09977166520",
+              "role_id": 1,
+              "branch_id": 1,
+              "department_id": 1,
+              "status": "active",
+              "created_at": "2026-03-23 05:00:14",
+              "updated_at": "2026-03-23 05:04:26",
+              "role": {
+                "id": 1,
+                "name": "Super Admin",
+                "parent_role_id": null,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_by": null,
+                "updated_by": null,
+                "created_at": "2026-03-23 04:42:27",
+                "updated_at": "2026-03-23 04:42:27"
+              },
+              "branch": {
+                "id": 1,
+                "prefix": "YGN",
+                "name": "Yangon Branch",
+                "location": "Yangon, 130st",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-23 04:48:46",
+                "updated_at": "2026-03-23 04:48:46"
+              },
+              "department": {
+                "id": 1,
+                "code": "ITD",
+                "name": "IT Department",
+                "branch_id": 1,
+                "description": "For software development",
+                "status": "inactive",
+                "created_at": "2026-03-23 04:49:17",
+                "updated_at": "2026-03-23 04:49:17"
+              },
+              "permissions": [
+                {
+                  "id": 21,
+                  "feature_id": 7,
+                  "name": "View Customer",
+                  "key": "view_customer",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 21
+                  },
+                  "feature": {
+                    "id": 7,
+                    "name": "Customer",
+                    "key": "customer_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of customer",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 22,
+                  "feature_id": 7,
+                  "name": "Create Customer",
+                  "key": "create_customer",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 22
+                  },
+                  "feature": {
+                    "id": 7,
+                    "name": "Customer",
+                    "key": "customer_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of customer",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 23,
+                  "feature_id": 7,
+                  "name": "Update Customer",
+                  "key": "update_customer",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 23
+                  },
+                  "feature": {
+                    "id": 7,
+                    "name": "Customer",
+                    "key": "customer_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of customer",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 24,
+                  "feature_id": 7,
+                  "name": "Delete Customer",
+                  "key": "delete_customer",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 24
+                  },
+                  "feature": {
+                    "id": 7,
+                    "name": "Customer",
+                    "key": "customer_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of customer",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 13,
+                  "feature_id": 4,
+                  "name": "View Feature",
+                  "key": "view_feature",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 13
+                  },
+                  "feature": {
+                    "id": 4,
+                    "name": "Feature",
+                    "key": "feature_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 14,
+                  "feature_id": 4,
+                  "name": "Update Feature",
+                  "key": "update_feature",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 14
+                  },
+                  "feature": {
+                    "id": 4,
+                    "name": "Feature",
+                    "key": "feature_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 15,
+                  "feature_id": 4,
+                  "name": "Assign Role To Feature",
+                  "key": "assign_role_to_feature",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 15
+                  },
+                  "feature": {
+                    "id": 4,
+                    "name": "Feature",
+                    "key": "feature_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 29,
+                  "feature_id": 6,
+                  "name": "View Feature Recommendation Rule",
+                  "key": "view_feature_recommendation_rule",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 29
+                  },
+                  "feature": {
+                    "id": 6,
+                    "name": "Feature Recommendation Rule",
+                    "key": "feature_recommendation_rule_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature recommendation rule",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 30,
+                  "feature_id": 6,
+                  "name": "Create Feature Recommendation Rule",
+                  "key": "create_feature_recommendation_rule",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 30
+                  },
+                  "feature": {
+                    "id": 6,
+                    "name": "Feature Recommendation Rule",
+                    "key": "feature_recommendation_rule_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature recommendation rule",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 31,
+                  "feature_id": 6,
+                  "name": "Update Feature Recommendation Rule",
+                  "key": "update_feature_recommendation_rule",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 31
+                  },
+                  "feature": {
+                    "id": 6,
+                    "name": "Feature Recommendation Rule",
+                    "key": "feature_recommendation_rule_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature recommendation rule",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 32,
+                  "feature_id": 6,
+                  "name": "Delete Feature Recommendation Rule",
+                  "key": "delete_feature_recommendation_rule",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 32
+                  },
+                  "feature": {
+                    "id": 6,
+                    "name": "Feature Recommendation Rule",
+                    "key": "feature_recommendation_rule_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature recommendation rule",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 9,
+                  "feature_id": 3,
+                  "name": "View Role",
+                  "key": "view_role",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 9
+                  },
+                  "feature": {
+                    "id": 3,
+                    "name": "Role",
+                    "key": "role_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of role",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 10,
+                  "feature_id": 3,
+                  "name": "Create Role",
+                  "key": "create_role",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 10
+                  },
+                  "feature": {
+                    "id": 3,
+                    "name": "Role",
+                    "key": "role_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of role",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 11,
+                  "feature_id": 3,
+                  "name": "Update Role",
+                  "key": "update_role",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 11
+                  },
+                  "feature": {
+                    "id": 3,
+                    "name": "Role",
+                    "key": "role_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of role",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 12,
+                  "feature_id": 3,
+                  "name": "Delete Role",
+                  "key": "delete_role",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 12
+                  },
+                  "feature": {
+                    "id": 3,
+                    "name": "Role",
+                    "key": "role_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of role",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 25,
+                  "feature_id": 8,
+                  "name": "View Supplier",
+                  "key": "view_supplier",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 25
+                  },
+                  "feature": {
+                    "id": 8,
+                    "name": "Supplier",
+                    "key": "supplier_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of supplier",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 26,
+                  "feature_id": 8,
+                  "name": "Create Supplier",
+                  "key": "create_supplier",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 26
+                  },
+                  "feature": {
+                    "id": 8,
+                    "name": "Supplier",
+                    "key": "supplier_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of supplier",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 27,
+                  "feature_id": 8,
+                  "name": "Update Supplier",
+                  "key": "update_supplier",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 27
+                  },
+                  "feature": {
+                    "id": 8,
+                    "name": "Supplier",
+                    "key": "supplier_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of supplier",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 28,
+                  "feature_id": 8,
+                  "name": "Delete Supplier",
+                  "key": "delete_supplier",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 28
+                  },
+                  "feature": {
+                    "id": 8,
+                    "name": "Supplier",
+                    "key": "supplier_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of supplier",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 16,
+                  "feature_id": 5,
+                  "name": "View User",
+                  "key": "view_user",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 16
+                  },
+                  "feature": {
+                    "id": 5,
+                    "name": "User",
+                    "key": "user_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of user",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 17,
+                  "feature_id": 5,
+                  "name": "Create User",
+                  "key": "create_user",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 17
+                  },
+                  "feature": {
+                    "id": 5,
+                    "name": "User",
+                    "key": "user_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of user",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 18,
+                  "feature_id": 5,
+                  "name": "Update User",
+                  "key": "update_user",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 18
+                  },
+                  "feature": {
+                    "id": 5,
+                    "name": "User",
+                    "key": "user_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of user",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 19,
+                  "feature_id": 5,
+                  "name": "Delete User",
+                  "key": "delete_user",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 19
+                  },
+                  "feature": {
+                    "id": 5,
+                    "name": "User",
+                    "key": "user_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of user",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 20,
+                  "feature_id": 5,
+                  "name": "Assign Role To User",
+                  "key": "assign_role_to_user",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 20
+                  },
+                  "feature": {
+                    "id": 5,
+                    "name": "User",
+                    "key": "user_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of user",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 3,
+                  "feature_id": 1,
+                  "name": "Update Branch",
+                  "key": "update_branch",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 3
+                  },
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                }
+              ],
+              "staff_personal_information": {
+                "id": 1,
+                "user_id": 2,
+                "date_of_birth": "1998-05-10T00:00:00.000000Z",
+                "nrc_number": "12/ABC(N)146536",
+                "nrc_image": "nrc_69c0c9f5772b05.40603785.png",
+                "nrc_image_path": "staff/nrc/nrc_69c0c9f5772b05.40603785.png",
+                "nrc_image_url": "http://localhost/storage/staff/nrc/nrc_69c0c9f5772b05.40603785.png",
+                "father_name": "U Aung",
+                "mother_name": "Daw Mya",
+                "town": "Yangon",
+                "township": "Hlaing",
+                "address": "No.123, Hlaing",
+                "house_hold_information_image": "household_69c0c9f57b4e79.50181835.png",
+                "house_hold_information_image_path": "staff/household/household_69c0c9f57b4e79.50181835.png",
+                "house_hold_information_image_url": "http://localhost/storage/staff/household/household_69c0c9f57b4e79.50181835.png",
+                "created_at": "2026-03-23T05:00:14.000000Z",
+                "updated_at": "2026-03-23T05:04:53.000000Z"
+              },
+              "staff_employment_information": {
+                "id": 1,
+                "user_id": 2,
+                "join_date": "2026-03-01T00:00:00.000000Z",
+                "is_contract": false,
+                "off_day": "Sunday",
+                "overtime_fee_type": "hourly",
+                "salary": "500000.00",
+                "sale_incentive_amount": "50000.00",
+                "sale_commission": "2.50",
+                "created_at": "2026-03-23T05:00:14.000000Z",
+                "updated_at": "2026-03-23T05:00:14.000000Z"
+              },
+              "staff_banking_information": {
+                "id": 1,
+                "user_id": 2,
+                "bank_name": "KBZ Bank",
+                "account_number": "1234567890",
+                "created_at": "2026-03-23T05:00:14.000000Z",
+                "updated_at": "2026-03-23T05:00:14.000000Z"
+              },
+              "staff_authorized_features": [
+                {
+                  "id": 10,
+                  "staff_id": 2,
+                  "feature_id": 7,
+                  "is_recommended": true,
+                  "recommended_by_rule": null,
+                  "access_type": "role_auto",
+                  "permission_level": "full",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:04:53.000000Z",
+                  "created_at": "2026-03-23T05:04:53.000000Z",
+                  "updated_at": "2026-03-23T05:04:53.000000Z",
+                  "feature": {
+                    "id": 7,
+                    "name": "Customer",
+                    "key": "customer_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of customer",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 11,
+                  "staff_id": 2,
+                  "feature_id": 4,
+                  "is_recommended": false,
+                  "recommended_by_rule": "RULE-001",
+                  "access_type": "system",
+                  "permission_level": "write",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:04:53.000000Z",
+                  "created_at": "2026-03-23T05:04:53.000000Z",
+                  "updated_at": "2026-03-23T05:04:53.000000Z",
+                  "feature": {
+                    "id": 4,
+                    "name": "Feature",
+                    "key": "feature_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 12,
+                  "staff_id": 2,
+                  "feature_id": 6,
+                  "is_recommended": true,
+                  "recommended_by_rule": null,
+                  "access_type": "role_auto",
+                  "permission_level": "full",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:04:53.000000Z",
+                  "created_at": "2026-03-23T05:04:53.000000Z",
+                  "updated_at": "2026-03-23T05:04:53.000000Z",
+                  "feature": {
+                    "id": 6,
+                    "name": "Feature Recommendation Rule",
+                    "key": "feature_recommendation_rule_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature recommendation rule",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 13,
+                  "staff_id": 2,
+                  "feature_id": 3,
+                  "is_recommended": true,
+                  "recommended_by_rule": null,
+                  "access_type": "role_auto",
+                  "permission_level": "full",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:04:53.000000Z",
+                  "created_at": "2026-03-23T05:04:53.000000Z",
+                  "updated_at": "2026-03-23T05:04:53.000000Z",
+                  "feature": {
+                    "id": 3,
+                    "name": "Role",
+                    "key": "role_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of role",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 14,
+                  "staff_id": 2,
+                  "feature_id": 8,
+                  "is_recommended": true,
+                  "recommended_by_rule": null,
+                  "access_type": "role_auto",
+                  "permission_level": "full",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:04:53.000000Z",
+                  "created_at": "2026-03-23T05:04:53.000000Z",
+                  "updated_at": "2026-03-23T05:04:53.000000Z",
+                  "feature": {
+                    "id": 8,
+                    "name": "Supplier",
+                    "key": "supplier_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of supplier",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 15,
+                  "staff_id": 2,
+                  "feature_id": 5,
+                  "is_recommended": true,
+                  "recommended_by_rule": null,
+                  "access_type": "role_auto",
+                  "permission_level": "full",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:04:53.000000Z",
+                  "created_at": "2026-03-23T05:04:53.000000Z",
+                  "updated_at": "2026-03-23T05:04:53.000000Z",
+                  "feature": {
+                    "id": 5,
+                    "name": "User",
+                    "key": "user_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of user",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                }
+              ]
+            }
+          }

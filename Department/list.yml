@@ -23,9 +23,7 @@ http:
     - name: status
       value: active
       type: query
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true

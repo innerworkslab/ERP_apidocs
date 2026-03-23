@@ -11,19 +11,19 @@ http:
     data:
       - name: name
         type: text
-        value: zin win htun
+        value: ZarNi
       - name: email
         type: text
-        value: zwh1@gmail.com
+        value: ZarNi@gmail.com
       - name: phone_number
         type: text
-        value: "09977166510"
+        value: "09977166511"
       - name: password
         type: text
         value: password123
       - name: role_id
         type: text
-        value: "1"
+        value: "3"
       - name: branch_id
         type: text
         value: "1"
@@ -38,7 +38,7 @@ http:
         value: 1998-05-10
       - name: personal_information[nrc_number]
         type: text
-        value: 12/ABC(N)146136
+        value: 12/ABC(N)146196
       - name: personal_information[father_name]
         type: text
         value: U Aung
@@ -101,6 +101,9 @@ http:
       - name: authorized_features[0][permission_level]
         type: text
         value: write
+      - name: permission_ids[0]
+        type: text
+        value: "1"
   auth: inherit
 
 settings:
@@ -119,19 +122,19 @@ examples:
         data:
           - name: name
             type: text
-            value: zin win htun
+            value: ZarNi
           - name: email
             type: text
-            value: zwh1@gmail.com
+            value: ZarNi@gmail.com
           - name: phone_number
             type: text
-            value: "09977166510"
+            value: "09977166511"
           - name: password
             type: text
             value: password123
           - name: role_id
             type: text
-            value: "1"
+            value: "3"
           - name: branch_id
             type: text
             value: "1"
@@ -146,7 +149,7 @@ examples:
             value: 1998-05-10
           - name: personal_information[nrc_number]
             type: text
-            value: 12/ABC(N)146136
+            value: 12/ABC(N)146196
           - name: personal_information[father_name]
             type: text
             value: U Aung
@@ -207,9 +210,182 @@ examples:
           - name: authorized_features[0][permission_level]
             type: text
             value: write
+          - name: permission_ids[0]
+            type: text
+            value: "1"
     response:
-      status: 200
-      statusText: OK
+      status: 201
+      statusText: Created
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 23 Mar 2026 05:20:47 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
       body:
-        type: text
-        data: ""
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Staff is created successfully"
+            },
+            "data": {
+              "id": 4,
+              "name": "ZarNi",
+              "email": "ZarNi@gmail.com",
+              "email_verified_at": null,
+              "phone_number": "09977166511",
+              "role_id": 3,
+              "branch_id": 1,
+              "department_id": 1,
+              "status": "active",
+              "created_at": "2026-03-23 05:20:47",
+              "updated_at": "2026-03-23 05:20:47",
+              "role": {
+                "id": 3,
+                "name": "Super",
+                "parent_role_id": 1,
+                "branch_id": 1,
+                "department_id": 1,
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-23 05:19:32",
+                "updated_at": "2026-03-23 05:19:32"
+              },
+              "branch": {
+                "id": 1,
+                "prefix": "YGN",
+                "name": "Yangon Branch",
+                "location": "Yangon, 130st",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-23 04:48:46",
+                "updated_at": "2026-03-23 04:48:46"
+              },
+              "department": {
+                "id": 1,
+                "code": "ITD",
+                "name": "IT Department",
+                "branch_id": 1,
+                "description": "For software development",
+                "status": "inactive",
+                "created_at": "2026-03-23 04:49:17",
+                "updated_at": "2026-03-23 04:49:17"
+              },
+              "permissions": [
+                {
+                  "id": 1,
+                  "feature_id": 1,
+                  "name": "View Branch",
+                  "key": "view_branch",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 4,
+                    "permission_id": 1
+                  },
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                }
+              ],
+              "staff_personal_information": {
+                "id": 3,
+                "user_id": 4,
+                "date_of_birth": "1998-05-10T00:00:00.000000Z",
+                "nrc_number": "12/ABC(N)146196",
+                "nrc_image": "nrc_69c0cdaee9bae4.48105566.png",
+                "nrc_image_path": "staff/nrc/nrc_69c0cdaee9bae4.48105566.png",
+                "nrc_image_url": "http://localhost/storage/staff/nrc/nrc_69c0cdaee9bae4.48105566.png",
+                "father_name": "U Aung",
+                "mother_name": "Daw Mya",
+                "town": "Yangon",
+                "township": "Hlaing",
+                "address": "No.123, Hlaing",
+                "house_hold_information_image": "household_69c0cdaef13ae5.46339222.png",
+                "house_hold_information_image_path": "staff/household/household_69c0cdaef13ae5.46339222.png",
+                "house_hold_information_image_url": "http://localhost/storage/staff/household/household_69c0cdaef13ae5.46339222.png",
+                "created_at": "2026-03-23T05:20:47.000000Z",
+                "updated_at": "2026-03-23T05:20:47.000000Z"
+              },
+              "staff_employment_information": {
+                "id": 3,
+                "user_id": 4,
+                "join_date": "2026-03-01T00:00:00.000000Z",
+                "is_contract": false,
+                "off_day": "Sunday",
+                "overtime_fee_type": "hourly",
+                "salary": "500000.00",
+                "sale_incentive_amount": "50000.00",
+                "sale_commission": "2.50",
+                "created_at": "2026-03-23T05:20:47.000000Z",
+                "updated_at": "2026-03-23T05:20:47.000000Z"
+              },
+              "staff_banking_information": {
+                "id": 3,
+                "user_id": 4,
+                "bank_name": "KBZ Bank",
+                "account_number": "1234567890",
+                "created_at": "2026-03-23T05:20:47.000000Z",
+                "updated_at": "2026-03-23T05:20:47.000000Z"
+              },
+              "staff_authorized_features": [
+                {
+                  "id": 21,
+                  "staff_id": 4,
+                  "feature_id": 1,
+                  "is_recommended": false,
+                  "recommended_by_rule": "rule",
+                  "access_type": "manual",
+                  "permission_level": "write",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:20:47.000000Z",
+                  "created_at": "2026-03-23T05:20:47.000000Z",
+                  "updated_at": "2026-03-23T05:20:47.000000Z",
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                }
+              ]
+            }
+          }

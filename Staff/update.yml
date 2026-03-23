@@ -27,7 +27,7 @@ http:
         value: password123
       - name: role_id
         type: text
-        value: "1"
+        value: "2"
       - name: branch_id
         type: text
         value: "1"
@@ -95,7 +95,7 @@ http:
         value: "1234567890"
       - name: authorized_features[0][feature_id]
         type: text
-        value: "2"
+        value: "4"
       - name: authorized_features[0][recommended_by_rule]
         type: text
         value: RULE-001
@@ -105,6 +105,9 @@ http:
       - name: authorized_features[0][permission_level]
         type: text
         value: write
+      - name: permission_ids[0]
+        type: text
+        value: "3"
   auth: inherit
 
 settings:
@@ -139,7 +142,7 @@ examples:
             value: password123
           - name: role_id
             type: text
-            value: "1"
+            value: "2"
           - name: branch_id
             type: text
             value: "1"
@@ -205,7 +208,7 @@ examples:
             value: "1234567890"
           - name: authorized_features[0][feature_id]
             type: text
-            value: "2"
+            value: "4"
           - name: authorized_features[0][recommended_by_rule]
             type: text
             value: RULE-001
@@ -215,9 +218,420 @@ examples:
           - name: authorized_features[0][permission_level]
             type: text
             value: write
+          - name: permission_ids[0]
+            type: text
+            value: "3"
     response:
       status: 200
       statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 23 Mar 2026 05:13:53 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
       body:
-        type: text
-        data: ""
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Staff is updated successfully"
+            },
+            "data": {
+              "id": 2,
+              "name": "zin win htun",
+              "email": "zwh@gmail.com",
+              "email_verified_at": null,
+              "phone_number": "09977166520",
+              "role_id": 2,
+              "branch_id": 1,
+              "department_id": 1,
+              "status": "active",
+              "created_at": "2026-03-23 05:00:14",
+              "updated_at": "2026-03-23 05:13:53",
+              "role": {
+                "id": 2,
+                "name": "Manager",
+                "parent_role_id": 1,
+                "branch_id": 1,
+                "department_id": 1,
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-23 04:56:37",
+                "updated_at": "2026-03-23 04:56:37"
+              },
+              "branch": {
+                "id": 1,
+                "prefix": "YGN",
+                "name": "Yangon Branch",
+                "location": "Yangon, 130st",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-03-23 04:48:46",
+                "updated_at": "2026-03-23 04:48:46"
+              },
+              "department": {
+                "id": 1,
+                "code": "ITD",
+                "name": "IT Department",
+                "branch_id": 1,
+                "description": "For software development",
+                "status": "inactive",
+                "created_at": "2026-03-23 04:49:17",
+                "updated_at": "2026-03-23 04:49:17"
+              },
+              "permissions": [
+                {
+                  "id": 1,
+                  "feature_id": 1,
+                  "name": "View Branch",
+                  "key": "view_branch",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 1
+                  },
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 2,
+                  "feature_id": 1,
+                  "name": "Create Branch",
+                  "key": "create_branch",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 2
+                  },
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 3,
+                  "feature_id": 1,
+                  "name": "Update Branch",
+                  "key": "update_branch",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 3
+                  },
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 4,
+                  "feature_id": 1,
+                  "name": "Delete Branch",
+                  "key": "delete_branch",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 4
+                  },
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 5,
+                  "feature_id": 2,
+                  "name": "View Department",
+                  "key": "view_department",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 5
+                  },
+                  "feature": {
+                    "id": 2,
+                    "name": "Department",
+                    "key": "department_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of department",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 6,
+                  "feature_id": 2,
+                  "name": "Create Department",
+                  "key": "create_department",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 6
+                  },
+                  "feature": {
+                    "id": 2,
+                    "name": "Department",
+                    "key": "department_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of department",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 7,
+                  "feature_id": 2,
+                  "name": "Update Department",
+                  "key": "update_department",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 7
+                  },
+                  "feature": {
+                    "id": 2,
+                    "name": "Department",
+                    "key": "department_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of department",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 8,
+                  "feature_id": 2,
+                  "name": "Delete Department",
+                  "key": "delete_department",
+                  "description": null,
+                  "status": "active",
+                  "created_at": "2026-03-23T04:42:27.000000Z",
+                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "pivot": {
+                    "user_id": 2,
+                    "permission_id": 8
+                  },
+                  "feature": {
+                    "id": 2,
+                    "name": "Department",
+                    "key": "department_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of department",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                }
+              ],
+              "staff_personal_information": {
+                "id": 1,
+                "user_id": 2,
+                "date_of_birth": "1998-05-10T00:00:00.000000Z",
+                "nrc_number": "12/ABC(N)146536",
+                "nrc_image": "nrc_69c0cc1117ddf1.78699184.png",
+                "nrc_image_path": "staff/nrc/nrc_69c0cc1117ddf1.78699184.png",
+                "nrc_image_url": "http://localhost/storage/staff/nrc/nrc_69c0cc1117ddf1.78699184.png",
+                "father_name": "U Aung",
+                "mother_name": "Daw Mya",
+                "town": "Yangon",
+                "township": "Hlaing",
+                "address": "No.123, Hlaing",
+                "house_hold_information_image": "household_69c0cc1121a702.53441418.png",
+                "house_hold_information_image_path": "staff/household/household_69c0cc1121a702.53441418.png",
+                "house_hold_information_image_url": "http://localhost/storage/staff/household/household_69c0cc1121a702.53441418.png",
+                "created_at": "2026-03-23T05:00:14.000000Z",
+                "updated_at": "2026-03-23T05:13:53.000000Z"
+              },
+              "staff_employment_information": {
+                "id": 1,
+                "user_id": 2,
+                "join_date": "2026-03-01T00:00:00.000000Z",
+                "is_contract": false,
+                "off_day": "Sunday",
+                "overtime_fee_type": "hourly",
+                "salary": "500000.00",
+                "sale_incentive_amount": "50000.00",
+                "sale_commission": "2.50",
+                "created_at": "2026-03-23T05:00:14.000000Z",
+                "updated_at": "2026-03-23T05:00:14.000000Z"
+              },
+              "staff_banking_information": {
+                "id": 1,
+                "user_id": 2,
+                "bank_name": "KBZ Bank",
+                "account_number": "1234567890",
+                "created_at": "2026-03-23T05:00:14.000000Z",
+                "updated_at": "2026-03-23T05:00:14.000000Z"
+              },
+              "staff_authorized_features": [
+                {
+                  "id": 16,
+                  "staff_id": 2,
+                  "feature_id": 1,
+                  "is_recommended": true,
+                  "recommended_by_rule": null,
+                  "access_type": "role_auto",
+                  "permission_level": "full",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:13:53.000000Z",
+                  "created_at": "2026-03-23T05:13:53.000000Z",
+                  "updated_at": "2026-03-23T05:13:53.000000Z",
+                  "feature": {
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of branch",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 17,
+                  "staff_id": 2,
+                  "feature_id": 2,
+                  "is_recommended": true,
+                  "recommended_by_rule": null,
+                  "access_type": "role_auto",
+                  "permission_level": "full",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:13:53.000000Z",
+                  "created_at": "2026-03-23T05:13:53.000000Z",
+                  "updated_at": "2026-03-23T05:13:53.000000Z",
+                  "feature": {
+                    "id": 2,
+                    "name": "Department",
+                    "key": "department_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of department",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                },
+                {
+                  "id": 18,
+                  "staff_id": 2,
+                  "feature_id": 4,
+                  "is_recommended": false,
+                  "recommended_by_rule": "RULE-001",
+                  "access_type": "system",
+                  "permission_level": "write",
+                  "assigned_by": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "email": "superadmin@example.com",
+                    "email_verified_at": null,
+                    "phone_number": "09123456789",
+                    "role_id": 1,
+                    "branch_id": null,
+                    "department_id": null,
+                    "status": "active",
+                    "created_at": "2026-03-23 04:42:28",
+                    "updated_at": "2026-03-23 04:42:28"
+                  },
+                  "assigned_date": "2026-03-23T05:13:53.000000Z",
+                  "created_at": "2026-03-23T05:13:53.000000Z",
+                  "updated_at": "2026-03-23T05:13:53.000000Z",
+                  "feature": {
+                    "id": 4,
+                    "name": "Feature",
+                    "key": "feature_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature",
+                    "status": "active",
+                    "created_at": "2026-03-23T04:42:27.000000Z",
+                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                  }
+                }
+              ]
+            }
+          }
