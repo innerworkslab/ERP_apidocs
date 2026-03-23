@@ -1,7 +1,7 @@
 info:
-  name: Department
+  name: Price Group
   type: folder
-  seq: 5
+  seq: 11
 
 request:
   auth: inherit
