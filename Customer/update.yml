@@ -13,6 +13,7 @@ http:
         "name": "Aung Aung Updated",
         "phone_number": "09-999999999",
         "credit_limit": 7000000,
+        "customer_type_id": 2,
         "status": "Inactive"
       }
   auth: inherit
@@ -35,12 +36,88 @@ examples:
             "name": "Aung Aung Updated",
             "phone_number": "09-999999999",
             "credit_limit": 7000000,
-            "status": "Inactive",
-            "updated_by": 2
+            "customer_type_id": 2,
+            "status": "Inactive"
           }
     response:
       status: 200
       statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 23 Mar 2026 09:45:12 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
       body:
-        type: text
-        data: ""
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Customer updated successfully"
+            },
+            "data": {
+              "id": 1,
+              "code": "1-1-CUS-000001",
+              "name": "Aung Aung Updated",
+              "company_name": "AAA Trading Co.,Ltd",
+              "phone_number": "09-999999999",
+              "country": "Myanmar",
+              "town": "Yangon",
+              "township": "Hlaing",
+              "address": "No.123, Hlaing Township",
+              "bank_acc": "KBZ-0011223344",
+              "branch_id": 1,
+              "credit_limit": "7000000.00",
+              "opening": "0.00",
+              "customer_type_id": 2,
+              "birthday": "1995-08-15T00:00:00.000000Z",
+              "payment_terms": "Net 30",
+              "payment_due": "30 days",
+              "status": "Inactive",
+              "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-03-23 09:39:12",
+                "updated_at": "2026-03-23 09:39:12"
+              },
+              "updated_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-03-23 09:39:12",
+                "updated_at": "2026-03-23 09:39:12"
+              },
+              "created_at": "2026-03-23T09:44:21.000000Z",
+              "updated_at": "2026-03-23T09:45:12.000000Z",
+              "customer_type": {
+                "id": 2,
+                "name": "wholesale",
+                "created_at": "2026-03-23T09:43:05.000000Z",
+                "updated_at": "2026-03-23T09:43:05.000000Z"
+              },
+              "branch": null
+            }
+          }
