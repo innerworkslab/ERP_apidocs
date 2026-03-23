@@ -1,0 +1,66 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/customer-types"
+  body:
+    type: json
+    data: |-
+      {
+        "name":"wholesale"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/customer-types"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name":"wholesale"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 23 Mar 2026 09:43:05 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Customer type created successfully"
+            },
+            "data": {
+              "name": "wholesale",
+              "updated_at": "2026-03-23T09:43:05.000000Z",
+              "created_at": "2026-03-23T09:43:05.000000Z",
+              "id": 2
+            }
+          }
