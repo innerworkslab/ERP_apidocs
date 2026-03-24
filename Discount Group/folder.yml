@@ -1,0 +1,7 @@
+info:
+  name: "Discount Group "
+  type: folder
+  seq: 12
+
+request:
+  auth: inherit
