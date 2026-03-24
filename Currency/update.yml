@@ -1,0 +1,87 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/v1/currencies/:id"
+  params:
+    - name: id
+      value: "2"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Myanmar Kyat Update",
+        "code": "MMK",
+        "symbol": "Ks",
+        "exchange_rate": 1,
+        "is_base_currency": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/currencies/:id"
+      method: PUT
+      params:
+        - name: id
+          value: "2"
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Myanmar Kyat Update",
+            "code": "MMK",
+            "symbol": "Ks",
+            "exchange_rate": 1,
+            "is_base_currency": false
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Tue, 24 Mar 2026 04:57:40 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Currency is updated successfully"
+            },
+            "data": {
+              "id": 2,
+              "name": "Myanmar Kyat Update",
+              "code": "MMK",
+              "symbol": "Ks",
+              "exchange_rate": "1.0000",
+              "is_base_currency": false,
+              "last_exchange_rate_update": null,
+              "created_at": "2026-03-24T04:56:07.000000Z",
+              "updated_at": "2026-03-24T04:57:40.000000Z"
+            }
+          }
