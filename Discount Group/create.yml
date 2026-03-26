@@ -10,7 +10,7 @@ http:
     type: json
     data: |-
       {
-        "name": "Retail Discount Group A",
+        "name": "Retail Discount Group B",
         "customer_type_id": 1,
         "branch_id": 1
       }

@@ -1,0 +1,67 @@
+info:
+  name: set-base-currency
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/v1/currencies/:id/set-base-currency"
+  params:
+    - name: id
+      value: "3"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/currencies/:id/set-base-currency"
+      method: PUT
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Tue, 24 Mar 2026 05:00:29 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Base currency updated successfully"
+            },
+            "data": {
+              "id": 1,
+              "name": "US Dollar",
+              "code": "USD",
+              "symbol": "$",
+              "exchange_rate": "0.0007",
+              "is_base_currency": true,
+              "last_exchange_rate_update": "2026-03-24T00:00:00.000000Z",
+              "created_at": "2026-03-24T04:50:01.000000Z",
+              "updated_at": "2026-03-24T05:00:29.000000Z"
+            }
+          }

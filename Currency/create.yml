@@ -1,0 +1,78 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/currencies"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Myanmar Kyat",
+        "code": "MMK",
+        "symbol": "Ks",
+        "exchange_rate": 1,
+        "is_base_currency": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/currencies"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Myanmar Kyat",
+            "code": "MMK",
+            "symbol": "Ks",
+            "exchange_rate": 1,
+            "is_base_currency": false
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Tue, 24 Mar 2026 04:56:07 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Currency is created successfully"
+            },
+            "data": {
+              "name": "Myanmar Kyat",
+              "code": "MMK",
+              "symbol": "Ks",
+              "exchange_rate": "1.0000",
+              "is_base_currency": false,
+              "updated_at": "2026-03-24T04:56:07.000000Z",
+              "created_at": "2026-03-24T04:56:07.000000Z",
+              "id": 2
+            }
+          }
