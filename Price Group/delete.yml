@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}/v1/price-groups/:id"
   params:
     - name: id
-      value: "2"
+      value: "1"
       type: path
   auth: inherit
 
@@ -25,7 +25,7 @@ examples:
       method: DELETE
       params:
         - name: id
-          value: "2"
+          value: "1"
           type: path
     response:
       status: 200
@@ -40,7 +40,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 23 Mar 2026 10:56:55 GMT
+          value: Thu, 26 Mar 2026 08:47:54 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -51,7 +51,7 @@ examples:
           {
             "response": {
               "status": "success",
-              "message": "Price group deleted successfully"
+              "message": "Selling price group deleted successfully"
             },
             "data": []
           }

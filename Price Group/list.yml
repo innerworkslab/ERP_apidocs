@@ -32,7 +32,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 23 Mar 2026 10:55:42 GMT
+          value: Thu, 26 Mar 2026 08:48:22 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -43,22 +43,24 @@ examples:
           {
             "response": {
               "status": "success",
-              "message": "Price group list"
+              "message": "Selling price group list"
             },
             "data": [
               {
                 "id": 2,
-                "name": "Retail GP",
+                "name": "Retail Standard",
                 "customer_type_id": 1,
                 "branch_id": 1,
-                "is_active": true,
-                "created_at": "2026-03-23T10:55:33.000000Z",
-                "updated_at": "2026-03-23T10:55:33.000000Z",
+                "profix_margin_type": "percentage",
+                "profix_margin_value": "15.00",
+                "status": "active",
+                "created_at": "2026-03-26T08:48:05.000000Z",
+                "updated_at": "2026-03-26T08:48:05.000000Z",
                 "customer_type": {
                   "id": 1,
                   "name": "Retail",
-                  "created_at": "2026-03-23T10:51:50.000000Z",
-                  "updated_at": "2026-03-23T10:51:50.000000Z"
+                  "created_at": "2026-03-26T08:38:50.000000Z",
+                  "updated_at": "2026-03-26T08:38:50.000000Z"
                 },
                 "branch": {
                   "id": 1,
@@ -68,39 +70,13 @@ examples:
                   "status": "active",
                   "created_by": 1,
                   "updated_by": null,
-                  "created_at": "2026-03-23 10:53:52",
-                  "updated_at": "2026-03-23 10:53:52"
-                }
-              },
-              {
-                "id": 1,
-                "name": "Retail MM",
-                "customer_type_id": 1,
-                "branch_id": 1,
-                "is_active": true,
-                "created_at": "2026-03-23T10:54:04.000000Z",
-                "updated_at": "2026-03-23T10:54:04.000000Z",
-                "customer_type": {
-                  "id": 1,
-                  "name": "Retail",
-                  "created_at": "2026-03-23T10:51:50.000000Z",
-                  "updated_at": "2026-03-23T10:51:50.000000Z"
-                },
-                "branch": {
-                  "id": 1,
-                  "prefix": "YGN",
-                  "name": "Yangon Branch",
-                  "location": "Yangon, 130st",
-                  "status": "active",
-                  "created_by": 1,
-                  "updated_by": null,
-                  "created_at": "2026-03-23 10:53:52",
-                  "updated_at": "2026-03-23 10:53:52"
+                  "created_at": "2026-03-26 08:43:02",
+                  "updated_at": "2026-03-26 08:43:02"
                 }
               }
             ],
             "meta": {
-              "total": 2,
+              "total": 1,
               "per_page": 10,
               "current_page": 1,
               "total_pages": 1
