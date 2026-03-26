@@ -1,0 +1,57 @@
+info:
+  name: delete
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/v1/categories/:id"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/categories/:id"
+      method: DELETE
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 26 Mar 2026 10:48:01 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Category deleted successfully!"
+            },
+            "data": []
+          }

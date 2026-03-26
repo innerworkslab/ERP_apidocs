@@ -1,0 +1,90 @@
+info:
+  name: find
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/categories/:id"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/categories/:id"
+      method: GET
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 26 Mar 2026 10:47:46 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "category"
+            },
+            "data": {
+              "id": 1,
+              "name": "Electronics Updated",
+              "description": "Updated electronic items",
+              "status": "active",
+              "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-03-26 10:36:23",
+                "updated_at": "2026-03-26 10:36:23"
+              },
+              "updated_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-03-26 10:36:23",
+                "updated_at": "2026-03-26 10:36:23"
+              },
+              "created_at": "2026-03-26T10:41:30.000000Z",
+              "updated_at": "2026-03-26T10:45:11.000000Z"
+            }
+          }
