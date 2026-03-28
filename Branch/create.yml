@@ -13,12 +13,22 @@ http:
     type: json
     data: |-
       {
-        "prefix": "YGN",
-        "name": "Yangon Branch",
-        "location": "Yangon, 130st",
+        "prefix": "MDY",
+        "name": "Mandalay Branch",
+        "latitude": "12.977399",
+        "longitude": "14.977399",
+        "mobile": "090000000",
+        "alternate_phone": "0987654",
+        "email": "email.buuu@buuu.com",
+        "website": "https://buuuwebsite.com",
+        "state_id": 3,
+        "city_id": 4,
+        "default_selling_price_group_id": 1,
         "status": "active" // or inactive
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true
@@ -40,7 +50,15 @@ examples:
           {
             "prefix": "MDY",
             "name": "Mandalay Branch",
-            "location": "Mandalay, 77*65",
+            "latitude": "12.977399",
+            "longitude": "14.977399",
+            "mobile": "090000000",
+            "alternate_phone": "0987654",
+            "email": "email.buuu@buuu.com",
+            "website": "https://buuuwebsite.com",
+            "state_id": 3,
+            "city_id": 4,
+            "default_selling_price_group_id": 1,
             "status": "active" // or inactive
           }
     response:
@@ -56,11 +74,11 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 18 Mar 2026 03:51:33 GMT
+          value: Fri, 27 Mar 2026 11:52:42 GMT
         - name: content-type
           value: application/json
-        - name: access-control-allow-origin
-          value: "*"
+        - name: vary
+          value: Origin
       body:
         type: json
         data: |-
@@ -72,11 +90,19 @@ examples:
             "data": {
               "prefix": "MDY",
               "name": "Mandalay Branch",
-              "location": "Mandalay, 77*65",
+              "latitude": "12.977399",
+              "longitude": "14.977399",
+              "city_id": 4,
+              "state_id": 3,
+              "mobile": "090000000",
+              "alternate_phone": "0987654",
+              "email": "email.buuu@buuu.com",
+              "website": "https://buuuwebsite.com",
+              "default_selling_price_group_id": 1,
               "status": "active",
               "created_by": 1,
-              "updated_at": "2026-03-18 03:51:33",
-              "created_at": "2026-03-18 03:51:33",
-              "id": 1
+              "updated_at": "2026-03-27 11:52:42",
+              "created_at": "2026-03-27 11:52:42",
+              "id": 2
             }
           }

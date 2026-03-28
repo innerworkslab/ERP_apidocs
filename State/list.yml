@@ -1,0 +1,191 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/states/all?page=1&per_page=20"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: per_page
+      value: "20"
+      type: query
+    - name: search
+      value: mandalay
+      type: query
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/states/all?page=1&per_page=20"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: per_page
+          value: "20"
+          type: query
+        - name: search
+          value: mandalay
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Fri, 27 Mar 2026 11:05:26 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "State Lists"
+            },
+            "data": [
+              {
+                "id": 1,
+                "name": "Ayeyarwady Region",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 2,
+                "name": "Bago Region",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 3,
+                "name": "Chin State",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 4,
+                "name": "Kachin State",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 5,
+                "name": "Kayah State",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 6,
+                "name": "Kayin State",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 7,
+                "name": "Magway Region",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 8,
+                "name": "Mandalay Region",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 9,
+                "name": "Mon State",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 10,
+                "name": "Naypyidaw Union Territory",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 11,
+                "name": "Rakhine State",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 12,
+                "name": "Sagaing Region",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 13,
+                "name": "Shan State",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 14,
+                "name": "Tanintharyi Region",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              },
+              {
+                "id": 15,
+                "name": "Yangon Region",
+                "created_at": "2026-03-27 11:03:44",
+                "updated_at": "2026-03-27 11:03:44",
+                "deleted_at": null
+              }
+            ],
+            "meta": {
+              "total": 15,
+              "per_page": 20,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }
