@@ -48,11 +48,11 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 18 Mar 2026 04:07:05 GMT
+          value: Fri, 27 Mar 2026 11:57:29 GMT
         - name: content-type
           value: application/json
-        - name: access-control-allow-origin
-          value: "*"
+        - name: vary
+          value: Origin
       body:
         type: json
         data: |-
@@ -63,10 +63,18 @@ examples:
             },
             "data": {
               "id": 1,
-              "prefix": "MDY Update",
-              "name": "Mandalay Branch",
-              "location": "Mandalay, 77*65",
-              "status": "inactive",
+              "prefix": "YGN",
+              "name": "Yangon Branch",
+              "latitude": "16.9773990",
+              "longitude": "16.9773990",
+              "city_id": 1,
+              "state_id": 1,
+              "mobile": "09123456789",
+              "alternate_phone": "09123456789",
+              "email": "email.example@example.com",
+              "website": "https://examplewebsite.com",
+              "default_selling_price_group_id": 1,
+              "status": "active",
               "created_by": {
                 "id": 1,
                 "name": "Super Admin",
@@ -76,28 +84,39 @@ examples:
                 "role_id": 1,
                 "branch_id": null,
                 "department_id": null,
-                "salary": null,
-                "sale_incentive": null,
                 "status": "active",
-                "created_at": "2026-03-18 03:46:21",
-                "updated_at": "2026-03-18 03:46:21"
+                "created_at": "2026-03-27 11:51:14",
+                "updated_at": "2026-03-27 11:51:14"
               },
-              "updated_by": {
+              "updated_by": null,
+              "created_at": "2026-03-27 11:52:07",
+              "updated_at": "2026-03-27 11:52:07",
+              "deleted_at": null,
+              "state": {
                 "id": 1,
-                "name": "Super Admin",
-                "email": "superadmin@example.com",
-                "email_verified_at": null,
-                "phone_number": "09123456789",
-                "role_id": 1,
-                "branch_id": null,
-                "department_id": null,
-                "salary": null,
-                "sale_incentive": null,
-                "status": "active",
-                "created_at": "2026-03-18 03:46:21",
-                "updated_at": "2026-03-18 03:46:21"
+                "name": "Ayeyarwady Region",
+                "created_at": "2026-03-27 11:51:14",
+                "updated_at": "2026-03-27 11:51:14",
+                "deleted_at": null
               },
-              "created_at": "2026-03-18 03:51:33",
-              "updated_at": "2026-03-18 04:01:51"
+              "city": {
+                "id": 1,
+                "state_id": 1,
+                "name": "Hinthada",
+                "created_at": "2026-03-27 11:51:14",
+                "updated_at": "2026-03-27 11:51:14",
+                "deleted_at": null
+              },
+              "price_group": {
+                "id": 1,
+                "name": "dsfgsdf",
+                "customer_type_id": 1,
+                "branch_id": null,
+                "profit_margin_type": "fixed",
+                "profit_margin_value": "10.00",
+                "status": "active",
+                "created_at": null,
+                "updated_at": null
+              }
             }
           }

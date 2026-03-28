@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/v1/branches/all?page=1&per_page=10&status=active"
+  url: "{{baseUrl}}/v1/branches/all?page=1&per_page=10&status=active&city_id=6"
   headers:
     - name: Content-Type
       value: application/json
@@ -17,13 +17,22 @@ http:
       value: "10"
       type: query
     - name: search
-      value: md
+      value: "0912"
       type: query
       disabled: true
     - name: status
       value: active
       type: query
-  auth: inherit
+    - name: state_id
+      value: "2"
+      type: query
+      disabled: true
+    - name: city_id
+      value: "6"
+      type: query
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true
@@ -34,7 +43,7 @@ settings:
 examples:
   - name: example
     request:
-      url: "{{baseUrl}}/v1/branches/all?page=1&per_page=10"
+      url: "{{baseUrl}}/v1/branches/all?page=1&per_page=10&status=active&city_id=6"
       method: GET
       headers:
         - name: Content-Type
@@ -47,9 +56,19 @@ examples:
           value: "10"
           type: query
         - name: search
-          value: active
+          value: "0912"
           type: query
           disabled: true
+        - name: status
+          value: active
+          type: query
+        - name: state_id
+          value: "2"
+          type: query
+          disabled: true
+        - name: city_id
+          value: "6"
+          type: query
     response:
       status: 200
       statusText: OK
@@ -63,11 +82,11 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 18 Mar 2026 04:04:04 GMT
+          value: Fri, 27 Mar 2026 11:57:05 GMT
         - name: content-type
           value: application/json
-        - name: access-control-allow-origin
-          value: "*"
+        - name: vary
+          value: Origin
       body:
         type: json
         data: |-
@@ -79,49 +98,18 @@ examples:
             "data": [
               {
                 "id": 2,
-                "prefix": "YGN",
-                "name": "YANGON Branch",
-                "location": "YANGON, 19 street",
-                "status": "inactive",
-                "created_by": {
-                  "id": 1,
-                  "name": "Super Admin",
-                  "email": "superadmin@example.com",
-                  "email_verified_at": null,
-                  "phone_number": "09123456789",
-                  "role_id": 1,
-                  "branch_id": null,
-                  "department_id": null,
-                  "salary": null,
-                  "sale_incentive": null,
-                  "status": "active",
-                  "created_at": "2026-03-18 03:46:21",
-                  "updated_at": "2026-03-18 03:46:21"
-                },
-                "updated_by": {
-                  "id": 1,
-                  "name": "Super Admin",
-                  "email": "superadmin@example.com",
-                  "email_verified_at": null,
-                  "phone_number": "09123456789",
-                  "role_id": 1,
-                  "branch_id": null,
-                  "department_id": null,
-                  "salary": null,
-                  "sale_incentive": null,
-                  "status": "active",
-                  "created_at": "2026-03-18 03:46:21",
-                  "updated_at": "2026-03-18 03:46:21"
-                },
-                "created_at": "2026-03-18 04:02:01",
-                "updated_at": "2026-03-18 04:02:34"
-              },
-              {
-                "id": 1,
                 "prefix": "MDY Update",
-                "name": "Mandalay Branch",
-                "location": "Mandalay, 77*65",
-                "status": "inactive",
+                "name": "MDY Branch",
+                "latitude": "12.9773990",
+                "longitude": "14.9773990",
+                "city_id": 6,
+                "state_id": 2,
+                "mobile": "090000000",
+                "alternate_phone": "098756432",
+                "email": "email.buuuu@buuuu.com",
+                "website": "https://buuuuwebsite.com",
+                "default_selling_price_group_id": 1,
+                "status": "active",
                 "created_by": {
                   "id": 1,
                   "name": "Super Admin",
@@ -131,11 +119,9 @@ examples:
                   "role_id": 1,
                   "branch_id": null,
                   "department_id": null,
-                  "salary": null,
-                  "sale_incentive": null,
                   "status": "active",
-                  "created_at": "2026-03-18 03:46:21",
-                  "updated_at": "2026-03-18 03:46:21"
+                  "created_at": "2026-03-27 11:51:14",
+                  "updated_at": "2026-03-27 11:51:14"
                 },
                 "updated_by": {
                   "id": 1,
@@ -146,18 +132,43 @@ examples:
                   "role_id": 1,
                   "branch_id": null,
                   "department_id": null,
-                  "salary": null,
-                  "sale_incentive": null,
                   "status": "active",
-                  "created_at": "2026-03-18 03:46:21",
-                  "updated_at": "2026-03-18 03:46:21"
+                  "created_at": "2026-03-27 11:51:14",
+                  "updated_at": "2026-03-27 11:51:14"
                 },
-                "created_at": "2026-03-18 03:51:33",
-                "updated_at": "2026-03-18 04:01:51"
+                "created_at": "2026-03-27 11:52:42",
+                "updated_at": "2026-03-27 11:53:44",
+                "deleted_at": null,
+                "state": {
+                  "id": 2,
+                  "name": "Bago Region",
+                  "created_at": "2026-03-27 11:51:14",
+                  "updated_at": "2026-03-27 11:51:14",
+                  "deleted_at": null
+                },
+                "city": {
+                  "id": 6,
+                  "state_id": 1,
+                  "name": "Zalun",
+                  "created_at": "2026-03-27 11:51:14",
+                  "updated_at": "2026-03-27 11:51:14",
+                  "deleted_at": null
+                },
+                "price_group": {
+                  "id": 1,
+                  "name": "dsfgsdf",
+                  "customer_type_id": 1,
+                  "branch_id": null,
+                  "profit_margin_type": "fixed",
+                  "profit_margin_value": "10.00",
+                  "status": "active",
+                  "created_at": null,
+                  "updated_at": null
+                }
               }
             ],
             "meta": {
-              "total": 2,
+              "total": 1,
               "per_page": 10,
               "current_page": 1,
               "total_pages": 1

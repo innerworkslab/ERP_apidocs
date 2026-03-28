@@ -11,16 +11,24 @@ http:
       value: application/json
   params:
     - name: id
-      value: "1"
+      value: "2"
       type: path
   body:
     type: json
     data: |-
       {
         "prefix": "MDY Update",
-        "name": "Mandalay Branch",
-        "location": "Mandalay, 77*65",
-        "status": "inactive" // or inactive
+        "name": "MDY Branch",
+        "latitude": "12.977399",
+        "longitude": "14.977399",
+        "mobile": "090000000",
+        "alternate_phone": "098756432",
+        "email": "email.buuuu@buuuu.com",
+        "website": "https://buuuuwebsite.com",
+        "state_id": 2,
+        "city_id": 6,
+        "default_selling_price_group_id": 1,
+        "status": "active" // or inactive
       }
   auth:
     type: bearer
@@ -42,16 +50,24 @@ examples:
           value: application/json
       params:
         - name: id
-          value: "1"
+          value: "2"
           type: path
       body:
         type: json
         data: |-
           {
             "prefix": "MDY Update",
-            "name": "Mandalay Branch",
-            "location": "Mandalay, 77*65",
-            "status": "inactive" // or inactive
+            "name": "MDY Branch",
+            "latitude": "12.977399",
+            "longitude": "14.977399",
+            "mobile": "090000000",
+            "alternate_phone": "098756432",
+            "email": "email.buuuu@buuuu.com",
+            "website": "https://buuuuwebsite.com",
+            "state_id": 2,
+            "city_id": 6,
+            "default_selling_price_group_id": 1,
+            "status": "active" // or inactive
           }
     response:
       status: 200
@@ -66,11 +82,11 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 18 Mar 2026 04:01:05 GMT
+          value: Fri, 27 Mar 2026 11:52:53 GMT
         - name: content-type
           value: application/json
-        - name: access-control-allow-origin
-          value: "*"
+        - name: vary
+          value: Origin
       body:
         type: json
         data: |-
@@ -80,14 +96,35 @@ examples:
               "message": "Branch is updated successfully"
             },
             "data": {
-              "id": 1,
+              "id": 2,
               "prefix": "MDY Update",
-              "name": "Mandalay Branch",
-              "location": "Mandalay, 77*65",
-              "status": "inactive",
-              "created_by": 1,
+              "name": "MDY Branch",
+              "latitude": "12.977399",
+              "longitude": "14.977399",
+              "city_id": 6,
+              "state_id": 2,
+              "mobile": "090000000",
+              "alternate_phone": "098756432",
+              "email": "email.buuuu@buuuu.com",
+              "website": "https://buuuuwebsite.com",
+              "default_selling_price_group_id": 1,
+              "status": "active",
+              "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-03-27 11:51:14",
+                "updated_at": "2026-03-27 11:51:14"
+              },
               "updated_by": null,
-              "created_at": "2026-03-18 03:51:33",
-              "updated_at": "2026-03-18 04:01:05"
+              "created_at": "2026-03-27 11:52:42",
+              "updated_at": "2026-03-27 11:52:53",
+              "deleted_at": "2026-03-27 11:52:53"
             }
           }
