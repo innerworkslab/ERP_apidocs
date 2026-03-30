@@ -1,0 +1,77 @@
+info:
+  name: Create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/taxes"
+  body:
+    type: json
+    data: |-
+      {
+      "category": "Commercial Tax",
+      "type": "sale", //purchase 
+      "amount": 5.0,
+      "status": "active"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/taxes"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+          "category": "Commercial Tax",
+          "type": "sale", //purchase 
+          "amount": 5.0,
+          "status": "active"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 30 Mar 2026 09:52:51 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Tax is created successfully"
+            },
+            "data": {
+              "category": "Commercial Tax",
+              "type": "sale",
+              "amount": 5,
+              "status": "active",
+              "code": "TAX-00001",
+              "created_by": 1,
+              "updated_at": "2026-03-30T09:52:51.000000Z",
+              "created_at": "2026-03-30T09:52:51.000000Z",
+              "id": 1
+            }
+          }

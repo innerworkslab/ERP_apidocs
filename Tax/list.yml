@@ -1,0 +1,92 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/taxes"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/taxes"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 30 Mar 2026 09:53:58 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Tax Lists"
+            },
+            "data": [
+              {
+                "id": 1,
+                "category": "Input VAT",
+                "code": "TAX-00025",
+                "type": "purchase",
+                "amount": "10.00",
+                "status": "active",
+                "created_by": {
+                  "id": 1,
+                  "name": "Super Admin",
+                  "email": "superadmin@example.com",
+                  "email_verified_at": null,
+                  "phone_number": "09123456789",
+                  "role_id": 1,
+                  "branch_id": null,
+                  "department_id": null,
+                  "status": "active",
+                  "created_at": "2026-03-30 09:45:50",
+                  "updated_at": "2026-03-30 09:45:50"
+                },
+                "updated_by": {
+                  "id": 1,
+                  "name": "Super Admin",
+                  "email": "superadmin@example.com",
+                  "email_verified_at": null,
+                  "phone_number": "09123456789",
+                  "role_id": 1,
+                  "branch_id": null,
+                  "department_id": null,
+                  "status": "active",
+                  "created_at": "2026-03-30 09:45:50",
+                  "updated_at": "2026-03-30 09:45:50"
+                },
+                "created_at": "2026-03-30T09:52:51.000000Z",
+                "updated_at": "2026-03-30T09:53:52.000000Z"
+              }
+            ],
+            "meta": {
+              "total": 1,
+              "per_page": 20,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }
