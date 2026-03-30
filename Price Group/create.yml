@@ -13,16 +13,12 @@ http:
         "name": "Retail Standard",
         "customer_type_id": 1,
         "branch_id": 1,
-        "profit_margin_type": "percentage",
-        "profit_margin_value": 15
       }
 
       // {
       //   "name": "VIP Fixed Margin",
       //   "customer_type_id": 2,
       //   "branch_id": 1,
-      //   "profit_margin_type": "fixed",
-      //   "profit_margin_value": 5000
       // }
   auth: inherit
 
