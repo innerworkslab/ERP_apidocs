@@ -20,7 +20,7 @@ request:
       value: application/json
   auth:
     type: bearer
-    token: 1|ifxi5oBPOvFLopcGyfOdHWbgfqFqzkPqgjZN9eVBf6dcf3b6
+    token: 1|Jgv3EqC8EEgvoG16xFw1K3bLfc5Uyl1xmupbY29rdfdc9d8e
   variables:
     - name: baseUrl
       value: http://localhost:8000/api
