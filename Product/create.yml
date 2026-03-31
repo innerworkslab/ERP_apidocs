@@ -1,0 +1,185 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/products"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: multipart/form-data
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: Coffee Arabica
+      - name: sku
+        type: text
+        value: COF-0001
+      - name: image
+        type: file
+        value: &a1
+          - C:\Users\DELL\OneDrive\Pictures\Screenshots\Screenshot 2026-03-31 105403.png
+      - name: category_id
+        type: text
+        value: "1"
+      - name: brand_id
+        type: text
+        value: "1"
+      - name: alert_quantity
+        type: text
+        value: "10"
+      - name: origin_country_id
+        type: text
+        value: "1"
+      - name: purchase_price
+        type: text
+        value: "2000"
+      - name: purchase_currency_id
+        type: text
+        value: "1"
+      - name: purchase_tax_id
+        type: text
+        value: "1"
+      - name: purchase_uom_id
+        type: text
+        value: "1"
+      - name: sale_price
+        type: text
+        value: "2500"
+      - name: sale_currency_id
+        type: text
+        value: "1"
+      - name: sale_tax_id
+        type: text
+        value: "1"
+      - name: sale_uom_id
+        type: text
+        value: "1"
+      - name: status
+        type: text
+        value: active
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/products"
+      method: POST
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Content-Type
+          value: multipart/form-data
+      body:
+        type: multipart-form
+        data:
+          - name: name
+            type: text
+            value: Coffee Arabica
+          - name: sku
+            type: text
+            value: COF-0001
+          - name: image
+            type: file
+            value: *a1
+          - name: category_id
+            type: text
+            value: "1"
+          - name: brand_id
+            type: text
+            value: "1"
+          - name: alert_quantity
+            type: text
+            value: "10"
+          - name: origin_country_id
+            type: text
+            value: "1"
+          - name: purchase_price
+            type: text
+            value: "2000"
+          - name: purchase_currency_id
+            type: text
+            value: "1"
+          - name: purchase_tax_id
+            type: text
+            value: "1"
+          - name: purchase_uom_id
+            type: text
+            value: "1"
+          - name: sale_price
+            type: text
+            value: "2500"
+          - name: sale_currency_id
+            type: text
+            value: "1"
+          - name: sale_tax_id
+            type: text
+            value: "1"
+          - name: sale_uom_id
+            type: text
+            value: "1"
+          - name: status
+            type: text
+            value: active
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Tue, 31 Mar 2026 04:27:36 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Product is created successfully"
+            },
+            "data": {
+              "name": "Coffee Arabica",
+              "sku": "COF-0001",
+              "image": "product_69cb4d3719c4c1.20876332.png",
+              "category_id": "1",
+              "brand_id": "1",
+              "alert_quantity": "10",
+              "purchase_price": "2000",
+              "purchase_currency_id": "1",
+              "purchase_tax_id": "1",
+              "purchase_uom_id": "1",
+              "sale_price": "2500",
+              "sale_currency_id": "1",
+              "sale_tax_id": "1",
+              "sale_uom_id": "1",
+              "origin_country_id": "1",
+              "status": "active",
+              "image_path": "product/images/product_69cb4d3719c4c1.20876332.png",
+              "image_url": "http://localhost/storage/product/images/product_69cb4d3719c4c1.20876332.png",
+              "created_by": 1,
+              "updated_at": "2026-03-31T04:27:36.000000Z",
+              "created_at": "2026-03-31T04:27:36.000000Z",
+              "id": 1
+            }
+          }
