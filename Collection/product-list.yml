@@ -1,0 +1,19 @@
+info:
+  name: product-list
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/collections/:id/products"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
