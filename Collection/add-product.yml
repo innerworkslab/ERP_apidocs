@@ -1,0 +1,34 @@
+info:
+  name: add-product
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/collections/:id/products"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "products": [
+          {
+            "product_id": 1,
+            "product_qty": 10
+          },
+          {
+            "product_id": 2,
+            "product_qty": 2
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
