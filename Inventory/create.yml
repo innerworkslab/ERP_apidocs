@@ -1,0 +1,124 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/inventories"
+  body:
+    type: json
+    data: |-
+      {
+        "name" : "Cold Warehouse",
+        "branch_ids": [2]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/inventories"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name" : "Main Store",
+            "branch_ids": [1,2]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 02 Apr 2026 02:57:00 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Inventory is created successfully"
+            },
+            "data": {
+              "id": 1,
+              "name": "Main Store",
+              "created_at": "2026-04-02T02:57:00.000000Z",
+              "updated_at": "2026-04-02T02:57:00.000000Z",
+              "branches": [
+                {
+                  "id": 1,
+                  "prefix": "MDY",
+                  "name": "Mandalay Branch",
+                  "latitude": "12.9773990",
+                  "longitude": "14.9773990",
+                  "city_id": 4,
+                  "state_id": 3,
+                  "mobile": "090000000",
+                  "alternate_phone": "0987654",
+                  "email": "email.buuu@buuu.com",
+                  "website": "https://buuuwebsite.com",
+                  "default_selling_price_group_id": 1,
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-04-02 02:56:11",
+                  "updated_at": "2026-04-02 02:56:11",
+                  "deleted_at": null,
+                  "pivot": {
+                    "inventory_id": 1,
+                    "branch_id": 1,
+                    "status": "active",
+                    "created_at": "2026-04-02T02:57:00.000000Z",
+                    "updated_at": "2026-04-02T02:57:00.000000Z"
+                  }
+                },
+                {
+                  "id": 2,
+                  "prefix": "YGN",
+                  "name": "Yangon Branch",
+                  "latitude": "12.9773990",
+                  "longitude": "14.9773990",
+                  "city_id": 4,
+                  "state_id": 3,
+                  "mobile": "090000000",
+                  "alternate_phone": "0987654",
+                  "email": "email.buuu@buuu.com",
+                  "website": "https://buuuwebsite.com",
+                  "default_selling_price_group_id": 1,
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-04-02 02:56:33",
+                  "updated_at": "2026-04-02 02:56:33",
+                  "deleted_at": null,
+                  "pivot": {
+                    "inventory_id": 1,
+                    "branch_id": 2,
+                    "status": "active",
+                    "created_at": "2026-04-02T02:57:00.000000Z",
+                    "updated_at": "2026-04-02T02:57:00.000000Z"
+                  }
+                }
+              ]
+            }
+          }

@@ -13,8 +13,8 @@ http:
     type: json
     data: |-
       {
-        "prefix": "MDY",
-        "name": "Mandalay Branch",
+        "prefix": "YGN",
+        "name": "Yangon Branch",
         "latitude": "12.977399",
         "longitude": "14.977399",
         "mobile": "090000000",
@@ -29,6 +29,11 @@ http:
   auth:
     type: bearer
     token: "{{accessToken}}"
+
+runtime:
+  variables:
+    - name: accessToken
+      value: 1|HpyPz5W9kryTGn0LVEa1a1c3OEklysgUzKJjgnNi9a62de8d
 
 settings:
   encodeUrl: true

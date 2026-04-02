@@ -1,0 +1,144 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/inventories"
+  params:
+    - name: search
+      value: ""
+      type: query
+      disabled: true
+    - name: branch_id
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/inventories"
+      method: GET
+      params:
+        - name: search
+          value: ""
+          type: query
+          disabled: true
+        - name: branch_id
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 02 Apr 2026 03:02:58 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Inventory lists"
+            },
+            "data": [
+              {
+                "id": 2,
+                "name": "Cold Warehouse",
+                "created_at": "2026-04-02T02:59:00.000000Z",
+                "updated_at": "2026-04-02T02:59:00.000000Z",
+                "branches": [
+                  {
+                    "id": 2,
+                    "prefix": "YGN",
+                    "name": "Yangon Branch",
+                    "latitude": "12.9773990",
+                    "longitude": "14.9773990",
+                    "city_id": 4,
+                    "state_id": 3,
+                    "mobile": "090000000",
+                    "alternate_phone": "0987654",
+                    "email": "email.buuu@buuu.com",
+                    "website": "https://buuuwebsite.com",
+                    "default_selling_price_group_id": 1,
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "created_at": "2026-04-02 02:56:33",
+                    "updated_at": "2026-04-02 02:56:33",
+                    "deleted_at": null,
+                    "pivot": {
+                      "inventory_id": 2,
+                      "branch_id": 2,
+                      "status": "active",
+                      "created_at": "2026-04-02T02:59:00.000000Z",
+                      "updated_at": "2026-04-02T02:59:00.000000Z"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": 1,
+                "name": "Branch 1 Inventory",
+                "created_at": "2026-04-02T02:57:00.000000Z",
+                "updated_at": "2026-04-02T03:00:56.000000Z",
+                "branches": [
+                  {
+                    "id": 1,
+                    "prefix": "MDY",
+                    "name": "Mandalay Branch",
+                    "latitude": "12.9773990",
+                    "longitude": "14.9773990",
+                    "city_id": 4,
+                    "state_id": 3,
+                    "mobile": "090000000",
+                    "alternate_phone": "0987654",
+                    "email": "email.buuu@buuu.com",
+                    "website": "https://buuuwebsite.com",
+                    "default_selling_price_group_id": 1,
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "created_at": "2026-04-02 02:56:11",
+                    "updated_at": "2026-04-02 02:56:11",
+                    "deleted_at": null,
+                    "pivot": {
+                      "inventory_id": 1,
+                      "branch_id": 1,
+                      "status": "inactive",
+                      "created_at": "2026-04-02T02:57:00.000000Z",
+                      "updated_at": "2026-04-02T03:01:25.000000Z"
+                    }
+                  }
+                ]
+              }
+            ],
+            "meta": {
+              "total": 2,
+              "per_page": 20,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }
