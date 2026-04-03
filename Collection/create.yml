@@ -5,7 +5,22 @@ info:
 
 http:
   method: POST
-  url: ""
+  url: "{{baseUrl}}/v1/collections"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Summer Collection 2026",
+        "purchase_price": 12000,
+        "purchase_currency_id": 1,
+        "purchase_tax_id": 1,
+        "purchase_uom_id": 1,
+        "sale_price": 15000,
+        "sale_currency_id": 1,
+        "sale_tax_id": 1,
+        "sale_uom_id": 1,
+        "status": "active"
+      }
   auth: inherit
 
 settings:
@@ -13,3 +28,67 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/collections"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Summer Collection 2026",
+            "purchase_price": 12000,
+            "purchase_currency_id": 1,
+            "purchase_tax_id": 1,
+            "purchase_uom_id": 1,
+            "sale_price": 15000,
+            "sale_currency_id": 1,
+            "sale_tax_id": 1,
+            "sale_uom_id": 1,
+            "status": "active"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Fri, 03 Apr 2026 10:06:35 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Collection is created successfully"
+            },
+            "data": {
+              "name": "Summer Collection 2026",
+              "purchase_price": "12000.00",
+              "purchase_currency_id": 1,
+              "purchase_tax_id": 1,
+              "purchase_uom_id": 1,
+              "sale_price": "15000.00",
+              "sale_currency_id": 1,
+              "sale_tax_id": 1,
+              "sale_uom_id": 1,
+              "status": "active",
+              "created_by": 1,
+              "updated_at": "2026-04-03T10:06:35.000000Z",
+              "created_at": "2026-04-03T10:06:35.000000Z",
+              "id": 1
+            }
+          }

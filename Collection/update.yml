@@ -10,6 +10,21 @@ http:
     - name: id
       value: "1"
       type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Summer Collection 2026 Updated",
+        "purchase_price": 12500,
+        "purchase_currency_id": 1,
+        "purchase_tax_id": 1,
+        "purchase_uom_id": 1,
+        "sale_price": 16000,
+        "sale_currency_id": 1,
+        "sale_tax_id": 1,
+        "sale_uom_id": 1,
+        "status": "inactive"
+      }
   auth: inherit
 
 settings:
@@ -17,3 +32,154 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/collections/:id"
+      method: GET
+      params:
+        - name: id
+          value: "1"
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Summer Collection 2026 Updated",
+            "purchase_price": 12500,
+            "purchase_currency_id": 1,
+            "purchase_tax_id": 1,
+            "purchase_uom_id": 1,
+            "sale_price": 16000,
+            "sale_currency_id": 1,
+            "sale_tax_id": 1,
+            "sale_uom_id": 1,
+            "status": "inactive"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Fri, 03 Apr 2026 10:07:18 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "collection"
+            },
+            "data": {
+              "id": 1,
+              "name": "Summer Collection 2026",
+              "purchase_price": "12000.00",
+              "purchase_currency_id": 1,
+              "purchase_tax_id": 1,
+              "purchase_uom_id": 1,
+              "sale_price": "15000.00",
+              "sale_currency_id": 1,
+              "sale_tax_id": 1,
+              "sale_uom_id": 1,
+              "status": "active",
+              "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-04-03 08:29:22",
+                "updated_at": "2026-04-03 08:29:22"
+              },
+              "updated_by": null,
+              "created_at": "2026-04-03T10:06:35.000000Z",
+              "updated_at": "2026-04-03T10:06:35.000000Z",
+              "product_count": 0,
+              "purchase_currency": {
+                "id": 1,
+                "name": "US Dollar",
+                "code": "USD",
+                "symbol": "$",
+                "exchange_rate": "0.0005",
+                "is_base_currency": false,
+                "last_exchange_rate_update": "2026-04-03T00:00:00.000000Z",
+                "created_at": "2026-04-03T08:29:24.000000Z",
+                "updated_at": "2026-04-03T08:29:24.000000Z"
+              },
+              "purchase_tax": {
+                "id": 1,
+                "category": "Commercial Tax",
+                "code": "TAX-00001",
+                "type": "sale",
+                "amount": "5.00",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-04-03T10:06:15.000000Z",
+                "updated_at": "2026-04-03T10:06:15.000000Z"
+              },
+              "purchase_uom": {
+                "id": 1,
+                "name": "Kilogram",
+                "code": "Kg",
+                "status": "inactive",
+                "created_by": 1,
+                "updated_by": null,
+                "deleted_at": null,
+                "created_at": "2026-04-03 10:06:04",
+                "updated_at": "2026-04-03 10:06:04"
+              },
+              "sale_currency": {
+                "id": 1,
+                "name": "US Dollar",
+                "code": "USD",
+                "symbol": "$",
+                "exchange_rate": "0.0005",
+                "is_base_currency": false,
+                "last_exchange_rate_update": "2026-04-03T00:00:00.000000Z",
+                "created_at": "2026-04-03T08:29:24.000000Z",
+                "updated_at": "2026-04-03T08:29:24.000000Z"
+              },
+              "sale_tax": {
+                "id": 1,
+                "category": "Commercial Tax",
+                "code": "TAX-00001",
+                "type": "sale",
+                "amount": "5.00",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-04-03T10:06:15.000000Z",
+                "updated_at": "2026-04-03T10:06:15.000000Z"
+              },
+              "sale_uom": {
+                "id": 1,
+                "name": "Kilogram",
+                "code": "Kg",
+                "status": "inactive",
+                "created_by": 1,
+                "updated_by": null,
+                "deleted_at": null,
+                "created_at": "2026-04-03 10:06:04",
+                "updated_at": "2026-04-03 10:06:04"
+              },
+              "products": []
+            }
+          }
