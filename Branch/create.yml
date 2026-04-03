@@ -26,9 +26,7 @@ http:
         "default_selling_price_group_id": 1,
         "status": "active" // or inactive
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 runtime:
   variables:

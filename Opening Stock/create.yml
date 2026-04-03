@@ -1,0 +1,115 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/opening-stocks"
+  body:
+    type: json
+    data: |-
+      {
+        "inventory_id": 1,
+        "status": "pending",
+        "remarks": "Initial opening stock entry",
+        "total_amount": 2500,
+        "lines": [
+          {
+            "product_id": 1,
+            "quantity": 50,
+            "uom_id": 1,
+            "purchase_price": 20,
+            "subtotal": 1000,
+            "lot_no": "LOT-20260401-A",
+            "expired_date": "2027-04-01",
+            "serial_no": "SN-0001",
+            "remarks": "First batch"
+          },
+          {
+            "product_id": 2,
+            "quantity": 30,
+            "uom_id": 1,
+            "purchase_price": 50,
+            "subtotal": 1500,
+            "lot_no": "LOT-20260401-B",
+            "expired_date": null,
+            "serial_no": null,
+            "remarks": "Second batch"
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/opening-stocks"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "inventory_id": 1,
+            "status": "pending",
+            "remarks": "Initial opening stock entry",
+            "total_amount": 2500,
+            "lines": [
+              {
+                "product_id": 1,
+                "quantity": 50,
+                "uom_id": 1,
+                "purchase_price": 20,
+                "subtotal": 1000,
+                "lot_no": "LOT-20260401-A",
+                "expired_date": "2027-04-01",
+                "serial_no": "SN-0001",
+                "remarks": "First batch"
+              },
+              {
+                "product_id": 2,
+                "quantity": 30,
+                "uom_id": 1,
+                "purchase_price": 50,
+                "subtotal": 1500,
+                "lot_no": "LOT-20260401-B",
+                "expired_date": null,
+                "serial_no": null,
+                "remarks": "Second batch"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Fri, 03 Apr 2026 16:38:14 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Opening stock is created successfully"
+            },
+            "data": true
+          }

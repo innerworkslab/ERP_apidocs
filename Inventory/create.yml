@@ -11,7 +11,7 @@ http:
     data: |-
       {
         "name" : "Cold Warehouse",
-        "branch_ids": [2]
+        "branch_ids": [1]
       }
   auth: inherit
 
