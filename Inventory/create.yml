@@ -10,7 +10,7 @@ http:
     type: json
     data: |-
       {
-        "name" : "Cold Warehouse",
+        "name" : "Hot Warehouse",
         "branch_ids": [1]
       }
   auth: inherit

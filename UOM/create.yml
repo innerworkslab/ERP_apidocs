@@ -21,6 +21,11 @@ http:
     type: bearer
     token: "{{accessToken}}"
 
+runtime:
+  variables:
+    - name: accessToken
+      value: 1|i6m4KK6llCJ9egxqZIH8utu18dXwFiDY83JWPOKb61fe54ce
+
 settings:
   encodeUrl: true
   timeout: 0

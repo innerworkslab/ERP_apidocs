@@ -1,0 +1,95 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/stock-transfers"
+  body:
+    type: json
+    data: |-
+      {
+        "transfer_date": "2026-04-04",
+        "source_inventory_id": 1,
+        "target_inventory_id": 2,
+        "remarks": "Main warehouse to branch A",
+        "lines": [
+          {
+            "product_id": 1,
+            "quantity": 10,
+            "uom_id": 1,
+            "remarks": "urgent"
+          },
+          {
+            "product_id": 2,
+            "quantity": 10,
+            "uom_id": 1,
+            "remarks": null
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/stock-transfers"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "transfer_date": "2026-04-04",
+            "source_inventory_id": 1,
+            "target_inventory_id": 2,
+            "remarks": "Main warehouse to branch A",
+            "lines": [
+              {
+                "product_id": 1,
+                "quantity": 10,
+                "uom_id": 1,
+                "remarks": "urgent"
+              },
+              {
+                "product_id": 2,
+                "quantity": 10,
+                "uom_id": 1,
+                "remarks": null
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Sat, 04 Apr 2026 03:59:52 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Stock transfer is created successfully"
+            },
+            "data": true
+          }
