@@ -1,0 +1,290 @@
+info:
+  name: ledger list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/stock-ledgers"
+  params:
+    - name: voucher_no
+      value: ""
+      type: query
+      disabled: true
+    - name: reference_type
+      value: "'opening_stock', 'purchase_receive', 'purchase_return', 'sale_issue' ,'sale_return', 'adjustment_in', 'adjustment_out','damage','transfer_in','transfer_out'"
+      type: query
+      disabled: true
+    - name: reference_id
+      value: ""
+      type: query
+      disabled: true
+    - name: product_search
+      value: "product name & SKU "
+      type: query
+      disabled: true
+    - name: inventory_name
+      value: ""
+      type: query
+      disabled: true
+    - name: branch_name
+      value: ""
+      type: query
+      disabled: true
+    - name: transaction_date_from
+      value: 2026-03-07
+      type: query
+      disabled: true
+    - name: transaction_date_to
+      value: 2026-04-07
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/stock-ledgers"
+      method: GET
+      params:
+        - name: voucher_no
+          value: ""
+          type: query
+          disabled: true
+        - name: reference_type
+          value: "'opening_stock', 'purchase_receive', 'purchase_return', 'sale_issue' ,'sale_return', 'adjustment_in', 'adjustment_out','damage','transfer_in','transfer_out'"
+          type: query
+          disabled: true
+        - name: reference_id
+          value: ""
+          type: query
+          disabled: true
+        - name: product_search
+          value: "product name & SKU "
+          type: query
+          disabled: true
+        - name: inventory_name
+          value: ""
+          type: query
+          disabled: true
+        - name: branch_name
+          value: ""
+          type: query
+          disabled: true
+        - name: transaction_date_from
+          value: 2026-03-07
+          type: query
+          disabled: true
+        - name: transaction_date_to
+          value: 2026-04-07
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Tue, 07 Apr 2026 08:33:05 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Stock ledger lists"
+            },
+            "data": [
+              {
+                "id": 8,
+                "transaction_date": "2026-04-07",
+                "reference_type": "transfer_in",
+                "reference_id": 3,
+                "voucher_no": "INW-ST-26-4-7-0003",
+                "product_name": "Test",
+                "sku": "T-0001",
+                "inventory_name": "Cold Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "in",
+                "quantity": "+2.00",
+                "UOM": "Kilogram",
+                "unit_cost": "2000.00",
+                "total_cost": "4000.00",
+                "balance_quantity_before": "0.00",
+                "balance_quantity_after": "2.00",
+                "balance_cost_before": "0.00",
+                "balance_cost_after": "4000.00",
+                "created_at": "2026-04-07 05:34:52"
+              },
+              {
+                "id": 7,
+                "transaction_date": "2026-04-07",
+                "reference_type": "transfer_out",
+                "reference_id": 3,
+                "voucher_no": "INW-ST-26-4-7-0003",
+                "product_name": "Test",
+                "sku": "T-0001",
+                "inventory_name": "Hot Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "out",
+                "quantity": "-2.00",
+                "UOM": "Kilogram",
+                "unit_cost": "2000.00",
+                "total_cost": "-4000.00",
+                "balance_quantity_before": "50.00",
+                "balance_quantity_after": "48.00",
+                "balance_cost_before": "10000.00",
+                "balance_cost_after": "6000.00",
+                "created_at": "2026-04-07 05:34:52"
+              },
+              {
+                "id": 6,
+                "transaction_date": "2026-04-07",
+                "reference_type": "opening_stock",
+                "reference_id": null,
+                "voucher_no": "INW-OS-26-4-7-0002",
+                "product_name": "Test",
+                "sku": "T-0001",
+                "inventory_name": "Hot Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "in",
+                "quantity": "+50.00",
+                "UOM": "Kilogram",
+                "unit_cost": "2000.00",
+                "total_cost": "10000.00",
+                "balance_quantity_before": "0.00",
+                "balance_quantity_after": "50.00",
+                "balance_cost_before": "0.00",
+                "balance_cost_after": "10000.00",
+                "created_at": "2026-04-07 05:34:04"
+              },
+              {
+                "id": 5,
+                "transaction_date": "2026-04-07",
+                "reference_type": "transfer_in",
+                "reference_id": 2,
+                "voucher_no": "INW-ST-26-4-7-0002",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "inventory_name": "Cold Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "in",
+                "quantity": "+1.00",
+                "UOM": "Kilogram",
+                "unit_cost": "2000.00",
+                "total_cost": "2000.00",
+                "balance_quantity_before": "10.00",
+                "balance_quantity_after": "11.00",
+                "balance_cost_before": "20000.00",
+                "balance_cost_after": "22000.00",
+                "created_at": "2026-04-07 05:31:14"
+              },
+              {
+                "id": 4,
+                "transaction_date": "2026-04-07",
+                "reference_type": "transfer_out",
+                "reference_id": 2,
+                "voucher_no": "INW-ST-26-4-7-0002",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "inventory_name": "Hot Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "out",
+                "quantity": "-1.00",
+                "UOM": "Kilogram",
+                "unit_cost": "2000.00",
+                "total_cost": "-2000.00",
+                "balance_quantity_before": "40.00",
+                "balance_quantity_after": "39.00",
+                "balance_cost_before": "-19000.00",
+                "balance_cost_after": "-21000.00",
+                "created_at": "2026-04-07 05:31:14"
+              },
+              {
+                "id": 3,
+                "transaction_date": "2026-04-07",
+                "reference_type": "transfer_in",
+                "reference_id": 1,
+                "voucher_no": "INW-ST-26-4-7-0001",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "inventory_name": "Cold Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "in",
+                "quantity": "+10.00",
+                "UOM": "Kilogram",
+                "unit_cost": "2000.00",
+                "total_cost": "20000.00",
+                "balance_quantity_before": "0.00",
+                "balance_quantity_after": "10.00",
+                "balance_cost_before": "0.00",
+                "balance_cost_after": "20000.00",
+                "created_at": "2026-04-07 05:29:42"
+              },
+              {
+                "id": 2,
+                "transaction_date": "2026-04-07",
+                "reference_type": "transfer_out",
+                "reference_id": 1,
+                "voucher_no": "INW-ST-26-4-7-0001",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "inventory_name": "Hot Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "out",
+                "quantity": "-10.00",
+                "UOM": "Kilogram",
+                "unit_cost": "2000.00",
+                "total_cost": "-20000.00",
+                "balance_quantity_before": "50.00",
+                "balance_quantity_after": "40.00",
+                "balance_cost_before": "1000.00",
+                "balance_cost_after": "-19000.00",
+                "created_at": "2026-04-07 05:29:42"
+              },
+              {
+                "id": 1,
+                "transaction_date": "2026-04-07",
+                "reference_type": "opening_stock",
+                "reference_id": null,
+                "voucher_no": "INW-OS-26-4-7-0001",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "inventory_name": "Hot Warehouse",
+                "branch_name": "Yangon Branch",
+                "movement_type": "in",
+                "quantity": "+50.00",
+                "UOM": "Kilogram",
+                "unit_cost": "20.00",
+                "total_cost": "1000.00",
+                "balance_quantity_before": "0.00",
+                "balance_quantity_after": "50.00",
+                "balance_cost_before": "0.00",
+                "balance_cost_after": "1000.00",
+                "created_at": "2026-04-07 05:27:07"
+              }
+            ],
+            "meta": {
+              "total": 8,
+              "per_page": 20,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }
