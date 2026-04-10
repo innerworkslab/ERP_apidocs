@@ -24,7 +24,7 @@ http:
 runtime:
   variables:
     - name: accessToken
-      value: 1|BrKL9PnCGtEk9iR59MzhwPEUQn2sXsumX8sa2hZdfb6d63a1
+      value: 1|VWLIjOoZViwTSTpC9lEDINine2UrJUHMs2cK5gwre9e225bf
 
 settings:
   encodeUrl: true

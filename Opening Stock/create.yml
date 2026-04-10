@@ -21,9 +21,18 @@ http:
             "uom_id": 1,
             "purchase_price": 20,
             "subtotal": 1000,
-            "lot_no": "LOT-20260401-A",
             "expired_date": "2027-04-01",
             "serial_no": "SN-0001",
+            "remarks": "First batch"
+          },
+          {
+            "product_id": 1,
+            "quantity": 20,
+            "uom_id": 1,
+            "purchase_price": 20,
+            "subtotal": 400,
+            "expired_date": "2027-05-01",
+            "serial_no": "SN-0002",
             "remarks": "First batch"
           },
           {
@@ -32,7 +41,6 @@ http:
             "uom_id": 1,
             "purchase_price": 50,
             "subtotal": 1500,
-            "lot_no": "LOT-20260401-B",
             "expired_date": null,
             "serial_no": null,
             "remarks": "Second batch"
