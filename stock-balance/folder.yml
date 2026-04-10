@@ -1,0 +1,7 @@
+info:
+  name: stock-balance
+  type: folder
+  seq: 29
+
+request:
+  auth: inherit

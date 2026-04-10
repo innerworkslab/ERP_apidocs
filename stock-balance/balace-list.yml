@@ -1,0 +1,279 @@
+info:
+  name: balace-list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/stock-balances"
+  params:
+    - name: branch_id
+      value: ""
+      type: query
+      disabled: true
+    - name: inventory_id
+      value: ""
+      type: query
+      disabled: true
+    - name: product_id
+      value: ""
+      type: query
+      disabled: true
+    - name: category_id
+      value: ""
+      type: query
+      disabled: true
+    - name: brand_id
+      value: ""
+      type: query
+      disabled: true
+    - name: collection_id
+      value: ""
+      type: query
+      disabled: true
+    - name: lot_no
+      value: ""
+      type: query
+      disabled: true
+    - name: expired_date_from
+      value: ""
+      type: query
+      disabled: true
+    - name: expired_date_to
+      value: ""
+      type: query
+      disabled: true
+    - name: status
+      value: active/inactive
+      type: query
+      disabled: true
+    - name: expiry_status
+      value: expired/nearly_expired/fresh
+      type: query
+      disabled: true
+    - name: near_expiry_days
+      value: "15"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/stock-balances"
+      method: GET
+      params:
+        - name: branch_id
+          value: ""
+          type: query
+          disabled: true
+        - name: inventory_id
+          value: ""
+          type: query
+          disabled: true
+        - name: product_id
+          value: ""
+          type: query
+          disabled: true
+        - name: category_id
+          value: ""
+          type: query
+          disabled: true
+        - name: brand_id
+          value: ""
+          type: query
+          disabled: true
+        - name: collection_id
+          value: ""
+          type: query
+          disabled: true
+        - name: lot_no
+          value: ""
+          type: query
+          disabled: true
+        - name: expired_date_from
+          value: ""
+          type: query
+          disabled: true
+        - name: expired_date_to
+          value: ""
+          type: query
+          disabled: true
+        - name: status
+          value: active/inactive
+          type: query
+          disabled: true
+        - name: expiry_status
+          value: expired/nearly_expired/fresh
+          type: query
+          disabled: true
+        - name: near_expiry_days
+          value: "15"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Fri, 10 Apr 2026 05:31:08 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Stock balance lists"
+            },
+            "data": [
+              {
+                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "barcode": null,
+                "category_name": "Electronics",
+                "brand_name": "Nike",
+                "branch_names": "Yangon Branch",
+                "inventory_name": "Cold Warehouse",
+                "stock_uom": "Kilogram",
+                "on_hand_quantity": "40.00",
+                "reserved_quantity": 0,
+                "available_quantity": "40.00",
+                "reorder_level": "10.00",
+                "unit_cost": "-475.0000",
+                "total_stock_value": "-19000.00",
+                "base_currency_value": "-9.5000",
+                "lot_no": "LOT-COF-0001_01",
+                "expired_date": "2027-04-01",
+                "serial_no": "SN-0001",
+                "last_movement_date": "2026-04-10",
+                "status": "active",
+                "expiry_remark": null,
+                "collection_names": null
+              },
+              {
+                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "barcode": null,
+                "category_name": "Electronics",
+                "brand_name": "Nike",
+                "branch_names": "Yangon Branch",
+                "inventory_name": "Cold Warehouse",
+                "stock_uom": "Kilogram",
+                "on_hand_quantity": "10.00",
+                "reserved_quantity": 0,
+                "available_quantity": "10.00",
+                "reorder_level": "10.00",
+                "unit_cost": "-1960.0000",
+                "total_stock_value": "-19600.00",
+                "base_currency_value": "-9.8000",
+                "lot_no": "LOT-COF-0001_02",
+                "expired_date": "2027-05-01",
+                "serial_no": "SN-0002",
+                "last_movement_date": "2026-04-10",
+                "status": "active",
+                "expiry_remark": null,
+                "collection_names": null
+              },
+              {
+                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "barcode": null,
+                "category_name": "Electronics",
+                "brand_name": "Nike",
+                "branch_names": "Yangon Branch",
+                "inventory_name": "Hot Warehouse",
+                "stock_uom": "Kilogram",
+                "on_hand_quantity": "10.00",
+                "reserved_quantity": 0,
+                "available_quantity": "10.00",
+                "reorder_level": "10.00",
+                "unit_cost": "2000.0000",
+                "total_stock_value": "20000.00",
+                "base_currency_value": "10.0000",
+                "lot_no": "LOT-COF-0001_01",
+                "expired_date": "2027-04-01",
+                "serial_no": "SN-0001",
+                "last_movement_date": "2026-04-04",
+                "status": "active",
+                "expiry_remark": null,
+                "collection_names": null
+              },
+              {
+                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
+                "product_name": "Coffee Arabica",
+                "sku": "COF-0001",
+                "barcode": null,
+                "category_name": "Electronics",
+                "brand_name": "Nike",
+                "branch_names": "Yangon Branch",
+                "inventory_name": "Hot Warehouse",
+                "stock_uom": "Kilogram",
+                "on_hand_quantity": "10.00",
+                "reserved_quantity": 0,
+                "available_quantity": "10.00",
+                "reorder_level": "10.00",
+                "unit_cost": "2000.0000",
+                "total_stock_value": "20000.00",
+                "base_currency_value": "10.0000",
+                "lot_no": "LOT-COF-0001_02",
+                "expired_date": "2027-05-01",
+                "serial_no": "SN-0002",
+                "last_movement_date": "2026-04-04",
+                "status": "active",
+                "expiry_remark": null,
+                "collection_names": null
+              },
+              {
+                "product_image": "http://localhost/storage/product/images/product_69d8832bdbe6b7.28505352.png",
+                "product_name": "Royal Tea Mix",
+                "sku": "RTM-0001",
+                "barcode": null,
+                "category_name": "Electronics",
+                "brand_name": "Nike",
+                "branch_names": "Yangon Branch",
+                "inventory_name": "Cold Warehouse",
+                "stock_uom": "Kilogram",
+                "on_hand_quantity": "30.00",
+                "reserved_quantity": 0,
+                "available_quantity": "30.00",
+                "reorder_level": "10.00",
+                "unit_cost": "50.0000",
+                "total_stock_value": "1500.00",
+                "base_currency_value": "0.7500",
+                "lot_no": "LOT-RTM-0001_01",
+                "expired_date": null,
+                "serial_no": null,
+                "last_movement_date": "2026-04-10",
+                "status": "active",
+                "expiry_remark": null,
+                "collection_names": null
+              }
+            ],
+            "meta": {
+              "total": 5,
+              "per_page": 20,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }
