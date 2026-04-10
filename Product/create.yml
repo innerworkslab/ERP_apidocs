@@ -19,7 +19,7 @@ http:
         value: Coffee Arabica
       - name: sku
         type: text
-        value: COF-0001
+        value: COF-0002
       - name: image
         type: file
         value: &a1
@@ -63,6 +63,9 @@ http:
       - name: status
         type: text
         value: active
+      - name: stock_uom_id
+        type: text
+        value: "1"
   auth: inherit
 
 settings:
@@ -89,7 +92,7 @@ examples:
             value: Coffee Arabica
           - name: sku
             type: text
-            value: COF-0001
+            value: COF-0002
           - name: image
             type: file
             value: *a1
@@ -132,6 +135,9 @@ examples:
           - name: status
             type: text
             value: active
+          - name: stock_uom_id
+            type: text
+            value: "1"
     response:
       status: 200
       statusText: OK
@@ -145,7 +151,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Tue, 31 Mar 2026 04:27:36 GMT
+          value: Fri, 10 Apr 2026 03:34:47 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -160,11 +166,12 @@ examples:
             },
             "data": {
               "name": "Coffee Arabica",
-              "sku": "COF-0001",
-              "image": "product_69cb4d3719c4c1.20876332.png",
+              "sku": "COF-0002",
+              "image": "product_69d86fd7e9c189.67690786.png",
               "category_id": "1",
               "brand_id": "1",
               "alert_quantity": "10",
+              "stock_uom_id": "1",
               "purchase_price": "2000",
               "purchase_currency_id": "1",
               "purchase_tax_id": "1",
@@ -175,11 +182,11 @@ examples:
               "sale_uom_id": "1",
               "origin_country_id": "1",
               "status": "active",
-              "image_path": "product/images/product_69cb4d3719c4c1.20876332.png",
-              "image_url": "http://localhost/storage/product/images/product_69cb4d3719c4c1.20876332.png",
+              "image_path": "product/images/product_69d86fd7e9c189.67690786.png",
+              "image_url": "http://localhost/storage/product/images/product_69d86fd7e9c189.67690786.png",
               "created_by": 1,
-              "updated_at": "2026-03-31T04:27:36.000000Z",
-              "created_at": "2026-03-31T04:27:36.000000Z",
+              "updated_at": "2026-04-10T03:34:47.000000Z",
+              "created_at": "2026-04-10T03:34:47.000000Z",
               "id": 1
             }
           }
