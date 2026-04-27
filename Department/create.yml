@@ -19,7 +19,9 @@ http:
         "status": "inactive", // or active,
         "description": "For software development" // optional
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true

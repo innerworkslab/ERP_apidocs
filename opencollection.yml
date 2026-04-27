@@ -24,6 +24,8 @@ request:
   variables:
     - name: baseUrl
       value: http://localhost:8000/api
+    - name: accessToken
+      value: 1|9zvQuzz3o8cVP3FeVlscE6Mv5ifIPmxPD11lxLyoca79dc36
 bundled: false
 extensions:
   bruno:
