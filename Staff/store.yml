@@ -11,22 +11,25 @@ http:
     data:
       - name: name
         type: text
-        value: ZarNi
+        value: "ZIn WIn "
       - name: email
         type: text
-        value: ZarNi@gmail.com
+        value: zinin@gmail.com
       - name: phone_number
         type: text
-        value: "09977166511"
+        value: "09977166501"
       - name: password
         type: text
         value: password123
       - name: role_id
         type: text
-        value: "3"
-      - name: branch_id
+        value: "2"
+      - name: branch_id[0]
         type: text
         value: "1"
+      - name: branch_id[1]
+        type: text
+        value: "2"
       - name: department_id
         type: text
         value: "1"
@@ -104,6 +107,18 @@ http:
       - name: permission_ids[0]
         type: text
         value: "1"
+      - name: nrc_code
+        type: text
+        value: "1"
+      - name: township_code
+        type: text
+        value: "1"
+      - name: nrc_type
+        type: text
+        value: N
+      - name: id_number
+        type: text
+        value: "123454"
   auth: inherit
 
 settings:
@@ -122,22 +137,25 @@ examples:
         data:
           - name: name
             type: text
-            value: ZarNi
+            value: "ZIn WIn "
           - name: email
             type: text
-            value: ZarNi@gmail.com
+            value: zinin@gmail.com
           - name: phone_number
             type: text
-            value: "09977166511"
+            value: "09977166501"
           - name: password
             type: text
             value: password123
           - name: role_id
             type: text
-            value: "3"
-          - name: branch_id
+            value: "2"
+          - name: branch_id[0]
             type: text
             value: "1"
+          - name: branch_id[1]
+            type: text
+            value: "2"
           - name: department_id
             type: text
             value: "1"
@@ -213,6 +231,18 @@ examples:
           - name: permission_ids[0]
             type: text
             value: "1"
+          - name: nrc_code
+            type: text
+            value: "1"
+          - name: township_code
+            type: text
+            value: "1"
+          - name: nrc_type
+            type: text
+            value: N
+          - name: id_number
+            type: text
+            value: "123454"
     response:
       status: 201
       statusText: Created
@@ -226,7 +256,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 23 Mar 2026 05:20:47 GMT
+          value: Mon, 27 Apr 2026 06:30:49 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -240,40 +270,87 @@ examples:
               "message": "Staff is created successfully"
             },
             "data": {
-              "id": 4,
-              "name": "ZarNi",
-              "email": "ZarNi@gmail.com",
+              "id": 3,
+              "name": "ZIn WIn",
+              "email": "zinin@gmail.com",
               "email_verified_at": null,
-              "phone_number": "09977166511",
-              "role_id": 3,
-              "branch_id": 1,
+              "phone_number": "09977166501",
+              "nrc_code": 1,
+              "township_code": "1",
+              "nrc_type": "N",
+              "id_number": "123454",
+              "role_id": 2,
               "department_id": 1,
               "status": "active",
-              "created_at": "2026-03-23 05:20:47",
-              "updated_at": "2026-03-23 05:20:47",
+              "created_at": "2026-04-27 06:30:49",
+              "updated_at": "2026-04-27 06:30:49",
+              "deleted_at": null,
               "role": {
-                "id": 3,
-                "name": "Super",
+                "id": 2,
+                "name": "staff",
                 "parent_role_id": 1,
                 "branch_id": 1,
                 "department_id": 1,
                 "status": "active",
                 "created_by": 1,
                 "updated_by": null,
-                "created_at": "2026-03-23 05:19:32",
-                "updated_at": "2026-03-23 05:19:32"
+                "created_at": "2026-04-27 06:07:16",
+                "updated_at": "2026-04-27 06:07:16"
               },
-              "branch": {
-                "id": 1,
-                "prefix": "YGN",
-                "name": "Yangon Branch",
-                "location": "Yangon, 130st",
-                "status": "active",
-                "created_by": 1,
-                "updated_by": null,
-                "created_at": "2026-03-23 04:48:46",
-                "updated_at": "2026-03-23 04:48:46"
-              },
+              "branches": [
+                {
+                  "id": 1,
+                  "prefix": "TGI",
+                  "name": "Taunggyi Branch",
+                  "latitude": "12.9773990",
+                  "longitude": "14.9773990",
+                  "city_id": 4,
+                  "state_id": 3,
+                  "mobile": "090000000",
+                  "alternate_phone": "0987654",
+                  "email": "email.buuu@buuu.com",
+                  "website": "https://buuuwebsite.com",
+                  "default_selling_price_group_id": 1,
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-04-27 06:02:06",
+                  "updated_at": "2026-04-27 06:02:06",
+                  "deleted_at": null,
+                  "pivot": {
+                    "staff_id": 3,
+                    "branch_id": 1,
+                    "created_at": "2026-04-27T06:30:49.000000Z",
+                    "updated_at": "2026-04-27T06:30:49.000000Z"
+                  }
+                },
+                {
+                  "id": 2,
+                  "prefix": "MDY",
+                  "name": "Mandalay Branch",
+                  "latitude": "12.9773990",
+                  "longitude": "14.9773990",
+                  "city_id": 4,
+                  "state_id": 3,
+                  "mobile": "090000000",
+                  "alternate_phone": "0987654",
+                  "email": "email.buuu@buuu.com",
+                  "website": "https://buuuwebsite.com",
+                  "default_selling_price_group_id": 1,
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-04-27 06:02:17",
+                  "updated_at": "2026-04-27 06:02:17",
+                  "deleted_at": null,
+                  "pivot": {
+                    "staff_id": 3,
+                    "branch_id": 2,
+                    "created_at": "2026-04-27T06:30:49.000000Z",
+                    "updated_at": "2026-04-27T06:30:49.000000Z"
+                  }
+                }
+              ],
               "department": {
                 "id": 1,
                 "code": "ITD",
@@ -281,8 +358,8 @@ examples:
                 "branch_id": 1,
                 "description": "For software development",
                 "status": "inactive",
-                "created_at": "2026-03-23 04:49:17",
-                "updated_at": "2026-03-23 04:49:17"
+                "created_at": "2026-04-27 06:03:40",
+                "updated_at": "2026-04-27 06:03:40"
               },
               "permissions": [
                 {
@@ -292,10 +369,10 @@ examples:
                   "key": "view_branch",
                   "description": null,
                   "status": "active",
-                  "created_at": "2026-03-23T04:42:27.000000Z",
-                  "updated_at": "2026-03-23T04:42:27.000000Z",
+                  "created_at": "2026-04-27T05:55:02.000000Z",
+                  "updated_at": "2026-04-27T05:55:02.000000Z",
                   "pivot": {
-                    "user_id": 4,
+                    "user_id": 3,
                     "permission_id": 1
                   },
                   "feature": {
@@ -305,33 +382,33 @@ examples:
                     "module": "Organization",
                     "description": "This is a feature of branch",
                     "status": "active",
-                    "created_at": "2026-03-23T04:42:27.000000Z",
-                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                    "created_at": "2026-04-27T05:55:02.000000Z",
+                    "updated_at": "2026-04-27T05:55:02.000000Z"
                   }
                 }
               ],
               "staff_personal_information": {
-                "id": 3,
-                "user_id": 4,
+                "id": 2,
+                "user_id": 3,
                 "date_of_birth": "1998-05-10T00:00:00.000000Z",
-                "nrc_number": "12/ABC(N)146196",
-                "nrc_image": "nrc_69c0cdaee9bae4.48105566.png",
-                "nrc_image_path": "staff/nrc/nrc_69c0cdaee9bae4.48105566.png",
-                "nrc_image_url": "http://localhost/storage/staff/nrc/nrc_69c0cdaee9bae4.48105566.png",
+                "nrc_number": "1/AHGAYA(N)123454",
+                "nrc_image": "nrc_69ef0298ac15b8.12321820.png",
+                "nrc_image_path": "staff/nrc/nrc_69ef0298ac15b8.12321820.png",
+                "nrc_image_url": "http://localhost/storage/staff/nrc/nrc_69ef0298ac15b8.12321820.png",
                 "father_name": "U Aung",
                 "mother_name": "Daw Mya",
                 "town": "Yangon",
                 "township": "Hlaing",
                 "address": "No.123, Hlaing",
-                "house_hold_information_image": "household_69c0cdaef13ae5.46339222.png",
-                "house_hold_information_image_path": "staff/household/household_69c0cdaef13ae5.46339222.png",
-                "house_hold_information_image_url": "http://localhost/storage/staff/household/household_69c0cdaef13ae5.46339222.png",
-                "created_at": "2026-03-23T05:20:47.000000Z",
-                "updated_at": "2026-03-23T05:20:47.000000Z"
+                "house_hold_information_image": "household_69ef0298b237c0.30340681.png",
+                "house_hold_information_image_path": "staff/household/household_69ef0298b237c0.30340681.png",
+                "house_hold_information_image_url": "http://localhost/storage/staff/household/household_69ef0298b237c0.30340681.png",
+                "created_at": "2026-04-27T06:30:49.000000Z",
+                "updated_at": "2026-04-27T06:30:49.000000Z"
               },
               "staff_employment_information": {
-                "id": 3,
-                "user_id": 4,
+                "id": 2,
+                "user_id": 3,
                 "join_date": "2026-03-01T00:00:00.000000Z",
                 "is_contract": false,
                 "off_day": "Sunday",
@@ -339,21 +416,21 @@ examples:
                 "salary": "500000.00",
                 "sale_incentive_amount": "50000.00",
                 "sale_commission": "2.50",
-                "created_at": "2026-03-23T05:20:47.000000Z",
-                "updated_at": "2026-03-23T05:20:47.000000Z"
+                "created_at": "2026-04-27T06:30:49.000000Z",
+                "updated_at": "2026-04-27T06:30:49.000000Z"
               },
               "staff_banking_information": {
-                "id": 3,
-                "user_id": 4,
+                "id": 2,
+                "user_id": 3,
                 "bank_name": "KBZ Bank",
                 "account_number": "1234567890",
-                "created_at": "2026-03-23T05:20:47.000000Z",
-                "updated_at": "2026-03-23T05:20:47.000000Z"
+                "created_at": "2026-04-27T06:30:49.000000Z",
+                "updated_at": "2026-04-27T06:30:49.000000Z"
               },
               "staff_authorized_features": [
                 {
-                  "id": 21,
-                  "staff_id": 4,
+                  "id": 2,
+                  "staff_id": 3,
                   "feature_id": 1,
                   "is_recommended": false,
                   "recommended_by_rule": "rule",
@@ -365,16 +442,20 @@ examples:
                     "email": "superadmin@example.com",
                     "email_verified_at": null,
                     "phone_number": "09123456789",
+                    "nrc_code": 13,
+                    "township_code": "KALANA",
+                    "nrc_type": "N",
+                    "id_number": "000000001",
                     "role_id": 1,
-                    "branch_id": null,
                     "department_id": null,
                     "status": "active",
-                    "created_at": "2026-03-23 04:42:28",
-                    "updated_at": "2026-03-23 04:42:28"
+                    "created_at": "2026-04-27 05:55:03",
+                    "updated_at": "2026-04-27 05:55:03",
+                    "deleted_at": null
                   },
-                  "assigned_date": "2026-03-23T05:20:47.000000Z",
-                  "created_at": "2026-03-23T05:20:47.000000Z",
-                  "updated_at": "2026-03-23T05:20:47.000000Z",
+                  "assigned_date": "2026-04-27T06:30:49.000000Z",
+                  "created_at": "2026-04-27T06:30:49.000000Z",
+                  "updated_at": "2026-04-27T06:30:49.000000Z",
                   "feature": {
                     "id": 1,
                     "name": "Branch",
@@ -382,8 +463,8 @@ examples:
                     "module": "Organization",
                     "description": "This is a feature of branch",
                     "status": "active",
-                    "created_at": "2026-03-23T04:42:27.000000Z",
-                    "updated_at": "2026-03-23T04:42:27.000000Z"
+                    "created_at": "2026-04-27T05:55:02.000000Z",
+                    "updated_at": "2026-04-27T05:55:02.000000Z"
                   }
                 }
               ]

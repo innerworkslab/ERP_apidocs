@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}/v1/stock-transfers/:id/confirm"
   params:
     - name: id
-      value: "3"
+      value: "4"
       type: path
   auth: inherit
 
