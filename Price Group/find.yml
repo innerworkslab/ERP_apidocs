@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}/v1/price-groups/:id"
   params:
     - name: id
-      value: "2"
+      value: "4"
       type: path
   auth: inherit
 
@@ -25,7 +25,7 @@ examples:
       method: GET
       params:
         - name: id
-          value: "2"
+          value: "4"
           type: path
     response:
       status: 200
@@ -40,7 +40,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Thu, 26 Mar 2026 08:48:15 GMT
+          value: Mon, 27 Apr 2026 06:33:58 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -54,31 +54,71 @@ examples:
               "message": "Selling price group detail"
             },
             "data": {
-              "id": 2,
-              "name": "Retail Standard",
+              "id": 4,
+              "name": "Retail Selling Price A",
               "customer_type_id": 1,
-              "branch_id": 1,
-              "profix_margin_type": "percentage",
-              "profix_margin_value": "15.00",
               "status": "active",
-              "created_at": "2026-03-26T08:48:05.000000Z",
-              "updated_at": "2026-03-26T08:48:05.000000Z",
+              "created_at": "2026-04-27T06:33:47.000000Z",
+              "updated_at": "2026-04-27T06:33:47.000000Z",
               "customer_type": {
                 "id": 1,
                 "name": "Retail",
-                "created_at": "2026-03-26T08:38:50.000000Z",
-                "updated_at": "2026-03-26T08:38:50.000000Z"
+                "created_at": "2026-04-27T05:55:03.000000Z",
+                "updated_at": "2026-04-27T05:55:03.000000Z"
               },
-              "branch": {
-                "id": 1,
-                "prefix": "YGN",
-                "name": "Yangon Branch",
-                "location": "Yangon, 130st",
-                "status": "active",
-                "created_by": 1,
-                "updated_by": null,
-                "created_at": "2026-03-26 08:43:02",
-                "updated_at": "2026-03-26 08:43:02"
-              }
+              "branches": [
+                {
+                  "id": 1,
+                  "prefix": "TGI",
+                  "name": "Taunggyi Branch",
+                  "latitude": "12.9773990",
+                  "longitude": "14.9773990",
+                  "city_id": 4,
+                  "state_id": 3,
+                  "mobile": "090000000",
+                  "alternate_phone": "0987654",
+                  "email": "email.buuu@buuu.com",
+                  "website": "https://buuuwebsite.com",
+                  "default_selling_price_group_id": 1,
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-04-27 06:02:06",
+                  "updated_at": "2026-04-27 06:02:06",
+                  "deleted_at": null,
+                  "pivot": {
+                    "selling_price_group_id": 4,
+                    "branch_id": 1,
+                    "created_at": "2026-04-27T06:33:47.000000Z",
+                    "updated_at": "2026-04-27T06:33:47.000000Z"
+                  }
+                },
+                {
+                  "id": 2,
+                  "prefix": "MDY",
+                  "name": "Mandalay Branch",
+                  "latitude": "12.9773990",
+                  "longitude": "14.9773990",
+                  "city_id": 4,
+                  "state_id": 3,
+                  "mobile": "090000000",
+                  "alternate_phone": "0987654",
+                  "email": "email.buuu@buuu.com",
+                  "website": "https://buuuwebsite.com",
+                  "default_selling_price_group_id": 1,
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-04-27 06:02:17",
+                  "updated_at": "2026-04-27 06:02:17",
+                  "deleted_at": null,
+                  "pivot": {
+                    "selling_price_group_id": 4,
+                    "branch_id": 2,
+                    "created_at": "2026-04-27T06:33:47.000000Z",
+                    "updated_at": "2026-04-27T06:33:47.000000Z"
+                  }
+                }
+              ]
             }
           }
