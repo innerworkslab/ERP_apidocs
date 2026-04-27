@@ -1,7 +1,7 @@
 info:
   name: toggle status
   type: http
-  seq: 5
+  seq: 4
 
 http:
   method: PATCH
@@ -22,44 +22,3 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
-
-examples:
-  - name: example
-    request:
-      url: "{{baseUrl}}/v1/branches/:id/toggle-status"
-      method: PATCH
-      headers:
-        - name: Content-Type
-          value: application/json
-      params:
-        - name: id
-          value: "1"
-          type: path
-    response:
-      status: 200
-      statusText: OK
-      headers:
-        - name: host
-          value: localhost:8000
-        - name: connection
-          value: close
-        - name: x-powered-by
-          value: PHP/8.2.30
-        - name: cache-control
-          value: no-cache, private
-        - name: date
-          value: Wed, 18 Mar 2026 04:16:54 GMT
-        - name: content-type
-          value: application/json
-        - name: access-control-allow-origin
-          value: "*"
-      body:
-        type: json
-        data: |-
-          {
-            "response": {
-              "status": "success",
-              "message": "Toggle status successfully"
-            },
-            "data": []
-          }

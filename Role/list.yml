@@ -17,15 +17,11 @@ http:
       value: "10"
       type: query
     - name: search
-      value: active
-      type: query
-      disabled: true
-    - name: branch_id
-      value: "2"
+      value: bhhh
       type: query
       disabled: true
     - name: department_id
-      value: "2"
+      value: "1"
       type: query
       disabled: true
     - name: parent_role_id
@@ -35,7 +31,9 @@ http:
     - name: status
       value: active
       type: query
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true
@@ -46,7 +44,7 @@ settings:
 examples:
   - name: example
     request:
-      url: "{{baseUrl}}/v1/roles/all?page=1&per_page=10"
+      url: "{{baseUrl}}/v1/roles/all?page=1&per_page=10&status=active"
       method: GET
       headers:
         - name: Content-Type
@@ -59,21 +57,20 @@ examples:
           value: "10"
           type: query
         - name: search
-          value: inactive
-          type: query
-          disabled: true
-        - name: branch_id
-          value: "2"
+          value: bhhh
           type: query
           disabled: true
         - name: department_id
-          value: "2"
+          value: "1"
           type: query
           disabled: true
         - name: parent_role_id
           value: "1"
           type: query
           disabled: true
+        - name: status
+          value: active
+          type: query
     response:
       status: 200
       statusText: OK
@@ -87,11 +84,11 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 18 Mar 2026 09:14:35 GMT
+          value: Mon, 27 Apr 2026 04:57:57 GMT
         - name: content-type
           value: application/json
-        - name: access-control-allow-origin
-          value: "*"
+        - name: vary
+          value: Origin
       body:
         type: json
         data: |-
@@ -103,70 +100,8 @@ examples:
             "data": [
               {
                 "id": 3,
-                "name": "Manager",
+                "name": "bhhhh",
                 "parent_role_id": 1,
-                "branch_id": 2,
-                "department_id": 2,
-                "status": "active",
-                "created_by": {
-                  "id": 1,
-                  "name": "Super Admin",
-                  "email": "superadmin@example.com",
-                  "email_verified_at": null,
-                  "phone_number": "09123456789",
-                  "role_id": 1,
-                  "branch_id": null,
-                  "department_id": null,
-                  "salary": null,
-                  "sale_incentive": null,
-                  "status": "active",
-                  "created_at": "2026-03-18 08:49:50",
-                  "updated_at": "2026-03-18 08:49:50"
-                },
-                "updated_by": null,
-                "created_at": "2026-03-18 09:12:41",
-                "updated_at": "2026-03-18 09:12:41",
-                "parent_role": {
-                  "id": 1,
-                  "name": "Super Admin",
-                  "parent_role_id": null,
-                  "branch_id": null,
-                  "department_id": null,
-                  "status": "active",
-                  "created_by": null,
-                  "updated_by": null,
-                  "created_at": "2026-03-18 08:49:49",
-                  "updated_at": "2026-03-18 08:49:49"
-                },
-                "children": [],
-                "branch": {
-                  "id": 2,
-                  "prefix": "YGN",
-                  "name": "Yangon Branch",
-                  "location": "Mandalay, 77*65",
-                  "status": "active",
-                  "created_by": 1,
-                  "updated_by": null,
-                  "created_at": "2026-03-18 09:12:15",
-                  "updated_at": "2026-03-18 09:12:15"
-                },
-                "department": {
-                  "id": 2,
-                  "code": "ITD2",
-                  "name": "IT Department",
-                  "branch_id": 2,
-                  "description": "For software development",
-                  "status": "inactive",
-                  "created_at": "2026-03-18 09:12:30",
-                  "updated_at": "2026-03-18 09:12:30"
-                },
-                "features": []
-              },
-              {
-                "id": 2,
-                "name": "Manager",
-                "parent_role_id": 1,
-                "branch_id": 1,
                 "department_id": 1,
                 "status": "active",
                 "created_by": {
@@ -178,39 +113,25 @@ examples:
                   "role_id": 1,
                   "branch_id": null,
                   "department_id": null,
-                  "salary": null,
-                  "sale_incentive": null,
                   "status": "active",
-                  "created_at": "2026-03-18 08:49:50",
-                  "updated_at": "2026-03-18 08:49:50"
+                  "created_at": "2026-04-27 04:25:26",
+                  "updated_at": "2026-04-27 04:25:26"
                 },
                 "updated_by": null,
-                "created_at": "2026-03-18 09:11:49",
-                "updated_at": "2026-03-18 09:11:49",
+                "created_at": "2026-04-27 04:56:02",
+                "updated_at": "2026-04-27 04:56:02",
                 "parent_role": {
                   "id": 1,
                   "name": "Super Admin",
                   "parent_role_id": null,
-                  "branch_id": null,
                   "department_id": null,
                   "status": "active",
                   "created_by": null,
                   "updated_by": null,
-                  "created_at": "2026-03-18 08:49:49",
-                  "updated_at": "2026-03-18 08:49:49"
+                  "created_at": "2026-04-27 04:25:26",
+                  "updated_at": "2026-04-27 04:25:26"
                 },
                 "children": [],
-                "branch": {
-                  "id": 1,
-                  "prefix": "MDY",
-                  "name": "Mandalay Branch",
-                  "location": "Mandalay, 77*65",
-                  "status": "active",
-                  "created_by": 1,
-                  "updated_by": null,
-                  "created_at": "2026-03-18 08:54:54",
-                  "updated_at": "2026-03-18 08:54:54"
-                },
                 "department": {
                   "id": 1,
                   "code": "ITD",
@@ -218,8 +139,66 @@ examples:
                   "branch_id": 1,
                   "description": "For software development",
                   "status": "inactive",
-                  "created_at": "2026-03-18 08:54:59",
-                  "updated_at": "2026-03-18 08:54:59"
+                  "created_at": "2026-04-27 04:50:49",
+                  "updated_at": "2026-04-27 04:50:49"
+                },
+                "features": []
+              },
+              {
+                "id": 2,
+                "name": "staff",
+                "parent_role_id": 1,
+                "department_id": 1,
+                "status": "active",
+                "created_by": {
+                  "id": 1,
+                  "name": "Super Admin",
+                  "email": "superadmin@example.com",
+                  "email_verified_at": null,
+                  "phone_number": "09123456789",
+                  "role_id": 1,
+                  "branch_id": null,
+                  "department_id": null,
+                  "status": "active",
+                  "created_at": "2026-04-27 04:25:26",
+                  "updated_at": "2026-04-27 04:25:26"
+                },
+                "updated_by": {
+                  "id": 1,
+                  "name": "Super Admin",
+                  "email": "superadmin@example.com",
+                  "email_verified_at": null,
+                  "phone_number": "09123456789",
+                  "role_id": 1,
+                  "branch_id": null,
+                  "department_id": null,
+                  "status": "active",
+                  "created_at": "2026-04-27 04:25:26",
+                  "updated_at": "2026-04-27 04:25:26"
+                },
+                "created_at": "2026-04-27 04:55:18",
+                "updated_at": "2026-04-27 04:55:40",
+                "parent_role": {
+                  "id": 1,
+                  "name": "Super Admin",
+                  "parent_role_id": null,
+                  "department_id": null,
+                  "status": "active",
+                  "created_by": null,
+                  "updated_by": null,
+                  "created_at": "2026-04-27 04:25:26",
+                  "updated_at": "2026-04-27 04:25:26"
+                },
+                "children": [],
+                "department": {
+                  "id": 1,
+                  "code": "ITD",
+                  "name": "IT Department",
+                  "branch_id": 1,
+                  "description": "For software development",
+                  "status": "inactive",
+                  "created_at": "2026-04-27 04:50:49",
+                  "updated_at": "2026-04-27 04:50:49"
                 },
                 "features": []
               },
@@ -227,80 +206,146 @@ examples:
                 "id": 1,
                 "name": "Super Admin",
                 "parent_role_id": null,
-                "branch_id": null,
                 "department_id": null,
                 "status": "active",
                 "created_by": null,
                 "updated_by": null,
-                "created_at": "2026-03-18 08:49:49",
-                "updated_at": "2026-03-18 08:49:49",
+                "created_at": "2026-04-27 04:25:26",
+                "updated_at": "2026-04-27 04:25:26",
                 "parent_role": null,
                 "children": [
                   {
                     "id": 2,
-                    "name": "Manager",
+                    "name": "staff",
                     "parent_role_id": 1,
-                    "branch_id": 1,
+                    "department_id": 1,
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": 1,
+                    "created_at": "2026-04-27 04:55:18",
+                    "updated_at": "2026-04-27 04:55:40"
+                  },
+                  {
+                    "id": 3,
+                    "name": "bhhhh",
+                    "parent_role_id": 1,
                     "department_id": 1,
                     "status": "active",
                     "created_by": 1,
                     "updated_by": null,
-                    "created_at": "2026-03-18 09:11:49",
-                    "updated_at": "2026-03-18 09:11:49"
-                  },
-                  {
-                    "id": 3,
-                    "name": "Manager",
-                    "parent_role_id": 1,
-                    "branch_id": 2,
-                    "department_id": 2,
-                    "status": "active",
-                    "created_by": 1,
-                    "updated_by": null,
-                    "created_at": "2026-03-18 09:12:41",
-                    "updated_at": "2026-03-18 09:12:41"
+                    "created_at": "2026-04-27 04:56:02",
+                    "updated_at": "2026-04-27 04:56:02"
                   }
                 ],
-                "branch": null,
                 "department": null,
                 "features": [
                   {
-                    "id": 2,
-                    "name": "Create Branch",
-                    "key": "create_branch",
+                    "id": 1,
+                    "name": "Branch",
+                    "key": "branch_feature",
                     "module": "Organization",
-                    "description": "Create new branch",
+                    "description": "This is a feature of branch",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 1
+                    }
+                  },
+                  {
+                    "id": 15,
+                    "name": "Brand",
+                    "key": "brand_feature",
+                    "module": "Product",
+                    "description": "This is a feature of brand",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 15
+                    }
+                  },
+                  {
+                    "id": 16,
+                    "name": "Category",
+                    "key": "category_feature",
+                    "module": "Product",
+                    "description": "This is a feature of category",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 16
+                    }
+                  },
+                  {
+                    "id": 20,
+                    "name": "Collection",
+                    "key": "collection_feature",
+                    "module": "Product",
+                    "description": "This is a feature of collection",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 20
+                    }
+                  },
+                  {
+                    "id": 14,
+                    "name": "Currency",
+                    "key": "currency_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of currency",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 14
+                    }
+                  },
+                  {
+                    "id": 7,
+                    "name": "Customer",
+                    "key": "customer_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of customer",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 7
+                    }
+                  },
+                  {
+                    "id": 2,
+                    "name": "Department",
+                    "key": "department_feature",
+                    "module": "Organization",
+                    "description": "This is a feature of department",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
                       "feature_id": 2
                     }
                   },
                   {
-                    "id": 6,
-                    "name": "Create Department",
-                    "key": "create_department",
-                    "module": "Organization",
-                    "description": "Create new department",
-                    "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
-                    "pivot": {
-                      "role_id": 1,
-                      "feature_id": 6
-                    }
-                  },
-                  {
                     "id": 10,
-                    "name": "Create Role",
-                    "key": "create_role",
-                    "module": "Organization",
-                    "description": "Create new role",
+                    "name": "Discount Group",
+                    "key": "discount_group_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of discount group",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
                       "feature_id": 10
@@ -308,128 +353,240 @@ examples:
                   },
                   {
                     "id": 4,
-                    "name": "Delete Branch",
-                    "key": "delete_branch",
-                    "module": "Organization",
-                    "description": "Delete branch",
+                    "name": "Feature",
+                    "key": "feature_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
                       "feature_id": 4
                     }
                   },
                   {
-                    "id": 8,
-                    "name": "Delete Department",
-                    "key": "delete_department",
-                    "module": "Organization",
-                    "description": "Delete department",
+                    "id": 6,
+                    "name": "Feature Recommendation Rule",
+                    "key": "feature_recommendation_rule_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of feature recommendation rule",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
-                      "feature_id": 8
+                      "feature_id": 6
                     }
                   },
                   {
-                    "id": 12,
-                    "name": "Delete Role",
-                    "key": "delete_role",
-                    "module": "Organization",
-                    "description": "Delete role",
+                    "id": 21,
+                    "name": "Inventory",
+                    "key": "inventory_feature",
+                    "module": "Inventory",
+                    "description": "This is a feature of inventory",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
-                      "feature_id": 12
+                      "feature_id": 21
+                    }
+                  },
+                  {
+                    "id": 18,
+                    "name": "Location",
+                    "key": "location_feature",
+                    "module": "Location",
+                    "description": "This is a feature of location",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 18
+                    }
+                  },
+                  {
+                    "id": 22,
+                    "name": "Opening Stock",
+                    "key": "opening_stock_feature",
+                    "module": "Inventory",
+                    "description": "This is a feature of opening stock",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 22
+                    }
+                  },
+                  {
+                    "id": 9,
+                    "name": "Price Group",
+                    "key": "price_group_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of price group",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 9
+                    }
+                  },
+                  {
+                    "id": 19,
+                    "name": "Product",
+                    "key": "product_feature",
+                    "module": "Product",
+                    "description": "This is a feature of product",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 19
                     }
                   },
                   {
                     "id": 3,
-                    "name": "Update Branch",
-                    "key": "update_branch",
-                    "module": "Organization",
-                    "description": "Update branch",
+                    "name": "Role",
+                    "key": "role_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of role",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
                       "feature_id": 3
                     }
                   },
                   {
-                    "id": 7,
-                    "name": "Update Department",
-                    "key": "update_department",
-                    "module": "Organization",
-                    "description": "Update department",
+                    "id": 25,
+                    "name": "Stock Balance",
+                    "key": "stock_balance_feature",
+                    "module": "Inventory",
+                    "description": "This is a feature of stock balance",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
-                      "feature_id": 7
+                      "feature_id": 25
                     }
                   },
                   {
-                    "id": 11,
-                    "name": "Update Role",
-                    "key": "update_role",
-                    "module": "Organization",
-                    "description": "Update role",
+                    "id": 24,
+                    "name": "Stock Ledger",
+                    "key": "stock_ledger_feature",
+                    "module": "Inventory",
+                    "description": "This is a feature of stock ledger",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
-                      "feature_id": 11
+                      "feature_id": 24
                     }
                   },
                   {
-                    "id": 1,
-                    "name": "View Branch",
-                    "key": "view_branch",
-                    "module": "Organization",
-                    "description": "View branch list",
+                    "id": 23,
+                    "name": "Stock Transfer",
+                    "key": "stock_transfer_feature",
+                    "module": "Inventory",
+                    "description": "This is a feature of stock transfer",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
-                      "feature_id": 1
+                      "feature_id": 23
+                    }
+                  },
+                  {
+                    "id": 8,
+                    "name": "Supplier",
+                    "key": "supplier_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of supplier",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 8
+                    }
+                  },
+                  {
+                    "id": 17,
+                    "name": "Tax",
+                    "key": "tax_feature",
+                    "module": "Product",
+                    "description": "This is a feature of tax",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 17
+                    }
+                  },
+                  {
+                    "id": 13,
+                    "name": "UOM Conversion",
+                    "key": "uom_conversion_feature",
+                    "module": "Inventory",
+                    "description": "This is a feature of uom conversion",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 13
+                    }
+                  },
+                  {
+                    "id": 12,
+                    "name": "UOM",
+                    "key": "uom_feature",
+                    "module": "Inventory",
+                    "description": "This is a feature of uom",
+                    "status": "active",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
+                    "pivot": {
+                      "role_id": 1,
+                      "feature_id": 12
                     }
                   },
                   {
                     "id": 5,
-                    "name": "View Department",
-                    "key": "view_department",
-                    "module": "Organization",
-                    "description": "View department list",
+                    "name": "User",
+                    "key": "user_feature",
+                    "module": "AccessControl",
+                    "description": "This is a feature of user",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
                       "feature_id": 5
                     }
                   },
                   {
-                    "id": 9,
-                    "name": "View Role",
-                    "key": "view_role",
-                    "module": "Organization",
-                    "description": "View role list",
+                    "id": 11,
+                    "name": "Variation",
+                    "key": "variation_feature",
+                    "module": "Product",
+                    "description": "This is a feature of variation",
                     "status": "active",
-                    "created_at": "2026-03-18T08:49:49.000000Z",
-                    "updated_at": "2026-03-18T08:49:49.000000Z",
+                    "created_at": "2026-04-27T04:25:26.000000Z",
+                    "updated_at": "2026-04-27T04:25:26.000000Z",
                     "pivot": {
                       "role_id": 1,
-                      "feature_id": 9
+                      "feature_id": 11
                     }
                   }
                 ]
