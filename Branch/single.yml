@@ -1,7 +1,7 @@
 info:
   name: single
   type: http
-  seq: 4
+  seq: 3
 
 http:
   method: GET
@@ -48,7 +48,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Fri, 27 Mar 2026 11:57:29 GMT
+          value: Mon, 27 Apr 2026 04:47:30 GMT
         - name: content-type
           value: application/json
         - name: vary
@@ -65,15 +65,18 @@ examples:
               "id": 1,
               "prefix": "YGN",
               "name": "Yangon Branch",
-              "latitude": "16.9773990",
-              "longitude": "16.9773990",
+              "address": "street 1",
+              "latitude": "12.9773990",
+              "longitude": "14.9773990",
               "city_id": 1,
               "state_id": 1,
-              "mobile": "09123456789",
-              "alternate_phone": "09123456789",
-              "email": "email.example@example.com",
-              "website": "https://examplewebsite.com",
-              "default_selling_price_group_id": 1,
+              "mobile_phones": [
+                "+959111111111",
+                "+959222222222"
+              ],
+              "email": "email.juuuu@juuuu.com",
+              "website": "https://juuuwebsite.com",
+              "facebook": "juujuuu page link",
               "status": "active",
               "created_by": {
                 "id": 1,
@@ -85,38 +88,39 @@ examples:
                 "branch_id": null,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-03-27 11:51:14",
-                "updated_at": "2026-03-27 11:51:14"
+                "created_at": "2026-04-27 04:25:26",
+                "updated_at": "2026-04-27 04:25:26"
               },
-              "updated_by": null,
-              "created_at": "2026-03-27 11:52:07",
-              "updated_at": "2026-03-27 11:52:07",
+              "updated_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "role_id": 1,
+                "branch_id": null,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-04-27 04:25:26",
+                "updated_at": "2026-04-27 04:25:26"
+              },
+              "created_at": "2026-04-27 04:32:56",
+              "updated_at": "2026-04-27 04:43:09",
               "deleted_at": null,
               "state": {
                 "id": 1,
                 "name": "Ayeyarwady Region",
-                "created_at": "2026-03-27 11:51:14",
-                "updated_at": "2026-03-27 11:51:14",
+                "created_at": "2026-04-27 04:25:26",
+                "updated_at": "2026-04-27 04:25:26",
                 "deleted_at": null
               },
               "city": {
                 "id": 1,
                 "state_id": 1,
                 "name": "Hinthada",
-                "created_at": "2026-03-27 11:51:14",
-                "updated_at": "2026-03-27 11:51:14",
+                "created_at": "2026-04-27 04:25:26",
+                "updated_at": "2026-04-27 04:25:26",
                 "deleted_at": null
-              },
-              "price_group": {
-                "id": 1,
-                "name": "dsfgsdf",
-                "customer_type_id": 1,
-                "branch_id": null,
-                "profit_margin_type": "fixed",
-                "profit_margin_value": "10.00",
-                "status": "active",
-                "created_at": null,
-                "updated_at": null
               }
             }
           }

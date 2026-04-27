@@ -1,7 +1,7 @@
 info:
   name: update
   type: http
-  seq: 3
+  seq: 2
 
 http:
   method: PUT
@@ -11,23 +11,26 @@ http:
       value: application/json
   params:
     - name: id
-      value: "2"
+      value: "1"
       type: path
   body:
     type: json
     data: |-
       {
-        "prefix": "MDY Update",
-        "name": "MDY Branch",
-        "latitude": "12.977399",
-        "longitude": "14.977399",
-        "mobile": "090000000",
-        "alternate_phone": "098756432",
-        "email": "email.buuuu@buuuu.com",
-        "website": "https://buuuuwebsite.com",
-        "state_id": 2,
-        "city_id": 6,
-        "default_selling_price_group_id": 1,
+        "prefix": "YGN",
+        "name": "Yangon Branch",
+        "address": "street 1",
+        "latitude": "12.977399", // optional
+        "longitude": "14.977399", // optional
+        "mobile_phones": [
+          "+959111111111",
+          "+959222222222"
+      ], // at least one phone
+        "email": "email.juuuu@juuuu.com", // optional
+        "website": "https://juuuwebsite.com", // optional
+        "facebook": "juujuuu page link", // optional
+        "state_id": 1,
+        "city_id": 1,
         "status": "active" // or inactive
       }
   auth:
@@ -39,92 +42,3 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
-
-examples:
-  - name: example
-    request:
-      url: "{{baseUrl}}/v1/branches/:id"
-      method: PUT
-      headers:
-        - name: Content-Type
-          value: application/json
-      params:
-        - name: id
-          value: "2"
-          type: path
-      body:
-        type: json
-        data: |-
-          {
-            "prefix": "MDY Update",
-            "name": "MDY Branch",
-            "latitude": "12.977399",
-            "longitude": "14.977399",
-            "mobile": "090000000",
-            "alternate_phone": "098756432",
-            "email": "email.buuuu@buuuu.com",
-            "website": "https://buuuuwebsite.com",
-            "state_id": 2,
-            "city_id": 6,
-            "default_selling_price_group_id": 1,
-            "status": "active" // or inactive
-          }
-    response:
-      status: 200
-      statusText: OK
-      headers:
-        - name: host
-          value: localhost:8000
-        - name: connection
-          value: close
-        - name: x-powered-by
-          value: PHP/8.2.30
-        - name: cache-control
-          value: no-cache, private
-        - name: date
-          value: Fri, 27 Mar 2026 11:52:53 GMT
-        - name: content-type
-          value: application/json
-        - name: vary
-          value: Origin
-      body:
-        type: json
-        data: |-
-          {
-            "response": {
-              "status": "success",
-              "message": "Branch is updated successfully"
-            },
-            "data": {
-              "id": 2,
-              "prefix": "MDY Update",
-              "name": "MDY Branch",
-              "latitude": "12.977399",
-              "longitude": "14.977399",
-              "city_id": 6,
-              "state_id": 2,
-              "mobile": "090000000",
-              "alternate_phone": "098756432",
-              "email": "email.buuuu@buuuu.com",
-              "website": "https://buuuuwebsite.com",
-              "default_selling_price_group_id": 1,
-              "status": "active",
-              "created_by": {
-                "id": 1,
-                "name": "Super Admin",
-                "email": "superadmin@example.com",
-                "email_verified_at": null,
-                "phone_number": "09123456789",
-                "role_id": 1,
-                "branch_id": null,
-                "department_id": null,
-                "status": "active",
-                "created_at": "2026-03-27 11:51:14",
-                "updated_at": "2026-03-27 11:51:14"
-              },
-              "updated_by": null,
-              "created_at": "2026-03-27 11:52:42",
-              "updated_at": "2026-03-27 11:52:53",
-              "deleted_at": "2026-03-27 11:52:53"
-            }
-          }
