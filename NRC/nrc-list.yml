@@ -1,0 +1,442 @@
+info:
+  name: nrc-list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/nrc/:nrc_code/township-code"
+  params:
+    - name: nrc_code
+      value: "13"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/nrc/:nrc_code/township-code"
+      method: GET
+      params:
+        - name: nrc_code
+          value: "13"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 27 Apr 2026 06:46:03 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "NRC township codes fetched successfully"
+            },
+            "data": [
+              {
+                "id": 405,
+                "name_en": "AhPaNa",
+                "name_mm": "(အပန) အောင်ပန်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 406,
+                "name_en": "AhTaNa",
+                "name_mm": "(အတန) အင်တော",
+                "nrc_code": "13"
+              },
+              {
+                "id": 407,
+                "name_en": "AhTaYa",
+                "name_mm": "(အသယ) အေးသာယာ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 408,
+                "name_en": "HaHaNa",
+                "name_mm": "(ဟဟန) ဟဲဟိုး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 409,
+                "name_en": "HaMaNa",
+                "name_mm": "(ဟမန) ဟိုမိန်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 279,
+                "name_en": "HaPaNa",
+                "name_mm": "(ဟပန) ဟိုပုံး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 278,
+                "name_en": "HaPaTa",
+                "name_mm": "(ဟပတ) ဟိုပန်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 282,
+                "name_en": "KaHaNa",
+                "name_mm": "(ကဟန) ကွန်ဟိန်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 287,
+                "name_en": "KaKhaNa",
+                "name_mm": "(ကခန) ကွတ်ခိုင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 410,
+                "name_en": "KaLaHta",
+                "name_mm": "(ကလထ) ကျိူင်းလပ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 280,
+                "name_en": "KaLaNa",
+                "name_mm": "(ကလန) ကလော",
+                "nrc_code": "13"
+              },
+              {
+                "id": 411,
+                "name_en": "KaLaNa",
+                "name_mm": "(ခလန) ခိုလမ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 281,
+                "name_en": "KaLaTa",
+                "name_mm": "(ကလတ) ကွမ်းလုံ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 286,
+                "name_en": "KaMaNa",
+                "name_mm": "(ကမန) ကျောက်မဲ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 285,
+                "name_en": "KaTaNa",
+                "name_mm": "(ကတန) ကျိုင်းတုံ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 284,
+                "name_en": "KaTaTa",
+                "name_mm": "(ကတတ) ကျိုင်းတောင်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 283,
+                "name_en": "KaThaNa",
+                "name_mm": "(ကသန) ကျေးသီး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 277,
+                "name_en": "KhaYaHa",
+                "name_mm": "(ခရဟ) ချင်းရွှေဟော် မြို့နယ်ခွဲ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 289,
+                "name_en": "LaKaNa",
+                "name_mm": "(လကန) လောက်ကိုင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 291,
+                "name_en": "LaKhaNa",
+                "name_mm": "(လခန) လင်းခေး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 290,
+                "name_en": "LaKhaTa",
+                "name_mm": "(လခတ) လဲချား",
+                "nrc_code": "13"
+              },
+              {
+                "id": 292,
+                "name_en": "LaLaNa",
+                "name_mm": "(လလန) လွိုင်လင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 288,
+                "name_en": "LaYaNa",
+                "name_mm": "(လရန) လားရှိုး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 293,
+                "name_en": "MaBaNa",
+                "name_mm": "(မဘန) မဘိမ်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 412,
+                "name_en": "MaHtaNa",
+                "name_mm": "(မထန) မော်ထိုက်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 304,
+                "name_en": "MaKaNa",
+                "name_mm": "(မကန) မုန်းကိုး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 294,
+                "name_en": "MaKaNa",
+                "name_mm": "(မကန) မိုင်းကိုင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 295,
+                "name_en": "MaKhaNa",
+                "name_mm": "(မခန) မိုင်းခတ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 413,
+                "name_en": "MaKhaTa",
+                "name_mm": "(မခတ) မိုင်းခုတ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 302,
+                "name_en": "MaMaTa",
+                "name_mm": "(မမတ) မိုးမိတ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 303,
+                "name_en": "MaNaNa",
+                "name_mm": "(မနန) မိုးနဲ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 414,
+                "name_en": "MaNgaNa",
+                "name_mm": "(မငန) မိုင်းငေါ့",
+                "nrc_code": "13"
+              },
+              {
+                "id": 297,
+                "name_en": "MaPaTa",
+                "name_mm": "(မပတ) မိုင်းပြင်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 415,
+                "name_en": "MaPhaHta",
+                "name_mm": "(မဖထ) မိုင်းဖျန်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 296,
+                "name_en": "MaPHaNa",
+                "name_mm": "(မဖန) မိုင်းဖြတ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 298,
+                "name_en": "MaSaNa",
+                "name_mm": "(မဆန) မိုင်းဆတ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 305,
+                "name_en": "MaSaTa",
+                "name_mm": "(မဆတ) မူဆယ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 301,
+                "name_en": "MaTaTa",
+                "name_mm": "(မတတ) မန်တုန်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 299,
+                "name_en": "MaYaNa",
+                "name_mm": "(မရန) မိုင်းရှုး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 300,
+                "name_en": "MaYaTa",
+                "name_mm": "(မရတ) မိုင်းရယ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 307,
+                "name_en": "NaKhaNa",
+                "name_mm": "(နခန) နမ့်ခမ်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 310,
+                "name_en": "NaKhaTa",
+                "name_mm": "(နခတ) နောင်ချို",
+                "nrc_code": "13"
+              },
+              {
+                "id": 306,
+                "name_en": "NaMaTa",
+                "name_mm": "(နမတ) နမ့်မတူ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 309,
+                "name_en": "NaPaNa",
+                "name_mm": "(နဖန) နမ့်ဖိုင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 308,
+                "name_en": "NaSaNa",
+                "name_mm": "(နဆန) နမ့်ဆန်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 416,
+                "name_en": "NaTaYa",
+                "name_mm": "(နတရ) နောင်တရား",
+                "nrc_code": "13"
+              },
+              {
+                "id": 311,
+                "name_en": "NyaYaNa",
+                "name_mm": "(ညရန) ညောင်ရွှေ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 313,
+                "name_en": "PaLaNa",
+                "name_mm": "(ပလန) ပင်လုံ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 417,
+                "name_en": "PaPaKa",
+                "name_mm": "(ပပက) ပုံပါကျင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 314,
+                "name_en": "PaTaYa",
+                "name_mm": "(ပတရ) ပင်းတယ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 418,
+                "name_en": "PaWaNa",
+                "name_mm": "(ပဝန) ပန်ဝိုင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 312,
+                "name_en": "PhaKhaNa",
+                "name_mm": "(ဖခန) ဖယ်ခုံ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 315,
+                "name_en": "SaSaNa",
+                "name_mm": "(ဆဆန) ဆီဆိုင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 321,
+                "name_en": "TaKaNa",
+                "name_mm": "(တကန) တောင်ကြီး",
+                "nrc_code": "13"
+              },
+              {
+                "id": 319,
+                "name_en": "TaKhaLa",
+                "name_mm": "(တခလ) တာချီလိတ်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 320,
+                "name_en": "TaLaNa",
+                "name_mm": "(တလန) တာလေ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 318,
+                "name_en": "TaMaNya",
+                "name_mm": "(တမည) တာမိုးညဲ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 419,
+                "name_en": "TaTaNa",
+                "name_mm": "(တတန) တုံတာ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 317,
+                "name_en": "TaYaNa",
+                "name_mm": "(တယန) တန့်ယန်း",
+                "nrc_code": "13"
+              },
+              {
+                "id": 322,
+                "name_en": "ThaNaNa",
+                "name_mm": "(သနန) သိန္နီ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 323,
+                "name_en": "ThaPaNa",
+                "name_mm": "(သပန) သီပေါ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 324,
+                "name_en": "YaNgaNa",
+                "name_mm": "(ရငန) ရွာငံ",
+                "nrc_code": "13"
+              },
+              {
+                "id": 316,
+                "name_en": "YaNyaNa",
+                "name_mm": "(ရညန) ရွှေညောင်",
+                "nrc_code": "13"
+              },
+              {
+                "id": 325,
+                "name_en": "YaSaNa",
+                "name_mm": "(ရစန) ရပ်စောက်",
+                "nrc_code": "13"
+              }
+            ]
+          }
