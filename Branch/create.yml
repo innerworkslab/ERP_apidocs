@@ -11,30 +11,104 @@ http:
       value: application/json
   body:
     type: json
-    data: |-
+    data: |
       {
-        "prefix": "MDY",
-        "name": "Mandalay Branch",
-        "address": "street 1",
-        "latitude": "12.977399", // optional
-        "longitude": "14.977399", // optional
-        "mobile_phones": [
-          "+9123456789",
-          "+9987654321"
-      ], // at least one phone
-        "email": "email.buuu@buuu.com", // optional
-        "website": "https://buuuwebsite.com", // optional
-        "facebook": "facebook page link", // optional
-        "state_id": 3,
-        "city_id": 4,
-        "status": "active" // or inactive
+        "prefix": "YGN",
+        "name": "Yangon Main Branch",
+        "address": "No.123, Pyay Road, Yangon",
+        "latitude": "16.8409",
+        "longitude": "96.1735",
+        "city_id": 1,
+        "state_id": 1,
+        "mobile_phones": ["09987654321", "09123456789"],
+        "email": "ygn.branch@company.com",
+        "website": "https://company.com",
+        "facebook": "https://facebook.com/company",
+        "status": "active"
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
+
+runtime:
+  variables:
+    - name: accessToken
+      value: 1|HpyPz5W9kryTGn0LVEa1a1c3OEklysgUzKJjgnNi9a62de8d
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/branches"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |
+          {
+            "prefix": "YGN",
+            "name": "Yangon Main Branch",
+            "address": "No.123, Pyay Road, Yangon",
+            "latitude": "16.8409",
+            "longitude": "96.1735",
+            "city_id": 1,
+            "state_id": 1,
+            "mobile_phones": ["09987654321", "09123456789"],
+            "email": "ygn.branch@company.com",
+            "website": "https://company.com",
+            "facebook": "https://facebook.com/company",
+            "status": "active"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 04 May 2026 04:07:36 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Branch is created successfully"
+            },
+            "data": {
+              "prefix": "YGN",
+              "name": "Yangon Main Branch",
+              "address": "No.123, Pyay Road, Yangon",
+              "latitude": "16.8409",
+              "longitude": "96.1735",
+              "city_id": 1,
+              "state_id": 1,
+              "email": "ygn.branch@company.com",
+              "website": "https://company.com",
+              "facebook": "https://facebook.com/company",
+              "status": "active",
+              "mobile_phones": [
+                "09987654321",
+                "09123456789"
+              ],
+              "created_by": 1,
+              "updated_at": "2026-05-04 04:07:36",
+              "created_at": "2026-05-04 04:07:36",
+              "id": 1
+            }
+          }
