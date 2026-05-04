@@ -40,7 +40,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Tue, 31 Mar 2026 04:37:16 GMT
+          value: Mon, 04 May 2026 08:37:15 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin

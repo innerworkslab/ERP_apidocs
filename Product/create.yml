@@ -20,6 +20,7 @@ http:
       - name: sku
         type: text
         value: COF-0002
+        disabled: true
       - name: image
         type: file
         value: &a1
@@ -66,6 +67,12 @@ http:
       - name: stock_uom_id
         type: text
         value: "1"
+      - name: variations[0][variation_id]
+        type: text
+        value: "1"
+      - name: variations[0][variation_value]
+        type: text
+        value: Red
   auth: inherit
 
 settings:
@@ -93,6 +100,7 @@ examples:
           - name: sku
             type: text
             value: COF-0002
+            disabled: true
           - name: image
             type: file
             value: *a1
@@ -138,6 +146,12 @@ examples:
           - name: stock_uom_id
             type: text
             value: "1"
+          - name: variations[0][variation_id]
+            type: text
+            value: "1"
+          - name: variations[0][variation_value]
+            type: text
+            value: Red
     response:
       status: 200
       statusText: OK
@@ -151,7 +165,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Fri, 10 Apr 2026 03:34:47 GMT
+          value: Mon, 04 May 2026 08:35:21 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -165,28 +179,50 @@ examples:
               "message": "Product is created successfully"
             },
             "data": {
+              "id": 1,
               "name": "Coffee Arabica",
-              "sku": "COF-0002",
-              "image": "product_69d86fd7e9c189.67690786.png",
-              "category_id": "1",
-              "brand_id": "1",
-              "alert_quantity": "10",
-              "stock_uom_id": "1",
-              "purchase_price": "2000",
-              "purchase_currency_id": "1",
-              "purchase_tax_id": "1",
-              "purchase_uom_id": "1",
-              "sale_price": "2500",
-              "sale_currency_id": "1",
-              "sale_tax_id": "1",
-              "sale_uom_id": "1",
-              "origin_country_id": "1",
-              "status": "active",
-              "image_path": "product/images/product_69d86fd7e9c189.67690786.png",
-              "image_url": "http://localhost/storage/product/images/product_69d86fd7e9c189.67690786.png",
+              "sku": "PRD-000001",
+              "image": "product_69f85a491ff8b1.40356964.png",
+              "image_path": "product/images/product_69f85a491ff8b1.40356964.png",
+              "image_url": "http://localhost/storage/product/images/product_69f85a491ff8b1.40356964.png",
+              "category_id": 1,
+              "brand_id": 1,
+              "alert_quantity": "10.00",
+              "stock_uom_id": 1,
+              "purchase_price": "2000.00",
+              "purchase_currency_id": 1,
+              "purchase_tax_id": 1,
+              "purchase_uom_id": 1,
+              "sale_price": "2500.00",
+              "sale_currency_id": 1,
+              "sale_tax_id": 1,
+              "sale_uom_id": 1,
+              "origin_country_id": 1,
               "created_by": 1,
-              "updated_at": "2026-04-10T03:34:47.000000Z",
-              "created_at": "2026-04-10T03:34:47.000000Z",
-              "id": 1
+              "updated_by": null,
+              "status": "active",
+              "created_at": "2026-05-04T08:35:21.000000Z",
+              "updated_at": "2026-05-04T08:35:21.000000Z",
+              "product_variations": [
+                {
+                  "id": 1,
+                  "product_id": 1,
+                  "variation_id": 1,
+                  "variation_value": "Red",
+                  "created_at": "2026-05-04T08:35:21.000000Z",
+                  "updated_at": "2026-05-04T08:35:21.000000Z",
+                  "variation": {
+                    "id": 1,
+                    "name": "Color",
+                    "value_data_type": "String",
+                    "status": "inactive",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "deleted_at": null,
+                    "created_at": "2026-05-04 08:33:14",
+                    "updated_at": "2026-05-04 08:33:14"
+                  }
+                }
+              ]
             }
           }
