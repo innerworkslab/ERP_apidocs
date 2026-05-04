@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/v1/variations/all?page=1&per_page=10&status=active"
+  url: "{{baseUrl}}/v1/variations/all?page=1&per_page=10&status=inactive"
   headers:
     - name: Content-Type
       value: application/json
@@ -17,10 +17,14 @@ http:
       value: "10"
       type: query
     - name: status
-      value: active
+      value: inactive
       type: query
     - name: search
       value: co
+      type: query
+      disabled: true
+    - name: product_category_id
+      value: "3"
       type: query
       disabled: true
   auth:
@@ -36,7 +40,7 @@ settings:
 examples:
   - name: example
     request:
-      url: "{{baseUrl}}/v1/variations/all?page=1&per_page=10&status=active"
+      url: "{{baseUrl}}/v1/variations/all?page=1&per_page=10&status=inactive"
       method: GET
       headers:
         - name: Content-Type
@@ -49,10 +53,14 @@ examples:
           value: "10"
           type: query
         - name: status
-          value: active
+          value: inactive
           type: query
         - name: search
           value: co
+          type: query
+          disabled: true
+        - name: product_category_id
+          value: "3"
           type: query
           disabled: true
     response:
@@ -68,7 +76,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 23 Mar 2026 14:57:38 GMT
+          value: Mon, 04 May 2026 05:25:22 GMT
         - name: content-type
           value: application/json
         - name: vary
@@ -84,30 +92,129 @@ examples:
             "data": [
               {
                 "id": 2,
-                "name": "Age",
-                "value_data_type": "Number",
-                "status": "active",
+                "name": "GGColor",
+                "value_data_type": "GGGString",
+                "status": "inactive",
                 "created_by": {
                   "id": 1,
                   "name": "Super Admin",
                   "email": "superadmin@example.com",
                   "email_verified_at": null,
                   "phone_number": "09123456789",
+                  "nrc_code": 13,
+                  "township_code": 2215,
+                  "nrc_type": "N",
+                  "id_number": "000000001",
                   "role_id": 1,
-                  "branch_id": null,
                   "department_id": null,
                   "status": "active",
-                  "created_at": "2026-03-23 14:56:12",
-                  "updated_at": "2026-03-23 14:56:12"
+                  "created_at": "2026-05-04 04:49:43",
+                  "updated_at": "2026-05-04 04:49:43",
+                  "deleted_at": null
                 },
                 "updated_by": null,
                 "deleted_at": null,
-                "created_at": "2026-03-23 14:56:42",
-                "updated_at": "2026-03-23 14:56:42"
+                "created_at": "2026-05-04 05:01:58",
+                "updated_at": "2026-05-04 05:01:58",
+                "product_categories": [
+                  {
+                    "id": 3,
+                    "name": "Facial Cleaning Gel",
+                    "description": "Electronic devices and gadgets",
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "created_at": "2026-05-04T04:58:13.000000Z",
+                    "updated_at": "2026-05-04T04:58:13.000000Z",
+                    "pivot": {
+                      "variation_id": 2,
+                      "category_id": 3,
+                      "created_at": "2026-05-04T05:01:58.000000Z",
+                      "updated_at": "2026-05-04T05:01:58.000000Z"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": 1,
+                "name": "Color Update",
+                "value_data_type": "String update",
+                "status": "inactive",
+                "created_by": {
+                  "id": 1,
+                  "name": "Super Admin",
+                  "email": "superadmin@example.com",
+                  "email_verified_at": null,
+                  "phone_number": "09123456789",
+                  "nrc_code": 13,
+                  "township_code": 2215,
+                  "nrc_type": "N",
+                  "id_number": "000000001",
+                  "role_id": 1,
+                  "department_id": null,
+                  "status": "active",
+                  "created_at": "2026-05-04 04:49:43",
+                  "updated_at": "2026-05-04 04:49:43",
+                  "deleted_at": null
+                },
+                "updated_by": {
+                  "id": 1,
+                  "name": "Super Admin",
+                  "email": "superadmin@example.com",
+                  "email_verified_at": null,
+                  "phone_number": "09123456789",
+                  "nrc_code": 13,
+                  "township_code": 2215,
+                  "nrc_type": "N",
+                  "id_number": "000000001",
+                  "role_id": 1,
+                  "department_id": null,
+                  "status": "active",
+                  "created_at": "2026-05-04 04:49:43",
+                  "updated_at": "2026-05-04 04:49:43",
+                  "deleted_at": null
+                },
+                "deleted_at": null,
+                "created_at": "2026-05-04 04:55:48",
+                "updated_at": "2026-05-04 04:57:25",
+                "product_categories": [
+                  {
+                    "id": 2,
+                    "name": "Facial Mask",
+                    "description": "Electronic devices and gadgets",
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "created_at": "2026-05-04T04:55:24.000000Z",
+                    "updated_at": "2026-05-04T04:55:24.000000Z",
+                    "pivot": {
+                      "variation_id": 1,
+                      "category_id": 2,
+                      "created_at": "2026-05-04T04:55:48.000000Z",
+                      "updated_at": "2026-05-04T04:55:48.000000Z"
+                    }
+                  },
+                  {
+                    "id": 3,
+                    "name": "Facial Cleaning Gel",
+                    "description": "Electronic devices and gadgets",
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "created_at": "2026-05-04T04:58:13.000000Z",
+                    "updated_at": "2026-05-04T04:58:13.000000Z",
+                    "pivot": {
+                      "variation_id": 1,
+                      "category_id": 3,
+                      "created_at": "2026-05-04T05:02:22.000000Z",
+                      "updated_at": "2026-05-04T05:02:22.000000Z"
+                    }
+                  }
+                ]
               }
             ],
             "meta": {
-              "total": 1,
+              "total": 2,
               "per_page": 10,
               "current_page": 1,
               "total_pages": 1

@@ -48,7 +48,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 23 Mar 2026 14:58:56 GMT
+          value: Mon, 04 May 2026 05:25:46 GMT
         - name: content-type
           value: application/json
         - name: vary
@@ -63,21 +63,25 @@ examples:
             },
             "data": {
               "id": 1,
-              "name": "Color",
-              "value_data_type": "String",
-              "status": "active",
+              "name": "Color Update",
+              "value_data_type": "String update",
+              "status": "inactive",
               "created_by": {
                 "id": 1,
                 "name": "Super Admin",
                 "email": "superadmin@example.com",
                 "email_verified_at": null,
                 "phone_number": "09123456789",
+                "nrc_code": 13,
+                "township_code": 2215,
+                "nrc_type": "N",
+                "id_number": "000000001",
                 "role_id": 1,
-                "branch_id": null,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-03-23 14:56:12",
-                "updated_at": "2026-03-23 14:56:12"
+                "created_at": "2026-05-04 04:49:43",
+                "updated_at": "2026-05-04 04:49:43",
+                "deleted_at": null
               },
               "updated_by": {
                 "id": 1,
@@ -85,15 +89,53 @@ examples:
                 "email": "superadmin@example.com",
                 "email_verified_at": null,
                 "phone_number": "09123456789",
+                "nrc_code": 13,
+                "township_code": 2215,
+                "nrc_type": "N",
+                "id_number": "000000001",
                 "role_id": 1,
-                "branch_id": null,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-03-23 14:56:12",
-                "updated_at": "2026-03-23 14:56:12"
+                "created_at": "2026-05-04 04:49:43",
+                "updated_at": "2026-05-04 04:49:43",
+                "deleted_at": null
               },
               "deleted_at": null,
-              "created_at": "2026-03-23 14:56:35",
-              "updated_at": "2026-03-23 14:58:27"
+              "created_at": "2026-05-04 04:55:48",
+              "updated_at": "2026-05-04 04:57:25",
+              "product_categories": [
+                {
+                  "id": 2,
+                  "name": "Facial Mask",
+                  "description": "Electronic devices and gadgets",
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-05-04T04:55:24.000000Z",
+                  "updated_at": "2026-05-04T04:55:24.000000Z",
+                  "pivot": {
+                    "variation_id": 1,
+                    "category_id": 2,
+                    "created_at": "2026-05-04T04:55:48.000000Z",
+                    "updated_at": "2026-05-04T04:55:48.000000Z"
+                  }
+                },
+                {
+                  "id": 3,
+                  "name": "Facial Cleaning Gel",
+                  "description": "Electronic devices and gadgets",
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-05-04T04:58:13.000000Z",
+                  "updated_at": "2026-05-04T04:58:13.000000Z",
+                  "pivot": {
+                    "variation_id": 1,
+                    "category_id": 3,
+                    "created_at": "2026-05-04T05:02:22.000000Z",
+                    "updated_at": "2026-05-04T05:02:22.000000Z"
+                  }
+                }
+              ]
             }
           }
