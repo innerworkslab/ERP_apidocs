@@ -15,7 +15,8 @@ http:
       {
         "name": "Color",
         "value_data_type": "String",
-        "status": "inactive" // or inactive
+        "status": "inactive", // or inactive
+        "product_category_ids": [2]
       }
   auth:
     type: bearer
@@ -26,55 +27,3 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
-
-examples:
-  - name: example
-    request:
-      url: "{{baseUrl}}/v1/variations"
-      method: POST
-      headers:
-        - name: Content-Type
-          value: application/json
-      body:
-        type: json
-        data: |-
-          {
-            "name": "Color",
-            "value_data_type": "String",
-            "status": "active" // or inactive
-          }
-    response:
-      status: 200
-      statusText: OK
-      headers:
-        - name: host
-          value: localhost:8000
-        - name: connection
-          value: close
-        - name: x-powered-by
-          value: PHP/8.2.30
-        - name: cache-control
-          value: no-cache, private
-        - name: date
-          value: Mon, 23 Mar 2026 14:49:15 GMT
-        - name: content-type
-          value: application/json
-        - name: vary
-          value: Origin
-      body:
-        type: json
-        data: |-
-          {
-            "response": {
-              "status": "success",
-              "message": "Variation is created successfully"
-            },
-            "data": {
-              "name": "Color",
-              "value_data_type": "String",
-              "status": "active",
-              "updated_at": "2026-03-23 14:49:15",
-              "created_at": "2026-03-23 14:49:15",
-              "id": 1
-            }
-          }
