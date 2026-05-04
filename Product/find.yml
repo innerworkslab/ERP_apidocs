@@ -40,7 +40,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Tue, 31 Mar 2026 04:36:48 GMT
+          value: Mon, 04 May 2026 08:35:50 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -55,19 +55,20 @@ examples:
             },
             "data": {
               "id": 1,
-              "name": "Coffee Arabica Premium",
-              "sku": "COF-0001",
-              "image": "product_69cb4f3db232d6.40558791.png",
-              "image_path": "product/images/product_69cb4f3db232d6.40558791.png",
-              "image_url": "http://localhost/storage/product/images/product_69cb4f3db232d6.40558791.png",
+              "name": "Coffee Arabica",
+              "sku": "PRD-000001",
+              "image": "product_69f85a491ff8b1.40356964.png",
+              "image_path": "product/images/product_69f85a491ff8b1.40356964.png",
+              "image_url": "http://localhost/storage/product/images/product_69f85a491ff8b1.40356964.png",
               "category_id": 1,
               "brand_id": 1,
-              "alert_quantity": "12.00",
-              "purchase_price": "2100.00",
+              "alert_quantity": "10.00",
+              "stock_uom_id": 1,
+              "purchase_price": "2000.00",
               "purchase_currency_id": 1,
               "purchase_tax_id": 1,
               "purchase_uom_id": 1,
-              "sale_price": "2600.00",
+              "sale_price": "2500.00",
               "sale_currency_id": 1,
               "sale_tax_id": 1,
               "sale_uom_id": 1,
@@ -78,29 +79,21 @@ examples:
                 "email": "superadmin@example.com",
                 "email_verified_at": null,
                 "phone_number": "09123456789",
+                "nrc_code": 13,
+                "township_code": 2215,
+                "nrc_type": "N",
+                "id_number": "000000001",
                 "role_id": 1,
-                "branch_id": null,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-03-31 04:17:19",
-                "updated_at": "2026-03-31 04:17:19"
+                "created_at": "2026-05-04 08:24:51",
+                "updated_at": "2026-05-04 08:24:51",
+                "deleted_at": null
               },
-              "updated_by": {
-                "id": 1,
-                "name": "Super Admin",
-                "email": "superadmin@example.com",
-                "email_verified_at": null,
-                "phone_number": "09123456789",
-                "role_id": 1,
-                "branch_id": null,
-                "department_id": null,
-                "status": "active",
-                "created_at": "2026-03-31 04:17:19",
-                "updated_at": "2026-03-31 04:17:19"
-              },
+              "updated_by": null,
               "status": "active",
-              "created_at": "2026-03-31T04:27:36.000000Z",
-              "updated_at": "2026-03-31T04:36:13.000000Z",
+              "created_at": "2026-05-04T08:35:21.000000Z",
+              "updated_at": "2026-05-04T08:35:21.000000Z",
               "category": {
                 "id": 1,
                 "name": "Electronics",
@@ -108,8 +101,8 @@ examples:
                 "status": "active",
                 "created_by": 1,
                 "updated_by": null,
-                "created_at": "2026-03-31T04:26:43.000000Z",
-                "updated_at": "2026-03-31T04:26:43.000000Z"
+                "created_at": "2026-05-04T08:26:59.000000Z",
+                "updated_at": "2026-05-04T08:26:59.000000Z"
               },
               "brand": {
                 "id": 1,
@@ -118,14 +111,25 @@ examples:
                 "status": "active",
                 "created_by": 1,
                 "updated_by": null,
-                "created_at": "2026-03-31T04:25:53.000000Z",
-                "updated_at": "2026-03-31T04:25:53.000000Z"
+                "created_at": "2026-05-04T08:26:51.000000Z",
+                "updated_at": "2026-05-04T08:26:51.000000Z"
               },
               "origin_country": {
                 "id": 1,
                 "name": "Myanmar",
-                "created_at": "2026-03-31T04:26:52.000000Z",
-                "updated_at": "2026-03-31T04:26:52.000000Z"
+                "created_at": "2026-05-04T08:27:08.000000Z",
+                "updated_at": "2026-05-04T08:27:08.000000Z"
+              },
+              "stock_uom": {
+                "id": 1,
+                "name": "Kilogram",
+                "code": "Kg",
+                "status": "inactive",
+                "created_by": 1,
+                "updated_by": null,
+                "deleted_at": null,
+                "created_at": "2026-05-04 08:26:20",
+                "updated_at": "2026-05-04 08:26:20"
               },
               "purchase_currency": {
                 "id": 1,
@@ -134,9 +138,9 @@ examples:
                 "symbol": "$",
                 "exchange_rate": "0.0005",
                 "is_base_currency": false,
-                "last_exchange_rate_update": "2026-03-31T00:00:00.000000Z",
-                "created_at": "2026-03-31T04:17:19.000000Z",
-                "updated_at": "2026-03-31T04:17:19.000000Z"
+                "last_exchange_rate_update": "2026-05-04T00:00:00.000000Z",
+                "created_at": "2026-05-04T08:24:51.000000Z",
+                "updated_at": "2026-05-04T08:24:51.000000Z"
               },
               "purchase_tax": {
                 "id": 1,
@@ -147,8 +151,8 @@ examples:
                 "status": "active",
                 "created_by": 1,
                 "updated_by": null,
-                "created_at": "2026-03-31T04:26:32.000000Z",
-                "updated_at": "2026-03-31T04:26:32.000000Z"
+                "created_at": "2026-05-04T08:25:47.000000Z",
+                "updated_at": "2026-05-04T08:25:47.000000Z"
               },
               "purchase_uom": {
                 "id": 1,
@@ -158,8 +162,8 @@ examples:
                 "created_by": 1,
                 "updated_by": null,
                 "deleted_at": null,
-                "created_at": "2026-03-31 04:27:27",
-                "updated_at": "2026-03-31 04:27:27"
+                "created_at": "2026-05-04 08:26:20",
+                "updated_at": "2026-05-04 08:26:20"
               },
               "sale_currency": {
                 "id": 1,
@@ -168,9 +172,9 @@ examples:
                 "symbol": "$",
                 "exchange_rate": "0.0005",
                 "is_base_currency": false,
-                "last_exchange_rate_update": "2026-03-31T00:00:00.000000Z",
-                "created_at": "2026-03-31T04:17:19.000000Z",
-                "updated_at": "2026-03-31T04:17:19.000000Z"
+                "last_exchange_rate_update": "2026-05-04T00:00:00.000000Z",
+                "created_at": "2026-05-04T08:24:51.000000Z",
+                "updated_at": "2026-05-04T08:24:51.000000Z"
               },
               "sale_tax": {
                 "id": 1,
@@ -181,8 +185,8 @@ examples:
                 "status": "active",
                 "created_by": 1,
                 "updated_by": null,
-                "created_at": "2026-03-31T04:26:32.000000Z",
-                "updated_at": "2026-03-31T04:26:32.000000Z"
+                "created_at": "2026-05-04T08:25:47.000000Z",
+                "updated_at": "2026-05-04T08:25:47.000000Z"
               },
               "sale_uom": {
                 "id": 1,
@@ -192,8 +196,29 @@ examples:
                 "created_by": 1,
                 "updated_by": null,
                 "deleted_at": null,
-                "created_at": "2026-03-31 04:27:27",
-                "updated_at": "2026-03-31 04:27:27"
-              }
+                "created_at": "2026-05-04 08:26:20",
+                "updated_at": "2026-05-04 08:26:20"
+              },
+              "product_variations": [
+                {
+                  "id": 1,
+                  "product_id": 1,
+                  "variation_id": 1,
+                  "variation_value": "Red",
+                  "created_at": "2026-05-04T08:35:21.000000Z",
+                  "updated_at": "2026-05-04T08:35:21.000000Z",
+                  "variation": {
+                    "id": 1,
+                    "name": "Color",
+                    "value_data_type": "String",
+                    "status": "inactive",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "deleted_at": null,
+                    "created_at": "2026-05-04 08:33:14",
+                    "updated_at": "2026-05-04 08:33:14"
+                  }
+                }
+              ]
             }
           }

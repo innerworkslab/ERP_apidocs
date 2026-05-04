@@ -24,6 +24,7 @@ http:
       - name: sku
         type: text
         value: COF-0001
+        disabled: true
       - name: image
         type: file
         value: &a1
@@ -70,6 +71,12 @@ http:
       - name: stock_uom_id
         type: text
         value: "1"
+      - name: variations[0][variation_id]
+        type: text
+        value: "1"
+      - name: variations[0][variation_value]
+        type: text
+        value: Black
   auth: inherit
 
 settings:
@@ -101,6 +108,7 @@ examples:
           - name: sku
             type: text
             value: COF-0001
+            disabled: true
           - name: image
             type: file
             value: *a1
@@ -146,6 +154,12 @@ examples:
           - name: stock_uom_id
             type: text
             value: "1"
+          - name: variations[0][variation_id]
+            type: text
+            value: "1"
+          - name: variations[0][variation_value]
+            type: text
+            value: Black
     response:
       status: 200
       statusText: OK
@@ -159,7 +173,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Fri, 10 Apr 2026 03:35:40 GMT
+          value: Mon, 04 May 2026 08:36:42 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -175,144 +189,48 @@ examples:
             "data": {
               "id": 1,
               "name": "Coffee Arabica Premium",
-              "sku": "COF-0001",
-              "image": "product_69d8700c6c77e4.11341960.png",
-              "image_path": "product/images/product_69d8700c6c77e4.11341960.png",
-              "image_url": "http://localhost/storage/product/images/product_69d8700c6c77e4.11341960.png",
-              "category_id": "1",
-              "brand_id": "1",
-              "alert_quantity": "12",
-              "stock_uom_id": "1",
-              "purchase_price": "2100",
-              "purchase_currency_id": "1",
-              "purchase_tax_id": "1",
-              "purchase_uom_id": "1",
-              "sale_price": "2600",
-              "sale_currency_id": "1",
-              "sale_tax_id": "1",
-              "sale_uom_id": "1",
-              "origin_country_id": "1",
-              "created_by": {
-                "id": 1,
-                "name": "Super Admin",
-                "email": "superadmin@example.com",
-                "email_verified_at": null,
-                "phone_number": "09123456789",
-                "role_id": 1,
-                "branch_id": null,
-                "department_id": null,
-                "status": "active",
-                "created_at": "2026-04-10 03:33:52",
-                "updated_at": "2026-04-10 03:33:52"
-              },
-              "updated_by": null,
+              "sku": "PRD-000001",
+              "image": "product_69f85a9ac5d507.24381272.png",
+              "image_path": "product/images/product_69f85a9ac5d507.24381272.png",
+              "image_url": "http://localhost/storage/product/images/product_69f85a9ac5d507.24381272.png",
+              "category_id": 1,
+              "brand_id": 1,
+              "alert_quantity": "12.00",
+              "stock_uom_id": 1,
+              "purchase_price": "2100.00",
+              "purchase_currency_id": 1,
+              "purchase_tax_id": 1,
+              "purchase_uom_id": 1,
+              "sale_price": "2600.00",
+              "sale_currency_id": 1,
+              "sale_tax_id": 1,
+              "sale_uom_id": 1,
+              "origin_country_id": 1,
+              "created_by": 1,
+              "updated_by": 1,
               "status": "active",
-              "created_at": "2026-04-10T03:34:47.000000Z",
-              "updated_at": "2026-04-10T03:35:40.000000Z",
-              "category": {
-                "id": 1,
-                "name": "Electronics",
-                "description": "Electronic devices and gadgets",
-                "status": "active",
-                "created_by": 1,
-                "updated_by": null,
-                "created_at": "2026-04-10T03:34:40.000000Z",
-                "updated_at": "2026-04-10T03:34:40.000000Z"
-              },
-              "brand": {
-                "id": 1,
-                "name": "Nike",
-                "description": "Premium devices",
-                "status": "active",
-                "created_by": 1,
-                "updated_by": null,
-                "created_at": "2026-04-10T03:34:36.000000Z",
-                "updated_at": "2026-04-10T03:34:36.000000Z"
-              },
-              "origin_country": {
-                "id": 1,
-                "name": "Myanmar",
-                "created_at": "2026-04-10T03:34:44.000000Z",
-                "updated_at": "2026-04-10T03:34:44.000000Z"
-              },
-              "stock_uom": {
-                "id": 1,
-                "name": "Kilogram",
-                "code": "Kg",
-                "status": "inactive",
-                "created_by": 1,
-                "updated_by": null,
-                "deleted_at": null,
-                "created_at": "2026-04-10 03:34:32",
-                "updated_at": "2026-04-10 03:34:32"
-              },
-              "purchase_currency": {
-                "id": 1,
-                "name": "US Dollar",
-                "code": "USD",
-                "symbol": "$",
-                "exchange_rate": "0.0005",
-                "is_base_currency": false,
-                "last_exchange_rate_update": "2026-04-10T00:00:00.000000Z",
-                "created_at": "2026-04-10T03:33:52.000000Z",
-                "updated_at": "2026-04-10T03:33:52.000000Z"
-              },
-              "purchase_tax": {
-                "id": 1,
-                "category": "Commercial Tax",
-                "code": "TAX-00001",
-                "type": "sale",
-                "amount": "5.00",
-                "status": "active",
-                "created_by": 1,
-                "updated_by": null,
-                "created_at": "2026-04-10T03:34:13.000000Z",
-                "updated_at": "2026-04-10T03:34:13.000000Z"
-              },
-              "purchase_uom": {
-                "id": 1,
-                "name": "Kilogram",
-                "code": "Kg",
-                "status": "inactive",
-                "created_by": 1,
-                "updated_by": null,
-                "deleted_at": null,
-                "created_at": "2026-04-10 03:34:32",
-                "updated_at": "2026-04-10 03:34:32"
-              },
-              "sale_currency": {
-                "id": 1,
-                "name": "US Dollar",
-                "code": "USD",
-                "symbol": "$",
-                "exchange_rate": "0.0005",
-                "is_base_currency": false,
-                "last_exchange_rate_update": "2026-04-10T00:00:00.000000Z",
-                "created_at": "2026-04-10T03:33:52.000000Z",
-                "updated_at": "2026-04-10T03:33:52.000000Z"
-              },
-              "sale_tax": {
-                "id": 1,
-                "category": "Commercial Tax",
-                "code": "TAX-00001",
-                "type": "sale",
-                "amount": "5.00",
-                "status": "active",
-                "created_by": 1,
-                "updated_by": null,
-                "created_at": "2026-04-10T03:34:13.000000Z",
-                "updated_at": "2026-04-10T03:34:13.000000Z"
-              },
-              "sale_uom": {
-                "id": 1,
-                "name": "Kilogram",
-                "code": "Kg",
-                "status": "inactive",
-                "created_by": 1,
-                "updated_by": null,
-                "deleted_at": null,
-                "created_at": "2026-04-10 03:34:32",
-                "updated_at": "2026-04-10 03:34:32"
-              }
+              "created_at": "2026-05-04T08:35:21.000000Z",
+              "updated_at": "2026-05-04T08:36:42.000000Z",
+              "product_variations": [
+                {
+                  "id": 2,
+                  "product_id": 1,
+                  "variation_id": 1,
+                  "variation_value": "Black",
+                  "created_at": "2026-05-04T08:36:42.000000Z",
+                  "updated_at": "2026-05-04T08:36:42.000000Z",
+                  "variation": {
+                    "id": 1,
+                    "name": "Color",
+                    "value_data_type": "String",
+                    "status": "inactive",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "deleted_at": null,
+                    "created_at": "2026-05-04 08:33:14",
+                    "updated_at": "2026-05-04 08:33:14"
+                  }
+                }
+              ]
             }
           }
