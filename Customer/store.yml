@@ -10,28 +10,23 @@ http:
     type: json
     data: |
       {
-        "name": "Customer One",
-        "company_name": "Customer Co.,Ltd",
+        "name": "John Doe",
+        "company_name": "ABC Trading",
         "phone_number": "09123456789",
         "state_id": 1,
-        "city_id": 10,
-        "address": "No.1, Street",
-        "branch_id": 1,
-        "credit_limit": 500000,
-        "opening": 0,
+        "city_id": 2,
+        "address": "Yangon",
         "customer_type_id": 1,
-        "birthday": "1995-10-20",
+        "credit_limit": 500000,
+        "opening": 10000,
+        "birthday": "1995-06-15",
         "status": "Active",
+        "branch_ids": [1, 2],
         "bank_accounts": [
           {
             "bank_name": "KBZ Bank",
-            "account_number": "123456789",
-            "holder_name": "Customer One"
-          },
-          {
-            "bank_name": "AYA Bank",
-            "account_number": "987654321",
-            "holder_name": "Customer One"
+            "account_number": "1234567890",
+            "holder_name": "John Doe"
           }
         ]
       }
@@ -52,28 +47,23 @@ examples:
         type: json
         data: |
           {
-            "name": "Customer One",
-            "company_name": "Customer Co.,Ltd",
+            "name": "John Doe",
+            "company_name": "ABC Trading",
             "phone_number": "09123456789",
             "state_id": 1,
-            "city_id": 10,
-            "address": "No.1, Street",
-            "branch_id": 1,
-            "credit_limit": 500000,
-            "opening": 0,
+            "city_id": 2,
+            "address": "Yangon",
             "customer_type_id": 1,
-            "birthday": "1995-10-20",
+            "credit_limit": 500000,
+            "opening": 10000,
+            "birthday": "1995-06-15",
             "status": "Active",
+            "branch_ids": [1, 2],
             "bank_accounts": [
               {
                 "bank_name": "KBZ Bank",
-                "account_number": "123456789",
-                "holder_name": "Customer One"
-              },
-              {
-                "bank_name": "AYA Bank",
-                "account_number": "987654321",
-                "holder_name": "Customer One"
+                "account_number": "1234567890",
+                "holder_name": "John Doe"
               }
             ]
           }
@@ -90,7 +80,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 04 May 2026 05:23:23 GMT
+          value: Fri, 08 May 2026 10:02:26 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -106,18 +96,17 @@ examples:
             "data": {
               "id": 1,
               "code": "1-1-CUS-000001",
-              "name": "Customer One",
-              "company_name": "Customer Co.,Ltd",
+              "name": "John Doe",
+              "company_name": "ABC Trading",
               "phone_number": "09123456789",
               "state_id": 1,
-              "city_id": 10,
-              "address": "No.1, Street",
+              "city_id": 2,
+              "address": "Yangon",
               "bank_account_id": 1,
-              "branch_id": 1,
               "credit_limit": "500000.00",
-              "opening": "0.00",
+              "opening": "10000.00",
               "customer_type_id": 1,
-              "birthday": "1995-10-20T00:00:00.000000Z",
+              "birthday": "1995-06-15T00:00:00.000000Z",
               "status": "Active",
               "created_by": {
                 "id": 1,
@@ -132,54 +121,104 @@ examples:
                 "role_id": 1,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-05-04 05:22:03",
-                "updated_at": "2026-05-04 05:22:03",
+                "created_at": "2026-05-08 10:00:48",
+                "updated_at": "2026-05-08 10:00:48",
                 "deleted_at": null
               },
               "updated_by": null,
-              "created_at": "2026-05-04T05:23:23.000000Z",
-              "updated_at": "2026-05-04T05:23:23.000000Z",
+              "created_at": "2026-05-08T10:02:26.000000Z",
+              "updated_at": "2026-05-08T10:02:26.000000Z",
               "customer_type": {
                 "id": 1,
                 "name": "Retail",
-                "created_at": "2026-05-04T05:22:03.000000Z",
-                "updated_at": "2026-05-04T05:22:03.000000Z"
+                "created_at": "2026-05-08T10:00:49.000000Z",
+                "updated_at": "2026-05-08T10:00:49.000000Z"
               },
               "bank_accounts": [
                 {
                   "id": 1,
                   "customer_id": 1,
                   "bank_name": "KBZ Bank",
-                  "account_number": "123456789",
-                  "holder_name": "Customer One",
-                  "created_at": "2026-05-04T05:23:23.000000Z",
-                  "updated_at": "2026-05-04T05:23:23.000000Z"
-                },
-                {
-                  "id": 2,
-                  "customer_id": 1,
-                  "bank_name": "AYA Bank",
-                  "account_number": "987654321",
-                  "holder_name": "Customer One",
-                  "created_at": "2026-05-04T05:23:23.000000Z",
-                  "updated_at": "2026-05-04T05:23:23.000000Z"
+                  "account_number": "1234567890",
+                  "holder_name": "John Doe",
+                  "created_at": "2026-05-08T10:02:26.000000Z",
+                  "updated_at": "2026-05-08T10:02:26.000000Z"
                 }
               ],
               "state": {
                 "id": 1,
                 "name": "Ayeyarwady Region",
-                "created_at": "2026-05-04 05:22:03",
-                "updated_at": "2026-05-04 05:22:03",
+                "created_at": "2026-05-08 10:00:49",
+                "updated_at": "2026-05-08 10:00:49",
                 "deleted_at": null
               },
               "city": {
-                "id": 10,
+                "id": 2,
                 "state_id": 1,
-                "name": "Danuphyu",
-                "created_at": "2026-05-04 05:22:03",
-                "updated_at": "2026-05-04 05:22:03",
+                "name": "Ingapu",
+                "created_at": "2026-05-08 10:00:49",
+                "updated_at": "2026-05-08 10:00:49",
                 "deleted_at": null
               },
-              "branch": null
+              "branches": [
+                {
+                  "id": 1,
+                  "prefix": "YGN",
+                  "name": "Yangon Main Branch",
+                  "address": "No.123, Pyay Road, Yangon",
+                  "latitude": "16.8409000",
+                  "longitude": "96.1735000",
+                  "city_id": 1,
+                  "state_id": 1,
+                  "mobile_phones": [
+                    "09987654321",
+                    "09123456789"
+                  ],
+                  "email": "ygn.branch@company.com",
+                  "website": "https://company.com",
+                  "facebook": "https://facebook.com/company",
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-05-08 10:01:21",
+                  "updated_at": "2026-05-08 10:01:21",
+                  "deleted_at": null,
+                  "pivot": {
+                    "customer_id": 1,
+                    "branch_id": 1,
+                    "created_at": "2026-05-08T10:02:26.000000Z",
+                    "updated_at": "2026-05-08T10:02:26.000000Z"
+                  }
+                },
+                {
+                  "id": 2,
+                  "prefix": "Mdy",
+                  "name": "Mandalay Main Branch",
+                  "address": "No.123, Pyay Road, Yangon",
+                  "latitude": "16.8409000",
+                  "longitude": "96.1735000",
+                  "city_id": 1,
+                  "state_id": 1,
+                  "mobile_phones": [
+                    "09987654321",
+                    "09123456789"
+                  ],
+                  "email": "ygn.branch@company.com",
+                  "website": "https://company.com",
+                  "facebook": "https://facebook.com/company",
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-05-08 10:01:37",
+                  "updated_at": "2026-05-08 10:01:37",
+                  "deleted_at": null,
+                  "pivot": {
+                    "customer_id": 1,
+                    "branch_id": 2,
+                    "created_at": "2026-05-08T10:02:26.000000Z",
+                    "updated_at": "2026-05-08T10:02:26.000000Z"
+                  }
+                }
+              ]
             }
           }
