@@ -5,7 +5,11 @@ info:
 
 http:
   method: PUT
-  url: "{{baseUrl}}/v1/suppliers/1"
+  url: "{{baseUrl}}/v1/suppliers/:id"
+  params:
+    - name: id
+      value: "2"
+      type: path
   body:
     type: json
     data: |
@@ -16,7 +20,6 @@ http:
         "state_id": 1,
         "city_id": 10,
         "address": "No.2, Street",
-        "branch_id": 1,
         "credit_limit": 300000,
         "opening": 0,
         "supplier_type_id": 1,
@@ -41,8 +44,12 @@ settings:
 examples:
   - name: example
     request:
-      url: "{{baseUrl}}/v1/suppliers/1"
+      url: "{{baseUrl}}/v1/suppliers/:id"
       method: PUT
+      params:
+        - name: id
+          value: "2"
+          type: path
       body:
         type: json
         data: |
@@ -53,7 +60,6 @@ examples:
             "state_id": 1,
             "city_id": 10,
             "address": "No.2, Street",
-            "branch_id": 1,
             "credit_limit": 300000,
             "opening": 0,
             "supplier_type_id": 1,
@@ -80,7 +86,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 04 May 2026 05:25:36 GMT
+          value: Tue, 12 May 2026 02:57:20 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -94,16 +100,15 @@ examples:
               "message": "Supplier updated successfully"
             },
             "data": {
-              "id": 1,
-              "code": "1-1-SUP-000001",
+              "id": 2,
+              "code": "SUP-0001",
               "name": "Supplier One Update",
               "company_name": "Supplier Co.,Ltd",
               "phone_number": "09987654321",
               "state_id": 1,
               "city_id": 10,
               "address": "No.2, Street",
-              "bank_account_id": 2,
-              "branch_id": 1,
+              "bank_account_id": 4,
               "credit_limit": "300000.00",
               "opening": "0.00",
               "supplier_type_id": 1,
@@ -122,8 +127,8 @@ examples:
                 "role_id": 1,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-05-04 05:22:03",
-                "updated_at": "2026-05-04 05:22:03",
+                "created_at": "2026-05-12 02:53:05",
+                "updated_at": "2026-05-12 02:53:05",
                 "deleted_at": null
               },
               "updated_by": {
@@ -139,65 +144,42 @@ examples:
                 "role_id": 1,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-05-04 05:22:03",
-                "updated_at": "2026-05-04 05:22:03",
+                "created_at": "2026-05-12 02:53:05",
+                "updated_at": "2026-05-12 02:53:05",
                 "deleted_at": null
               },
-              "created_at": "2026-05-04T05:25:10.000000Z",
-              "updated_at": "2026-05-04T05:25:36.000000Z",
+              "created_at": "2026-05-12T02:56:12.000000Z",
+              "updated_at": "2026-05-12T02:57:20.000000Z",
               "supplier_type": {
                 "id": 1,
                 "name": "Retail",
-                "created_at": "2026-05-04T05:22:03.000000Z",
-                "updated_at": "2026-05-04T05:22:03.000000Z"
+                "created_at": "2026-05-12T02:53:05.000000Z",
+                "updated_at": "2026-05-12T02:53:05.000000Z"
               },
               "bank_accounts": [
                 {
-                  "id": 2,
-                  "supplier_id": 1,
+                  "id": 4,
+                  "supplier_id": 2,
                   "bank_name": "CB Bank",
                   "account_number": "555666777",
                   "holder_name": "Supplier One",
-                  "created_at": "2026-05-04T05:25:36.000000Z",
-                  "updated_at": "2026-05-04T05:25:36.000000Z"
+                  "created_at": "2026-05-12T02:57:20.000000Z",
+                  "updated_at": "2026-05-12T02:57:20.000000Z"
                 }
               ],
               "state": {
                 "id": 1,
                 "name": "Ayeyarwady Region",
-                "created_at": "2026-05-04 05:22:03",
-                "updated_at": "2026-05-04 05:22:03",
+                "created_at": "2026-05-12 02:53:05",
+                "updated_at": "2026-05-12 02:53:05",
                 "deleted_at": null
               },
               "city": {
                 "id": 10,
                 "state_id": 1,
                 "name": "Danuphyu",
-                "created_at": "2026-05-04 05:22:03",
-                "updated_at": "2026-05-04 05:22:03",
-                "deleted_at": null
-              },
-              "branch": {
-                "id": 1,
-                "prefix": "YGN",
-                "name": "Yangon Main Branch",
-                "address": "No.123, Pyay Road, Yangon",
-                "latitude": "16.8409000",
-                "longitude": "96.1735000",
-                "city_id": 1,
-                "state_id": 1,
-                "mobile_phones": [
-                  "09987654321",
-                  "09123456789"
-                ],
-                "email": "ygn.branch@company.com",
-                "website": "https://company.com",
-                "facebook": "https://facebook.com/company",
-                "status": "active",
-                "created_by": 1,
-                "updated_by": null,
-                "created_at": "2026-05-04 05:24:25",
-                "updated_at": "2026-05-04 05:24:25",
+                "created_at": "2026-05-12 02:53:06",
+                "updated_at": "2026-05-12 02:53:06",
                 "deleted_at": null
               }
             }
