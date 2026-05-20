@@ -1,0 +1,108 @@
+info:
+  name: calculate total amount
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/purchase-orders/calculate-total-amount"
+  body:
+    type: json
+    data: |-
+      {
+        "discount_amount": 5000,
+        "tax_amount": 2000,
+        "lines": [
+          {
+            "quantity": 5,
+            "unit_price": 50000,
+            "discount_amount": 10000,
+            "tax_amount": 5000
+          },
+          {
+            "quantity": 2,
+            "unit_price": 80000,
+            "discount_amount": 0,
+            "tax_amount": 8000
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/purchase-orders/calculate-total-amount"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "discount_amount": 5000,
+            "tax_amount": 2000,
+            "lines": [
+              {
+                "quantity": 5,
+                "unit_price": 50000,
+                "discount_amount": 10000,
+                "tax_amount": 5000
+              },
+              {
+                "quantity": 2,
+                "unit_price": 80000,
+                "discount_amount": 0,
+                "tax_amount": 8000
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Wed, 20 May 2026 07:54:01 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Purchase order total amount calculated successfully"
+            },
+            "data": {
+              "lines": [
+                {
+                  "line_no": 1,
+                  "gross_amount": 250000,
+                  "line_total": 245000
+                },
+                {
+                  "line_no": 2,
+                  "gross_amount": 160000,
+                  "line_total": 168000
+                }
+              ],
+              "subtotal_amount": 413000,
+              "discount_amount": 5000,
+              "tax_amount": 2000,
+              "total_amount": 410000
+            }
+          }
