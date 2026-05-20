@@ -19,12 +19,14 @@ http:
       }
   auth:
     type: bearer
-    token: "{{accessToken}}"
+    token: "{{accessTokenn}}"
 
 runtime:
   variables:
     - name: accessToken
       value: 1|FIFj00e2aX5nBusij6V1U2qLM8IgDCxGCt2IPyXb7252d821
+    - name: accessTokenn
+      value: 1|kSMnqvAQ7p1nvwMC0nNi6GraT6hxEm1LDGRJ93Y5bb382718
 
 settings:
   encodeUrl: true
