@@ -1,0 +1,49 @@
+info:
+  name: create
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/cashbook-transactions"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+  body:
+    type: multipart-form
+    data:
+      - name: cashbook_id
+        type: text
+        value: "1"
+      - name: account_id
+        type: text
+        value: "49"
+      - name: currency_id
+        type: text
+        value: "1"
+      - name: transaction_type
+        type: text
+        value: in or out
+      - name: category
+        type: text
+        value: expense or income or transfer or adjustment or deposit or withdraw or others
+      - name: amount
+        type: text
+        value: "5"
+      - name: attachments[0]
+        type: file
+        value:
+          - /Users/phoneminmyat/Downloads/MJ Websocket Flow.pdf
+      - name: attachments[1]
+        type: file
+        value:
+          - /Users/phoneminmyat/Downloads/test_image3.jpeg
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,206 @@
+info:
+  name: account list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/accounts/all?page=1&per_page=10"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: per_page
+      value: "10"
+      type: query
+    - name: search
+      value: musical
+      type: query
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/accounts/all?page=1&per_page=10"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: per_page
+          value: "10"
+          type: query
+        - name: search
+          value: musical
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Wed, 20 May 2026 07:24:17 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Account Lists"
+            },
+            "data": [
+              {
+                "id": 1,
+                "parent_account_id": null,
+                "code": "1-0000",
+                "name": "Assets",
+                "type": "Heading",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 2,
+                "parent_account_id": 1,
+                "code": "1-1000",
+                "name": "Fixed Assets (Tangible)",
+                "type": "Heading",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 3,
+                "parent_account_id": 2,
+                "code": "1-1003",
+                "name": "Musical Instruments",
+                "type": "Fixed Asset",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 4,
+                "parent_account_id": 2,
+                "code": "1-1004",
+                "name": "Office Equipment",
+                "type": "Fixed Asset",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 5,
+                "parent_account_id": 2,
+                "code": "1-1005",
+                "name": "Furniture",
+                "type": "Fixed Asset",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 6,
+                "parent_account_id": 1,
+                "code": "1-1200",
+                "name": "Accumulated Depreciation",
+                "type": "Heading",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 7,
+                "parent_account_id": 6,
+                "code": "1-1201",
+                "name": "Accn Depn - Leasehold Improvements",
+                "type": "Contra Asset",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 8,
+                "parent_account_id": 6,
+                "code": "1-1202",
+                "name": "Accn Depn - Equipment (PPE)",
+                "type": "Contra Asset",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 9,
+                "parent_account_id": 6,
+                "code": "1-1203",
+                "name": "Accn Depn - Musical Instruments",
+                "type": "Contra Asset",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              },
+              {
+                "id": 10,
+                "parent_account_id": 6,
+                "code": "1-1204",
+                "name": "Accn Depn - Equipment",
+                "type": "Contra Asset",
+                "division": "SOFP",
+                "description": null,
+                "is_active": true,
+                "created_at": "2026-05-20T07:18:15.000000Z",
+                "updated_at": "2026-05-20T07:18:15.000000Z"
+              }
+            ],
+            "meta": {
+              "total": 112,
+              "per_page": 10,
+              "current_page": 1,
+              "total_pages": 12
+            }
+          }
