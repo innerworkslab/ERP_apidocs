@@ -1,0 +1,31 @@
+info:
+  name: create
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/cashbooks"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "branch_id": 1,
+        "currency_id": 1,
+        "name": "KBZ Main Cash",
+        "type": "cash",//'cash','bank','mobile_wallet','petty_cash',
+        "status": "active",
+        "remark": "Main office daily cashbook"
+      }
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
