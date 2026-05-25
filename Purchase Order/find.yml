@@ -40,7 +40,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 20 May 2026 07:34:38 GMT
+          value: Mon, 25 May 2026 03:20:25 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -55,20 +55,21 @@ examples:
             },
             "data": {
               "id": 1,
-              "po_number": "INW-PO-26-5-20-0001",
+              "po_number": "INW-PO-26-5-22-0001",
               "po_date": "2026-05-20",
               "supplier_id": 1,
               "branch_id": 1,
-              "inventory_id": 2,
+              "inventory_id": 1,
               "currency_id": 1,
               "subtotal_amount": "500000.00",
               "discount_amount": "10000.00",
               "tax_amount": "25000.00",
               "total_amount": "515000.00",
+              "paid_amount": "515000.00",
               "status": "pending",
-              "payment_status": "unpaid",
+              "payment_status": "paid",
               "delivery_status": "not_delivered",
-              "remarks": "Urgent order Update",
+              "remarks": "Urgent order",
               "created_by": {
                 "id": 1,
                 "name": "Super Admin",
@@ -82,12 +83,12 @@ examples:
                 "role_id": 1,
                 "department_id": null,
                 "status": "active",
-                "created_at": "2026-05-20 05:16:45",
-                "updated_at": "2026-05-20 05:16:45",
+                "created_at": "2026-05-22 09:21:36",
+                "updated_at": "2026-05-22 09:21:36",
                 "deleted_at": null
               },
-              "created_at": "2026-05-20T07:31:50.000000Z",
-              "updated_at": "2026-05-20T07:32:47.000000Z",
+              "created_at": "2026-05-22T10:16:54.000000Z",
+              "updated_at": "2026-05-22T11:20:16.000000Z",
               "supplier": {
                 "id": 1,
                 "code": "SUP-0001",
@@ -105,8 +106,8 @@ examples:
                 "status": "Active",
                 "created_by": 1,
                 "updated_by": null,
-                "created_at": "2026-05-20T07:31:44.000000Z",
-                "updated_at": "2026-05-20T07:31:44.000000Z"
+                "created_at": "2026-05-22T10:09:43.000000Z",
+                "updated_at": "2026-05-22T10:09:43.000000Z"
               },
               "branch": {
                 "id": 1,
@@ -127,15 +128,15 @@ examples:
                 "status": "active",
                 "created_by": 1,
                 "updated_by": null,
-                "created_at": "2026-05-20 07:20:53",
-                "updated_at": "2026-05-20 07:20:53",
+                "created_at": "2026-05-22 10:09:34",
+                "updated_at": "2026-05-22 10:09:34",
                 "deleted_at": null
               },
               "inventory": {
-                "id": 2,
-                "name": "Hot Warehouse",
-                "created_at": "2026-05-20T07:24:37.000000Z",
-                "updated_at": "2026-05-20T07:24:37.000000Z"
+                "id": 1,
+                "name": "Cold Warehouse",
+                "created_at": "2026-05-22T10:16:43.000000Z",
+                "updated_at": "2026-05-22T10:16:43.000000Z"
               },
               "currency": {
                 "id": 1,
@@ -144,13 +145,13 @@ examples:
                 "symbol": "$",
                 "exchange_rate": "0.0005",
                 "is_base_currency": false,
-                "last_exchange_rate_update": "2026-05-20T00:00:00.000000Z",
-                "created_at": "2026-05-20T05:16:45.000000Z",
-                "updated_at": "2026-05-20T05:16:45.000000Z"
+                "last_exchange_rate_update": "2026-05-22T00:00:00.000000Z",
+                "created_at": "2026-05-22T09:21:37.000000Z",
+                "updated_at": "2026-05-22T09:21:37.000000Z"
               },
               "lines": [
                 {
-                  "id": 3,
+                  "id": 1,
                   "purchase_order_id": 1,
                   "product_id": 1,
                   "uom_id": 1,
@@ -162,16 +163,18 @@ examples:
                   "discount_amount": "10000.00",
                   "tax_id": 1,
                   "tax_amount": "12500.00",
+                  "expenses_type": "none",
+                  "expenses_amount": "0.00",
                   "line_total": "252500.00",
-                  "created_at": "2026-05-20T07:32:47.000000Z",
-                  "updated_at": "2026-05-20T07:32:47.000000Z",
+                  "created_at": "2026-05-22T10:16:54.000000Z",
+                  "updated_at": "2026-05-22T10:16:54.000000Z",
                   "product": {
                     "id": 1,
                     "name": "Coffee Genius",
                     "sku": "PRD-000001",
-                    "image": "product_6a0d618398d257.57664674.png",
-                    "image_path": "product/images/product_6a0d618398d257.57664674.png",
-                    "image_url": "http://localhost/storage/product/images/product_6a0d618398d257.57664674.png",
+                    "image": "product_6a102c2e6b1e54.97158407.png",
+                    "image_path": "product/images/product_6a102c2e6b1e54.97158407.png",
+                    "image_url": "http://localhost/storage/product/images/product_6a102c2e6b1e54.97158407.png",
                     "category_id": 1,
                     "brand_id": 1,
                     "alert_quantity": "10.00",
@@ -188,8 +191,8 @@ examples:
                     "created_by": 1,
                     "updated_by": null,
                     "status": "active",
-                    "created_at": "2026-05-20T07:23:48.000000Z",
-                    "updated_at": "2026-05-20T07:23:48.000000Z"
+                    "created_at": "2026-05-22T10:13:03.000000Z",
+                    "updated_at": "2026-05-22T10:13:03.000000Z"
                   },
                   "uom": {
                     "id": 1,
@@ -199,8 +202,8 @@ examples:
                     "created_by": 1,
                     "updated_by": null,
                     "deleted_at": null,
-                    "created_at": "2026-05-20 07:21:24",
-                    "updated_at": "2026-05-20 07:21:24"
+                    "created_at": "2026-05-22 10:10:55",
+                    "updated_at": "2026-05-22 10:10:55"
                   },
                   "tax": {
                     "id": 1,
@@ -211,12 +214,12 @@ examples:
                     "status": "active",
                     "created_by": 1,
                     "updated_by": null,
-                    "created_at": "2026-05-20T07:20:44.000000Z",
-                    "updated_at": "2026-05-20T07:20:44.000000Z"
+                    "created_at": "2026-05-22T10:09:23.000000Z",
+                    "updated_at": "2026-05-22T10:09:23.000000Z"
                   }
                 },
                 {
-                  "id": 4,
+                  "id": 2,
                   "purchase_order_id": 1,
                   "product_id": 2,
                   "uom_id": 1,
@@ -228,16 +231,18 @@ examples:
                   "discount_amount": "0.00",
                   "tax_id": 1,
                   "tax_amount": "12500.00",
+                  "expenses_type": "none",
+                  "expenses_amount": "0.00",
                   "line_total": "262500.00",
-                  "created_at": "2026-05-20T07:32:47.000000Z",
-                  "updated_at": "2026-05-20T07:32:47.000000Z",
+                  "created_at": "2026-05-22T10:16:54.000000Z",
+                  "updated_at": "2026-05-22T10:16:54.000000Z",
                   "product": {
                     "id": 2,
-                    "name": "CoCo Powder",
+                    "name": "CoCo Milk",
                     "sku": "PRD-000002",
-                    "image": "product_6a0d61a2a04153.61027405.png",
-                    "image_path": "product/images/product_6a0d61a2a04153.61027405.png",
-                    "image_url": "http://localhost/storage/product/images/product_6a0d61a2a04153.61027405.png",
+                    "image": "product_6a102c61115905.51788961.png",
+                    "image_path": "product/images/product_6a102c61115905.51788961.png",
+                    "image_url": "http://localhost/storage/product/images/product_6a102c61115905.51788961.png",
                     "category_id": 1,
                     "brand_id": 1,
                     "alert_quantity": "10.00",
@@ -254,8 +259,8 @@ examples:
                     "created_by": 1,
                     "updated_by": null,
                     "status": "active",
-                    "created_at": "2026-05-20T07:24:18.000000Z",
-                    "updated_at": "2026-05-20T07:24:18.000000Z"
+                    "created_at": "2026-05-22T10:13:53.000000Z",
+                    "updated_at": "2026-05-22T10:13:53.000000Z"
                   },
                   "uom": {
                     "id": 1,
@@ -265,8 +270,8 @@ examples:
                     "created_by": 1,
                     "updated_by": null,
                     "deleted_at": null,
-                    "created_at": "2026-05-20 07:21:24",
-                    "updated_at": "2026-05-20 07:21:24"
+                    "created_at": "2026-05-22 10:10:55",
+                    "updated_at": "2026-05-22 10:10:55"
                   },
                   "tax": {
                     "id": 1,
@@ -277,8 +282,8 @@ examples:
                     "status": "active",
                     "created_by": 1,
                     "updated_by": null,
-                    "created_at": "2026-05-20T07:20:44.000000Z",
-                    "updated_at": "2026-05-20T07:20:44.000000Z"
+                    "created_at": "2026-05-22T10:09:23.000000Z",
+                    "updated_at": "2026-05-22T10:09:23.000000Z"
                   }
                 }
               ]
