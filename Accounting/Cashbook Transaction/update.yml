@@ -11,7 +11,7 @@ http:
       value: multipart/form-data
   params:
     - name: id
-      value: "1"
+      value: "3"
       type: path
   body:
     type: multipart-form
@@ -19,38 +19,149 @@ http:
       - name: cashbook_id
         type: text
         value: "1"
-      - name: account_id
+      - name: source_account_id
         type: text
         value: "49"
-      - name: currency_id
+      - name: destination_account_id
         type: text
         value: "1"
       - name: transaction_type
         type: text
-        value: in or out
+        value: in
       - name: category
         type: text
-        value: expense or income or transfer or adjustment or deposit or withdraw or others
+        value: others
+      - name: currency_id
+        type: text
+        value: "1"
       - name: amount
         type: text
         value: "5"
       - name: attachments[0]
-        type: file
-        value:
-          - /Users/phoneminmyat/Downloads/MJ Websocket Flow.pdf
+        type: text
+        value: ""
+        disabled: true
       - name: attachments[1]
-        type: file
-        value:
-          - /Users/phoneminmyat/Downloads/test_image3.jpeg
+        type: text
+        value: ""
+        disabled: true
       - name: existing_attachment_ids[0]
         type: text
         value: "1"
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+        disabled: true
+      - name: remark
+        type: text
+        value: update test
+      - name: description
+        type: text
+        value: ""
+  auth: inherit
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/cashbook-transactions/:id"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+      params:
+        - name: id
+          value: "3"
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: cashbook_id
+            type: text
+            value: "1"
+          - name: source_account_id
+            type: text
+            value: "49"
+          - name: destination_account_id
+            type: text
+            value: "1"
+          - name: transaction_type
+            type: text
+            value: in
+          - name: category
+            type: text
+            value: others
+          - name: currency_id
+            type: text
+            value: "1"
+          - name: amount
+            type: text
+            value: "5"
+          - name: attachments[0]
+            type: text
+            value: ""
+            disabled: true
+          - name: attachments[1]
+            type: text
+            value: ""
+            disabled: true
+          - name: existing_attachment_ids[0]
+            type: text
+            value: "1"
+            disabled: true
+          - name: remark
+            type: text
+            value: update test
+          - name: description
+            type: text
+            value: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Wed, 27 May 2026 09:38:42 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Cashbook Transaction is updated successfully"
+            },
+            "data": {
+              "id": 3,
+              "cashbook_id": "1",
+              "source_account_id": "49",
+              "destination_account_id": "1",
+              "transaction_type": "in",
+              "category": "others",
+              "transaction_datetime": "2026-05-27T09:38:42.000000Z",
+              "currency_id": "1",
+              "amount": "5.00000000",
+              "base_currency_amount": "0.00250000",
+              "reference_no": "CBT-20260527-000003",
+              "remark": "update test",
+              "description": null,
+              "status": "pending",
+              "created_by": 1,
+              "updated_by": 1,
+              "created_at": "2026-05-27T09:21:46.000000Z",
+              "updated_at": "2026-05-27T09:38:42.000000Z",
+              "deleted_at": null
+            }
+          }
