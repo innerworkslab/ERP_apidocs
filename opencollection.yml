@@ -20,12 +20,12 @@ request:
       value: application/json
   auth:
     type: bearer
-    token: 2|YpLPDBvctTmUJ9J7qbDmnYZcnvEhkqWUSqvnNz7Je3f51356
+    token: 1|IlRSAbjReMPwaMxfsVLVr8eE5CogV3a7p1qWO0BT48b3ca9b
   variables:
     - name: baseUrl
       value: http://localhost:8000/api
     - name: accessToken
-      value: 1|aojPaGpWIEY8DlS7TOFAWZq8nO9FqQ7OW2r7owFI976b3411
+      value: 3|daOeu8BBbTSiguC511IyOj4Nb8UdqqS2WRj8cKxF20410183
 bundled: false
 extensions:
   bruno:

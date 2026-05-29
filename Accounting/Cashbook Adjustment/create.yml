@@ -1,0 +1,172 @@
+info:
+  name: create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/cashbook-adjustments"
+  body:
+    type: json
+    data: |-
+      {
+        "cashbook_id": 1,
+        "type": "increase", //increase or decrease
+        "amount": 25000,
+        "reason": "Cash count correction"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/cashbook-adjustments"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "cashbook_id": 1,
+            "type": "increase", //increase or decrease
+            "amount": 25000,
+            "reason": "Cash count correction"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Fri, 29 May 2026 08:22:34 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Cashbook Adjustment is created successfully"
+            },
+            "data": {
+              "id": 4,
+              "branch_id": 1,
+              "reference_no": "CBAD-20260529-000004",
+              "cashbook_id": 1,
+              "type": "increase",
+              "amount": "25000.00",
+              "reason": "Cash count correction",
+              "status": "pending",
+              "approved_by": null,
+              "created_by": 1,
+              "approved_at": null,
+              "created_at": "2026-05-29T08:22:34.000000Z",
+              "updated_at": "2026-05-29T08:22:34.000000Z",
+              "cashbook": {
+                "id": 1,
+                "branch_id": 1,
+                "account_id": 113,
+                "currency_id": 1,
+                "name": "KBZ Second Cash",
+                "type": "cash",
+                "current_balance": "15000.00000000",
+                "status": "active",
+                "remark": "Main office daily cashbook",
+                "created_by": 1,
+                "updated_by": 1,
+                "created_at": "2026-05-29T08:05:30.000000Z",
+                "updated_at": "2026-05-29T08:22:20.000000Z",
+                "deleted_at": null,
+                "branch": {
+                  "id": 1,
+                  "prefix": "Mdy",
+                  "name": "Mandalay Main Branch",
+                  "address": "No.123, Pyay Road, Yangon",
+                  "latitude": "16.8409000",
+                  "longitude": "96.1735000",
+                  "city_id": 1,
+                  "state_id": 1,
+                  "mobile_phones": [
+                    "09987654321",
+                    "09123456789"
+                  ],
+                  "email": "ygn.branch@company.com",
+                  "website": "https://company.com",
+                  "facebook": "https://facebook.com/company",
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-05-29 08:04:02",
+                  "updated_at": "2026-05-29 08:04:02",
+                  "deleted_at": null
+                },
+                "currency": {
+                  "id": 1,
+                  "name": "US Dollar",
+                  "code": "USD",
+                  "symbol": "$",
+                  "exchange_rate": "0.0005",
+                  "is_base_currency": false,
+                  "last_exchange_rate_update": "2026-05-29T00:00:00.000000Z",
+                  "created_at": "2026-05-29T07:36:52.000000Z",
+                  "updated_at": "2026-05-29T07:36:52.000000Z"
+                }
+              },
+              "creator": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "nrc_code": 13,
+                "township_code": 2215,
+                "nrc_type": "N",
+                "id_number": "000000001",
+                "role_id": 1,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-05-29 07:36:51",
+                "updated_at": "2026-05-29 07:36:51",
+                "deleted_at": null
+              },
+              "approver": null,
+              "branch": {
+                "id": 1,
+                "prefix": "Mdy",
+                "name": "Mandalay Main Branch",
+                "address": "No.123, Pyay Road, Yangon",
+                "latitude": "16.8409000",
+                "longitude": "96.1735000",
+                "city_id": 1,
+                "state_id": 1,
+                "mobile_phones": [
+                  "09987654321",
+                  "09123456789"
+                ],
+                "email": "ygn.branch@company.com",
+                "website": "https://company.com",
+                "facebook": "https://facebook.com/company",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-05-29 08:04:02",
+                "updated_at": "2026-05-29 08:04:02",
+                "deleted_at": null
+              }
+            }
+          }

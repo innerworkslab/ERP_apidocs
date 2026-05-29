@@ -28,9 +28,7 @@ http:
       value: in or out
       type: query
       disabled: true
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true

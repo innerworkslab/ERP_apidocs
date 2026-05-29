@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}/v1/cashbook-transactions/:id/confirm"
   params:
     - name: id
-      value: "1"
+      value: "4"
       type: path
   auth: inherit
 
