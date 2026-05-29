@@ -12,7 +12,7 @@ http:
       {
         "source_cashbook_id": 1,
         "destination_cashbook_id": 2,
-        "amount": 50000,
+        "amount": 75000,
         "currency_id": 1,
         "remark": "Transfer to second branch"
       }

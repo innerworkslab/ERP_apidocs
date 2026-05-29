@@ -1,0 +1,7 @@
+info:
+  name: Cashbook Adjustment
+  type: folder
+  seq: 5
+
+request:
+  auth: inherit

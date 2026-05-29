@@ -15,14 +15,12 @@ http:
       {
         "branch_id": 1,
         "currency_id": 1,
-        "name": "KBZ Main Cash",
+        "name": "KBZ Second Cash",
         "type": "cash",//'cash','bank','mobile_wallet','petty_cash',
         "status": "active",
         "remark": "Main office daily cashbook"
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true
