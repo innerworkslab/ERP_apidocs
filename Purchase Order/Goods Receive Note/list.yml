@@ -1,0 +1,69 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/goods-receive-notes"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/goods-receive-notes"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Sat, 30 May 2026 06:31:05 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Goods receive note lists"
+            },
+            "data": [
+              {
+                "id": 2,
+                "grn_no": "INW-GRN-26-5-30-0001",
+                "grn_date": "2026-05-30",
+                "supplier": "Supplier Two",
+                "po_no": "INW-PO-26-5-30-0001",
+                "branch": "Mandalay Main Branch",
+                "warehouse_location": "Cold Warehouse",
+                "delivery_status": "not_delivered",
+                "total_amount": "404000.00",
+                "currency": "USD",
+                "status": "pending"
+              }
+            ],
+            "meta": {
+              "total": 1,
+              "per_page": 20,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }
