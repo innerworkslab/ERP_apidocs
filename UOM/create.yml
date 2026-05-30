@@ -17,9 +17,7 @@ http:
         "code": "Kg",
         "status": "inactive" // or inactive
       }
-  auth:
-    type: bearer
-    token: "{{accessTokenn}}"
+  auth: inherit
 
 runtime:
   variables:

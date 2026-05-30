@@ -1,0 +1,190 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/goods-receive-notes"
+  body:
+    type: json
+    data: |-
+      {
+        "purchase_order_id": 1,
+        "supplier_id": 1,
+        "branch_id": 1,
+        "inventory_id": 1,
+        "currency_id": 1,
+        "grn_date": "2026-05-30",
+        "fee_allocation_method": "by_line_value",
+        "tax_allocation_method": "by_products",
+        "cargo_tax_amount": 2000,
+        "discount_amount": 0,
+        "remarks": "GRN create test",
+        "charges": [
+          {
+            "charge_type": "cargo",
+            "currency_id": 1,
+            "amount": 1500,
+            "description": "Freight"
+          },
+          {
+            "charge_type": "delivery",
+            "currency_id": 1,
+            "amount": 500,
+            "description": "Local delivery"
+          }
+        ],
+        "lines": [
+          {
+            "purchase_order_line_id": 1,
+            "product_id": 1,
+            "uom_id": 1,
+            "ordered_quantity": 5,
+            "received_quantity": 3,
+            "good_quantity": 3,
+            "unit_price": 5000,
+            "line_weight": 1.2,
+            "discrepancy_reason": "defect",
+            "defect_responsibility": "supplier_side",
+            "remarks": "1 short",
+            "manual_tax_amount": 1200
+          },
+          {
+            "purchase_order_line_id": 2,
+            "product_id": 2,
+            "uom_id": 1,
+            "ordered_quantity": 5,
+            "received_quantity": 5,
+            "good_quantity": 5,
+            "unit_price": 3000,
+            "line_weight": 0.8,
+            "discrepancy_reason": "none",
+            "remarks": null,
+            "manual_tax_amount": 800
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/goods-receive-notes"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "purchase_order_id": 1,
+            "supplier_id": 1,
+            "branch_id": 1,
+            "inventory_id": 1,
+            "currency_id": 1,
+            "grn_date": "2026-05-30",
+            "fee_allocation_method": "by_line_value",
+            "tax_allocation_method": "by_products",
+            "cargo_tax_amount": 2000,
+            "discount_amount": 0,
+            "remarks": "GRN create test",
+            "charges": [
+              {
+                "charge_type": "cargo",
+                "currency_id": 1,
+                "amount": 1500,
+                "description": "Freight"
+              },
+              {
+                "charge_type": "delivery",
+                "currency_id": 1,
+                "amount": 500,
+                "description": "Local delivery"
+              }
+            ],
+            "lines": [
+              {
+                "purchase_order_line_id": 1,
+                "product_id": 1,
+                "uom_id": 1,
+                "ordered_quantity": 5,
+                "received_quantity": 3,
+                "good_quantity": 3,
+                "unit_price": 5000,
+                "line_weight": 1.2,
+                "discrepancy_reason": "defect",
+                "defect_responsibility": "supplier_side",
+                "remarks": "1 short",
+                "manual_tax_amount": 1200
+              },
+              {
+                "purchase_order_line_id": 2,
+                "product_id": 2,
+                "uom_id": 1,
+                "ordered_quantity": 5,
+                "received_quantity": 5,
+                "good_quantity": 5,
+                "unit_price": 3000,
+                "line_weight": 0.8,
+                "discrepancy_reason": "none",
+                "remarks": null,
+                "manual_tax_amount": 800
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Sat, 30 May 2026 06:30:40 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Goods receive note is created successfully"
+            },
+            "data": {
+              "grn_no": "INW-GRN-26-5-30-0001",
+              "purchase_order_id": 1,
+              "supplier_id": 1,
+              "branch_id": 1,
+              "inventory_id": 1,
+              "currency_id": 1,
+              "grn_date": "2026-05-30",
+              "fee_allocation_method": "by_line_value",
+              "tax_allocation_method": "by_products",
+              "remarks": "GRN create test",
+              "subtotal_amount": 400000,
+              "discount_amount": 0,
+              "cargo_tax_amount": 2000,
+              "charge_total_amount": 2000,
+              "total_amount": 404000,
+              "status": "pending",
+              "created_by": 1,
+              "approved_by": null,
+              "approved_at": null,
+              "updated_at": "2026-05-30T06:30:40.000000Z",
+              "created_at": "2026-05-30T06:30:40.000000Z",
+              "id": 2
+            }
+          }
