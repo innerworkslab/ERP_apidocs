@@ -1,0 +1,297 @@
+info:
+  name: findbyid
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/purchase-returns/:id"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/purchase-returns/:id"
+      method: GET
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Wed, 03 Jun 2026 04:30:25 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Purchase return"
+            },
+            "data": {
+              "id": 1,
+              "return_no": "INW-PR-26-6-3-0001",
+              "goods_receive_note_id": 1,
+              "purchase_order_id": 1,
+              "supplier_id": 1,
+              "branch_id": 1,
+              "inventory_id": 1,
+              "currency_id": 1,
+              "exchange_goods_receive_note_id": null,
+              "return_date": "2026-06-03",
+              "return_type": "fully_returned",
+              "subtotal_amount": "50583.33",
+              "tax_amount": "2500.00",
+              "total_amount": "53083.33",
+              "remarks": "Updated PR from approved GRN",
+              "status": "pending",
+              "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "superadmin@example.com",
+                "email_verified_at": null,
+                "phone_number": "09123456789",
+                "nrc_code": 13,
+                "township_code": 2215,
+                "nrc_type": "N",
+                "id_number": "000000001",
+                "role_id": 1,
+                "department_id": null,
+                "status": "active",
+                "created_at": "2026-06-03 04:21:26",
+                "updated_at": "2026-06-03 04:21:26",
+                "deleted_at": null
+              },
+              "approved_by": null,
+              "approved_at": null,
+              "created_at": "2026-06-03T04:27:29.000000Z",
+              "updated_at": "2026-06-03T04:30:02.000000Z",
+              "goods_receive_note": {
+                "id": 1,
+                "grn_no": "INW-GRN-26-6-3-0001",
+                "purchase_order_id": 1,
+                "supplier_id": 1,
+                "branch_id": 1,
+                "inventory_id": 1,
+                "currency_id": 1,
+                "grn_date": "2026-05-30",
+                "fee_allocation_method": "by_line_value",
+                "tax_allocation_method": "by_products",
+                "remarks": "GRN create test",
+                "subtotal_amount": "400000.00",
+                "discount_amount": "0.00",
+                "cargo_tax_amount": "2000.00",
+                "charge_total_amount": "2000.00",
+                "total_amount": "404000.00",
+                "status": "approved",
+                "created_by": 1,
+                "approved_by": 1,
+                "approved_at": "2026-06-03 04:27:03",
+                "created_at": "2026-06-03T04:26:59.000000Z",
+                "updated_at": "2026-06-03T04:27:03.000000Z"
+              },
+              "purchase_order": {
+                "id": 1,
+                "po_number": "INW-PO-26-6-3-0001",
+                "po_date": "2026-05-20",
+                "supplier_id": 1,
+                "branch_id": 1,
+                "inventory_id": 1,
+                "currency_id": 1,
+                "subtotal_amount": "500000.00",
+                "discount_amount": "10000.00",
+                "tax_amount": "25000.00",
+                "total_amount": "515000.00",
+                "paid_amount": "0.00",
+                "status": "pending",
+                "payment_status": "unpaid",
+                "delivery_status": "partially_delivered",
+                "remarks": "Urgent order",
+                "created_by": 1,
+                "created_at": "2026-06-03T04:26:56.000000Z",
+                "updated_at": "2026-06-03T04:27:03.000000Z"
+              },
+              "supplier": {
+                "id": 1,
+                "code": "SUP-0001",
+                "name": "Supplier One",
+                "company_name": "Supplier Co.,Ltd",
+                "phone_number": "09987654321",
+                "state_id": 1,
+                "city_id": 10,
+                "address": "No.23, Street",
+                "bank_account_id": 1,
+                "credit_limit": "300000.00",
+                "opening": "0.00",
+                "supplier_type_id": 1,
+                "birthday": "1992-05-11T00:00:00.000000Z",
+                "status": "Active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-06-03T04:24:39.000000Z",
+                "updated_at": "2026-06-03T04:24:39.000000Z"
+              },
+              "branch": {
+                "id": 1,
+                "prefix": "YGN",
+                "name": "Yangon Main Branch",
+                "address": "No.123, Pyay Road, Yangon",
+                "latitude": "16.8409000",
+                "longitude": "96.1735000",
+                "city_id": 1,
+                "state_id": 1,
+                "mobile_phones": [
+                  "09987654321",
+                  "09123456789"
+                ],
+                "email": "ygn.branch@company.com",
+                "website": "https://company.com",
+                "facebook": "https://facebook.com/company",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-06-03 04:24:35",
+                "updated_at": "2026-06-03 04:24:35",
+                "deleted_at": null
+              },
+              "inventory": {
+                "id": 1,
+                "name": "Cold Warehouse",
+                "created_at": "2026-06-03T04:26:38.000000Z",
+                "updated_at": "2026-06-03T04:26:38.000000Z"
+              },
+              "currency": {
+                "id": 1,
+                "name": "US Dollar",
+                "code": "USD",
+                "symbol": "$",
+                "exchange_rate": "0.0005",
+                "is_base_currency": false,
+                "last_exchange_rate_update": "2026-06-03T00:00:00.000000Z",
+                "created_at": "2026-06-03T04:21:27.000000Z",
+                "updated_at": "2026-06-03T04:21:27.000000Z"
+              },
+              "exchange_goods_receive_note": null,
+              "lines": [
+                {
+                  "id": 3,
+                  "purchase_return_id": 1,
+                  "goods_receive_note_line_id": 1,
+                  "purchase_order_line_id": 1,
+                  "product_id": 1,
+                  "uom_id": 1,
+                  "tax_id": 1,
+                  "grn_good_quantity": "3.00",
+                  "already_returned_quantity": "0.00",
+                  "returnable_quantity": "3.00",
+                  "return_quantity": "1.00",
+                  "unit_price": "50000.00",
+                  "final_unit_cost": "50583.3333",
+                  "tax_amount": "2500.00",
+                  "line_total": "53083.33",
+                  "reason": "damaged",
+                  "remarks": "Keep this line",
+                  "created_at": "2026-06-03T04:30:02.000000Z",
+                  "updated_at": "2026-06-03T04:30:02.000000Z",
+                  "product": {
+                    "id": 1,
+                    "name": "Coffee Mix",
+                    "sku": "PRD-000001",
+                    "image": "product_6a1facb4640721.68492400.png",
+                    "image_path": "product/images/product_6a1facb4640721.68492400.png",
+                    "image_url": "http://localhost/storage/product/images/product_6a1facb4640721.68492400.png",
+                    "category_id": 1,
+                    "brand_id": 1,
+                    "alert_quantity": "10.00",
+                    "stock_uom_id": 1,
+                    "purchase_price": "2000.00",
+                    "purchase_currency_id": 1,
+                    "purchase_tax_id": 1,
+                    "purchase_uom_id": 1,
+                    "sale_price": "2500.00",
+                    "sale_currency_id": 1,
+                    "sale_tax_id": 1,
+                    "sale_uom_id": 1,
+                    "origin_country_id": 1,
+                    "created_by": 1,
+                    "updated_by": null,
+                    "status": "active",
+                    "created_at": "2026-06-03T04:25:25.000000Z",
+                    "updated_at": "2026-06-03T04:25:25.000000Z"
+                  },
+                  "uom": {
+                    "id": 1,
+                    "name": "Kilogram",
+                    "code": "Kg",
+                    "status": "inactive",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "deleted_at": null,
+                    "created_at": "2026-06-03 04:25:02",
+                    "updated_at": "2026-06-03 04:25:02"
+                  },
+                  "tax": {
+                    "id": 1,
+                    "category": "Commercial Tax",
+                    "code": "TAX-00001",
+                    "type": "sale",
+                    "amount": "5.00",
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "created_at": "2026-06-03T04:24:31.000000Z",
+                    "updated_at": "2026-06-03T04:24:31.000000Z"
+                  },
+                  "goods_receive_note_line": {
+                    "id": 1,
+                    "goods_receive_note_id": 1,
+                    "purchase_order_line_id": 1,
+                    "product_id": 1,
+                    "uom_id": 1,
+                    "ordered_quantity": "5.00",
+                    "previously_received_quantity": "0.00",
+                    "remaining_quantity": "2.00",
+                    "received_quantity": "3.00",
+                    "good_quantity": "3.00",
+                    "short_quantity": "0.00",
+                    "discrepancy_reason": "none",
+                    "defect_responsibility": "supplier_side",
+                    "unit_price": "50000.00",
+                    "line_weight": "1.2000",
+                    "allocated_charge_amount": "750.00",
+                    "allocated_tax_amount": "1200.00",
+                    "final_unit_cost": "50583.3333",
+                    "line_total": "151750.00",
+                    "remarks": "1 short",
+                    "created_at": "2026-06-03T04:26:59.000000Z",
+                    "updated_at": "2026-06-03T04:26:59.000000Z"
+                  }
+                }
+              ]
+            }
+          }

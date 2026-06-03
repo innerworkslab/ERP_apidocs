@@ -1,0 +1,88 @@
+info:
+  name: list
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/purchase-returns"
+  params:
+    - name: goods_receive_note_id
+      value: ""
+      type: query
+      disabled: true
+    - name: status
+      value: pending
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/purchase-returns"
+      method: GET
+      params:
+        - name: goods_receive_note_id
+          value: ""
+          type: query
+          disabled: true
+        - name: status
+          value: pending
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Wed, 03 Jun 2026 04:28:22 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Purchase return lists"
+            },
+            "data": [
+              {
+                "id": 1,
+                "return_no": "INW-PR-26-6-3-0001",
+                "return_date": "2026-06-03",
+                "grn_no": "INW-GRN-26-6-3-0001",
+                "po_no": "INW-PO-26-6-3-0001",
+                "supplier": "Supplier One",
+                "branch": "Yangon Main Branch",
+                "inventory": "Cold Warehouse",
+                "currency": "USD",
+                "return_type": "exchange",
+                "total_amount": "158983.33",
+                "status": "pending"
+              }
+            ],
+            "meta": {
+              "total": 1,
+              "per_page": 20,
+              "current_page": 1,
+              "total_pages": 1
+            }
+          }

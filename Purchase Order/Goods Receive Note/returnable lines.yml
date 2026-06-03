@@ -1,0 +1,105 @@
+info:
+  name: returnable lines
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/goods-receive-notes/:id/returnable-lines"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    description: This route is used by the frontend to retrieve and pre-fill data when creating a Purchase Return from a GRN.
+    request:
+      url: "{{baseUrl}}/v1/goods-receive-notes/:id/returnable-lines"
+      method: GET
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.12
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Wed, 03 Jun 2026 04:33:47 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Returnable GRN lines"
+            },
+            "data": {
+              "goods_receive_note_id": 1,
+              "grn_no": "INW-GRN-26-6-3-0001",
+              "purchase_order_id": 1,
+              "purchase_order_no": "INW-PO-26-6-3-0001",
+              "supplier_id": 1,
+              "supplier_name": "Supplier One",
+              "branch_id": 1,
+              "branch_name": "Yangon Main Branch",
+              "inventory_id": 1,
+              "inventory_name": "Cold Warehouse",
+              "currency_id": 1,
+              "currency_code": "USD",
+              "lines": [
+                {
+                  "goods_receive_note_line_id": 1,
+                  "purchase_order_line_id": 1,
+                  "product_id": 1,
+                  "product_name": "Coffee Mix",
+                  "sku": "PRD-000001",
+                  "uom_id": 1,
+                  "uom_name": "Kilogram",
+                  "unit_price": 50000,
+                  "final_unit_cost": 50583.3333,
+                  "tax_id": 1,
+                  "tax_amount": 7500,
+                  "grn_good_quantity": 3,
+                  "already_returned_quantity": 1,
+                  "returnable_quantity": 2
+                },
+                {
+                  "goods_receive_note_line_id": 2,
+                  "purchase_order_line_id": 2,
+                  "product_id": 2,
+                  "product_name": "Coffee Genius",
+                  "sku": "PRD-000002",
+                  "uom_id": 1,
+                  "uom_name": "Kilogram",
+                  "unit_price": 50000,
+                  "final_unit_cost": 50450,
+                  "tax_id": 1,
+                  "tax_amount": 12500,
+                  "grn_good_quantity": 5,
+                  "already_returned_quantity": 0,
+                  "returnable_quantity": 5
+                }
+              ]
+            }
+          }
