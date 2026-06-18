@@ -13,8 +13,8 @@ http:
     type: json
     data: |-
       {
-        "name": "Kilogram",
-        "code": "Kg",
+        "name": "Gram",
+        "code": "G",
         "status": "inactive" // or inactive
       }
   auth: inherit

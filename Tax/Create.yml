@@ -10,7 +10,7 @@ http:
     type: json
     data: |-
       {
-      "category": "Commercial Tax",
+      "category": "GOV Tax",
       "type": "sale", //purchase 
       "amount": 5.0,
       "status": "active"

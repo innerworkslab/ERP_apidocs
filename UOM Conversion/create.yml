@@ -13,14 +13,13 @@ http:
     type: json
     data: |-
       {
+        "conversions_name": "Kg to Gram",
         "base_unit_id": 1,
         "conversion_unit_id": 2,
-        "conversion_rate": 12,
-        "status": "inactive" // or inactive
+        "conversion_rate": 1000,
+        "status": "active" // inactive
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true
@@ -40,10 +39,11 @@ examples:
         type: json
         data: |-
           {
+            "conversions_name": "Kg to Gram",
             "base_unit_id": 1,
             "conversion_unit_id": 2,
-            "conversion_rate": 12,
-            "status": "inactive" // or inactive
+            "conversion_rate": 1000,
+            "status": "active" // inactive
           }
     response:
       status: 200
@@ -54,15 +54,15 @@ examples:
         - name: connection
           value: close
         - name: x-powered-by
-          value: PHP/8.2.30
+          value: PHP/8.2.12
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 23 Mar 2026 16:03:58 GMT
+          value: Thu, 18 Jun 2026 03:21:29 GMT
         - name: content-type
           value: application/json
-        - name: vary
-          value: Origin
+        - name: access-control-allow-origin
+          value: ""
       body:
         type: json
         data: |-
@@ -72,13 +72,14 @@ examples:
               "message": "UOM Conversion is created successfully"
             },
             "data": {
+              "conversions_name": "Kg to Gram",
               "base_unit_id": 1,
               "conversion_unit_id": 2,
-              "conversion_rate": 12,
-              "status": "inactive",
+              "conversion_rate": 1000,
+              "status": "active",
               "created_by": 1,
-              "updated_at": "2026-03-23 16:03:58",
-              "created_at": "2026-03-23 16:03:58",
+              "updated_at": "2026-06-18 03:21:29",
+              "created_at": "2026-06-18 03:21:29",
               "id": 1
             }
           }
