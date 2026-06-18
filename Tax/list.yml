@@ -6,6 +6,27 @@ info:
 http:
   method: GET
   url: "{{baseUrl}}/v1/taxes"
+  params:
+    - name: type
+      value: "sale / purchase "
+      type: query
+      disabled: true
+    - name: "status "
+      value: active / inactive
+      type: query
+      disabled: true
+    - name: search
+      value: Commercial
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
   auth: inherit
 
 settings:
@@ -19,6 +40,27 @@ examples:
     request:
       url: "{{baseUrl}}/v1/taxes"
       method: GET
+      params:
+        - name: type
+          value: "sale / purchase "
+          type: query
+          disabled: true
+        - name: "status "
+          value: active / inactive
+          type: query
+          disabled: true
+        - name: search
+          value: Commercial
+          type: query
+          disabled: true
+        - name: page
+          value: "1"
+          type: query
+          disabled: true
+        - name: per_page
+          value: "10"
+          type: query
+          disabled: true
     response:
       status: 200
       statusText: OK
@@ -32,7 +74,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 30 Mar 2026 09:53:58 GMT
+          value: Thu, 18 Jun 2026 03:01:05 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -48,10 +90,10 @@ examples:
             "data": [
               {
                 "id": 1,
-                "category": "Input VAT",
-                "code": "TAX-00025",
-                "type": "purchase",
-                "amount": "10.00",
+                "category": "Commercial Tax",
+                "code": "TAX-00001",
+                "type": "sale",
+                "amount": "5.00",
                 "status": "active",
                 "created_by": {
                   "id": 1,
@@ -59,28 +101,20 @@ examples:
                   "email": "superadmin@example.com",
                   "email_verified_at": null,
                   "phone_number": "09123456789",
+                  "nrc_code": 13,
+                  "township_code": 2215,
+                  "nrc_type": "N",
+                  "id_number": "000000001",
                   "role_id": 1,
-                  "branch_id": null,
                   "department_id": null,
                   "status": "active",
-                  "created_at": "2026-03-30 09:45:50",
-                  "updated_at": "2026-03-30 09:45:50"
+                  "created_at": "2026-06-03 04:39:39",
+                  "updated_at": "2026-06-03 04:39:39",
+                  "deleted_at": null
                 },
-                "updated_by": {
-                  "id": 1,
-                  "name": "Super Admin",
-                  "email": "superadmin@example.com",
-                  "email_verified_at": null,
-                  "phone_number": "09123456789",
-                  "role_id": 1,
-                  "branch_id": null,
-                  "department_id": null,
-                  "status": "active",
-                  "created_at": "2026-03-30 09:45:50",
-                  "updated_at": "2026-03-30 09:45:50"
-                },
-                "created_at": "2026-03-30T09:52:51.000000Z",
-                "updated_at": "2026-03-30T09:53:52.000000Z"
+                "updated_by": null,
+                "created_at": "2026-06-18T02:59:07.000000Z",
+                "updated_at": "2026-06-18T02:59:07.000000Z"
               }
             ],
             "meta": {

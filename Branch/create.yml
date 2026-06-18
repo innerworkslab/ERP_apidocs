@@ -13,8 +13,8 @@ http:
     type: json
     data: |
       {
-        "prefix": "Mdy",
-        "name": "Mandalay Main Branch",
+        "prefix": "YGN",
+        "name": "Yangon Main Branch",
         "address": "No.123, Pyay Road, Yangon",
         "latitude": "16.8409",
         "longitude": "96.1735",

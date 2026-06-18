@@ -16,11 +16,9 @@ http:
         "name": "Color",
         "value_data_type": "String",
         "status": "inactive", // or inactive
-        "product_category_ids": [2]
+        "product_category_ids": [1]
       }
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true
