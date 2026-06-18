@@ -27,9 +27,11 @@ http:
       value: "2"
       type: query
       disabled: true
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+    - name: conversions_name
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
 
 settings:
   encodeUrl: true
@@ -56,10 +58,14 @@ examples:
           value: active
           type: query
         - name: base_unit_id
-          value: ""
+          value: "1"
           type: query
           disabled: true
         - name: conversion_unit_id
+          value: "2"
+          type: query
+          disabled: true
+        - name: conversions_name
           value: ""
           type: query
           disabled: true
@@ -72,15 +78,15 @@ examples:
         - name: connection
           value: close
         - name: x-powered-by
-          value: PHP/8.2.30
+          value: PHP/8.2.12
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Mon, 23 Mar 2026 16:10:15 GMT
+          value: Thu, 18 Jun 2026 03:23:28 GMT
         - name: content-type
           value: application/json
-        - name: vary
-          value: Origin
+        - name: access-control-allow-origin
+          value: ""
       body:
         type: json
         data: |-
@@ -91,46 +97,11 @@ examples:
             },
             "data": [
               {
-                "id": 5,
-                "base_unit_id": 2,
-                "conversion_unit_id": 1,
-                "conversion_rate": "12.000000",
-                "status": "active",
-                "created_by": {
-                  "id": 1,
-                  "name": "Super Admin",
-                  "email": "superadmin@example.com",
-                  "email_verified_at": null,
-                  "phone_number": "09123456789",
-                  "role_id": 1,
-                  "branch_id": null,
-                  "department_id": null,
-                  "status": "active",
-                  "created_at": "2026-03-23 16:01:12",
-                  "updated_at": "2026-03-23 16:01:12"
-                },
-                "updated_by": {
-                  "id": 1,
-                  "name": "Super Admin",
-                  "email": "superadmin@example.com",
-                  "email_verified_at": null,
-                  "phone_number": "09123456789",
-                  "role_id": 1,
-                  "branch_id": null,
-                  "department_id": null,
-                  "status": "active",
-                  "created_at": "2026-03-23 16:01:12",
-                  "updated_at": "2026-03-23 16:01:12"
-                },
-                "created_at": "2026-03-23 16:06:50",
-                "updated_at": "2026-03-23 16:10:10",
-                "deleted_at": null
-              },
-              {
                 "id": 1,
+                "conversions_name": "Kg to Gram Update",
                 "base_unit_id": 1,
                 "conversion_unit_id": 2,
-                "conversion_rate": "12.000000",
+                "conversion_rate": "1100.000000",
                 "status": "active",
                 "created_by": {
                   "id": 1,
@@ -138,12 +109,16 @@ examples:
                   "email": "superadmin@example.com",
                   "email_verified_at": null,
                   "phone_number": "09123456789",
+                  "nrc_code": 13,
+                  "township_code": 2215,
+                  "nrc_type": "N",
+                  "id_number": "000000001",
                   "role_id": 1,
-                  "branch_id": null,
                   "department_id": null,
                   "status": "active",
-                  "created_at": "2026-03-23 16:01:12",
-                  "updated_at": "2026-03-23 16:01:12"
+                  "created_at": "2026-06-18 03:18:22",
+                  "updated_at": "2026-06-18 03:18:22",
+                  "deleted_at": null
                 },
                 "updated_by": {
                   "id": 1,
@@ -151,20 +126,46 @@ examples:
                   "email": "superadmin@example.com",
                   "email_verified_at": null,
                   "phone_number": "09123456789",
+                  "nrc_code": 13,
+                  "township_code": 2215,
+                  "nrc_type": "N",
+                  "id_number": "000000001",
                   "role_id": 1,
-                  "branch_id": null,
                   "department_id": null,
                   "status": "active",
-                  "created_at": "2026-03-23 16:01:12",
-                  "updated_at": "2026-03-23 16:01:12"
+                  "created_at": "2026-06-18 03:18:22",
+                  "updated_at": "2026-06-18 03:18:22",
+                  "deleted_at": null
                 },
-                "created_at": "2026-03-23 16:03:58",
-                "updated_at": "2026-03-23 16:10:07",
-                "deleted_at": null
+                "created_at": "2026-06-18 03:21:29",
+                "updated_at": "2026-06-18 03:23:17",
+                "deleted_at": null,
+                "base_unit": {
+                  "id": 1,
+                  "name": "Kilogram",
+                  "code": "Kg",
+                  "status": "inactive",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "deleted_at": null,
+                  "created_at": "2026-06-18 03:20:06",
+                  "updated_at": "2026-06-18 03:20:06"
+                },
+                "conversion_unit": {
+                  "id": 2,
+                  "name": "Gram",
+                  "code": "G",
+                  "status": "inactive",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "deleted_at": null,
+                  "created_at": "2026-06-18 03:20:18",
+                  "updated_at": "2026-06-18 03:20:18"
+                }
               }
             ],
             "meta": {
-              "total": 2,
+              "total": 1,
               "per_page": 10,
               "current_page": 1,
               "total_pages": 1
