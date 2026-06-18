@@ -55,6 +55,14 @@ http:
       value: "15"
       type: query
       disabled: true
+    - name: date_from
+      value: ""
+      type: query
+      disabled: true
+    - name: date_to
+      value: ""
+      type: query
+      disabled: true
   auth: inherit
 
 settings:
@@ -117,6 +125,14 @@ examples:
           value: "15"
           type: query
           disabled: true
+        - name: date_from
+          value: ""
+          type: query
+          disabled: true
+        - name: date_to
+          value: ""
+          type: query
+          disabled: true
     response:
       status: 200
       statusText: OK
@@ -130,7 +146,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Fri, 10 Apr 2026 05:31:08 GMT
+          value: Thu, 18 Jun 2026 03:41:46 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -145,115 +161,86 @@ examples:
             },
             "data": [
               {
-                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
+                "product_image": "http://localhost/storage/product/images/product_6a33688ceb5cc3.87260569.png",
                 "product_name": "Coffee Arabica",
-                "sku": "COF-0001",
+                "sku": "PRD-000001",
                 "barcode": null,
                 "category_name": "Electronics",
                 "brand_name": "Nike",
-                "branch_names": "Yangon Branch",
+                "branch_names": "Yangon Main Branch",
                 "inventory_name": "Cold Warehouse",
                 "stock_uom": "Kilogram",
-                "on_hand_quantity": "40.00",
+                "opening_quantity": "0.00",
+                "movement_quantity": "50.00",
+                "closing_quantity": "50.00",
+                "running_quantity": "50.00",
+                "opening_stock_value": "0.00",
+                "movement_stock_value": "1000.00",
+                "closing_stock_value": "1000.00",
+                "on_hand_quantity": "50.00",
                 "reserved_quantity": 0,
-                "available_quantity": "40.00",
+                "available_quantity": "50.00",
                 "reorder_level": "10.00",
-                "unit_cost": "-475.0000",
-                "total_stock_value": "-19000.00",
-                "base_currency_value": "-9.5000",
-                "lot_no": "LOT-COF-0001_01",
+                "unit_cost": "20.0000",
+                "total_stock_value": "1000.00",
+                "base_currency_value": "0.5000",
+                "lot_no": "LOT-PRD-000001_01",
                 "expired_date": "2027-04-01",
                 "serial_no": "SN-0001",
-                "last_movement_date": "2026-04-10",
+                "last_movement_date": "2026-06-18",
                 "status": "active",
                 "expiry_remark": null,
                 "collection_names": null
               },
               {
-                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
+                "product_image": "http://localhost/storage/product/images/product_6a33688ceb5cc3.87260569.png",
                 "product_name": "Coffee Arabica",
-                "sku": "COF-0001",
+                "sku": "PRD-000001",
                 "barcode": null,
                 "category_name": "Electronics",
                 "brand_name": "Nike",
-                "branch_names": "Yangon Branch",
+                "branch_names": "Yangon Main Branch",
                 "inventory_name": "Cold Warehouse",
                 "stock_uom": "Kilogram",
-                "on_hand_quantity": "10.00",
+                "opening_quantity": "0.00",
+                "movement_quantity": "20.00",
+                "closing_quantity": "20.00",
+                "running_quantity": "20.00",
+                "opening_stock_value": "0.00",
+                "movement_stock_value": "400.00",
+                "closing_stock_value": "400.00",
+                "on_hand_quantity": "20.00",
                 "reserved_quantity": 0,
-                "available_quantity": "10.00",
+                "available_quantity": "20.00",
                 "reorder_level": "10.00",
-                "unit_cost": "-1960.0000",
-                "total_stock_value": "-19600.00",
-                "base_currency_value": "-9.8000",
-                "lot_no": "LOT-COF-0001_02",
+                "unit_cost": "20.0000",
+                "total_stock_value": "400.00",
+                "base_currency_value": "0.2000",
+                "lot_no": "LOT-PRD-000001_02",
                 "expired_date": "2027-05-01",
                 "serial_no": "SN-0002",
-                "last_movement_date": "2026-04-10",
+                "last_movement_date": "2026-06-18",
                 "status": "active",
                 "expiry_remark": null,
                 "collection_names": null
               },
               {
-                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
-                "product_name": "Coffee Arabica",
-                "sku": "COF-0001",
+                "product_image": "http://localhost/storage/product/images/product_6a3368a211adb2.32141612.png",
+                "product_name": "Coffee Mix",
+                "sku": "PRD-000002",
                 "barcode": null,
                 "category_name": "Electronics",
                 "brand_name": "Nike",
-                "branch_names": "Yangon Branch",
-                "inventory_name": "Hot Warehouse",
-                "stock_uom": "Kilogram",
-                "on_hand_quantity": "10.00",
-                "reserved_quantity": 0,
-                "available_quantity": "10.00",
-                "reorder_level": "10.00",
-                "unit_cost": "2000.0000",
-                "total_stock_value": "20000.00",
-                "base_currency_value": "10.0000",
-                "lot_no": "LOT-COF-0001_01",
-                "expired_date": "2027-04-01",
-                "serial_no": "SN-0001",
-                "last_movement_date": "2026-04-04",
-                "status": "active",
-                "expiry_remark": null,
-                "collection_names": null
-              },
-              {
-                "product_image": "http://localhost/storage/product/images/product_69d88318b04782.84626750.png",
-                "product_name": "Coffee Arabica",
-                "sku": "COF-0001",
-                "barcode": null,
-                "category_name": "Electronics",
-                "brand_name": "Nike",
-                "branch_names": "Yangon Branch",
-                "inventory_name": "Hot Warehouse",
-                "stock_uom": "Kilogram",
-                "on_hand_quantity": "10.00",
-                "reserved_quantity": 0,
-                "available_quantity": "10.00",
-                "reorder_level": "10.00",
-                "unit_cost": "2000.0000",
-                "total_stock_value": "20000.00",
-                "base_currency_value": "10.0000",
-                "lot_no": "LOT-COF-0001_02",
-                "expired_date": "2027-05-01",
-                "serial_no": "SN-0002",
-                "last_movement_date": "2026-04-04",
-                "status": "active",
-                "expiry_remark": null,
-                "collection_names": null
-              },
-              {
-                "product_image": "http://localhost/storage/product/images/product_69d8832bdbe6b7.28505352.png",
-                "product_name": "Royal Tea Mix",
-                "sku": "RTM-0001",
-                "barcode": null,
-                "category_name": "Electronics",
-                "brand_name": "Nike",
-                "branch_names": "Yangon Branch",
+                "branch_names": "Yangon Main Branch",
                 "inventory_name": "Cold Warehouse",
                 "stock_uom": "Kilogram",
+                "opening_quantity": "0.00",
+                "movement_quantity": "30.00",
+                "closing_quantity": "30.00",
+                "running_quantity": "30.00",
+                "opening_stock_value": "0.00",
+                "movement_stock_value": "1500.00",
+                "closing_stock_value": "1500.00",
                 "on_hand_quantity": "30.00",
                 "reserved_quantity": 0,
                 "available_quantity": "30.00",
@@ -261,19 +248,21 @@ examples:
                 "unit_cost": "50.0000",
                 "total_stock_value": "1500.00",
                 "base_currency_value": "0.7500",
-                "lot_no": "LOT-RTM-0001_01",
+                "lot_no": "LOT-PRD-000002_01",
                 "expired_date": null,
                 "serial_no": null,
-                "last_movement_date": "2026-04-10",
+                "last_movement_date": "2026-06-18",
                 "status": "active",
                 "expiry_remark": null,
                 "collection_names": null
               }
             ],
             "meta": {
-              "total": 5,
+              "total": 3,
               "per_page": 20,
               "current_page": 1,
-              "total_pages": 1
+              "total_pages": 1,
+              "date_from": "2026-06-18",
+              "date_to": "2026-06-18"
             }
           }
