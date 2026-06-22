@@ -11,7 +11,7 @@ http:
       value: multipart/form-data
   params:
     - name: id
-      value: "3"
+      value: "2"
       type: path
   body:
     type: multipart-form
@@ -22,21 +22,15 @@ http:
       - name: source_account_id
         type: text
         value: "49"
-      - name: destination_account_id
-        type: text
-        value: "1"
-      - name: transaction_type
-        type: text
-        value: in
       - name: category
         type: text
-        value: others
+        value: expense
       - name: currency_id
         type: text
         value: "1"
       - name: amount
         type: text
-        value: "5"
+        value: "25000"
       - name: attachments[0]
         type: text
         value: ""
@@ -51,10 +45,10 @@ http:
         disabled: true
       - name: remark
         type: text
-        value: update test
+        value: Office supplies
       - name: description
         type: text
-        value: ""
+        value: Bought printer ink"
   auth: inherit
 
 settings:
@@ -73,7 +67,7 @@ examples:
           value: multipart/form-data
       params:
         - name: id
-          value: "3"
+          value: "2"
           type: path
       body:
         type: multipart-form
@@ -84,21 +78,15 @@ examples:
           - name: source_account_id
             type: text
             value: "49"
-          - name: destination_account_id
-            type: text
-            value: "1"
-          - name: transaction_type
-            type: text
-            value: in
           - name: category
             type: text
-            value: others
+            value: expense
           - name: currency_id
             type: text
             value: "1"
           - name: amount
             type: text
-            value: "5"
+            value: "25000"
           - name: attachments[0]
             type: text
             value: ""
@@ -113,10 +101,10 @@ examples:
             disabled: true
           - name: remark
             type: text
-            value: update test
+            value: Office supplies
           - name: description
             type: text
-            value: ""
+            value: Bought printer ink"
     response:
       status: 200
       statusText: OK
@@ -130,7 +118,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 27 May 2026 09:38:42 GMT
+          value: Sun, 21 Jun 2026 03:50:01 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -144,24 +132,24 @@ examples:
               "message": "Cashbook Transaction is updated successfully"
             },
             "data": {
-              "id": 3,
+              "id": 2,
               "cashbook_id": "1",
               "source_account_id": "49",
-              "destination_account_id": "1",
-              "transaction_type": "in",
-              "category": "others",
-              "transaction_datetime": "2026-05-27T09:38:42.000000Z",
+              "destination_account_id": 113,
+              "transaction_type": "out",
+              "category": "expense",
+              "transaction_datetime": "2026-06-21T03:50:01.000000Z",
               "currency_id": "1",
-              "amount": "5.00000000",
-              "base_currency_amount": "0.00250000",
-              "reference_no": "CBT-20260527-000003",
-              "remark": "update test",
-              "description": null,
+              "amount": "25000.00000000",
+              "base_currency_amount": "12.50000000",
+              "reference_no": "CBTS-20260621-000002",
+              "remark": "Office supplies",
+              "description": "Bought printer ink\"",
               "status": "pending",
               "created_by": 1,
               "updated_by": 1,
-              "created_at": "2026-05-27T09:21:46.000000Z",
-              "updated_at": "2026-05-27T09:38:42.000000Z",
+              "created_at": "2026-06-21T03:49:13.000000Z",
+              "updated_at": "2026-06-21T03:50:01.000000Z",
               "deleted_at": null
             }
           }
