@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}/v1/goods-receive-notes/:id/approve"
   params:
     - name: id
-      value: "1"
+      value: "3"
       type: path
   body:
     type: json
