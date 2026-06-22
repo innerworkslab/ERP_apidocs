@@ -17,19 +17,13 @@ http:
         value: "1"
       - name: source_account_id
         type: text
-        value: "49"
-      - name: destination_account_id
-        type: text
-        value: "1"
-      - name: transaction_type
-        type: text
-        value: "in "
+        value: "23"
       - name: category
         type: text
-        value: others
+        value: expense
       - name: currency_id
-        type: text
-        value: "1"
+        type: file
+        value: []
       - name: attachments[0]
         type: text
         value: ""
@@ -40,13 +34,13 @@ http:
         disabled: true
       - name: amount
         type: text
-        value: "500000"
+        value: "20000"
       - name: remark
         type: text
-        value: Test
+        value: Office supplies
       - name: description
         type: text
-        value: Transaction test
+        value: Bought printer ink
   auth: inherit
 
 settings:
@@ -71,16 +65,10 @@ examples:
             value: "1"
           - name: source_account_id
             type: text
-            value: "49"
-          - name: destination_account_id
-            type: text
-            value: "1"
-          - name: transaction_type
-            type: text
-            value: "in "
+            value: "12"
           - name: category
             type: text
-            value: others
+            value: expense // income
           - name: currency_id
             type: text
             value: "1"
@@ -114,7 +102,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 27 May 2026 05:55:45 GMT
+          value: Sun, 21 Jun 2026 03:42:46 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -129,20 +117,20 @@ examples:
             },
             "data": {
               "cashbook_id": "1",
-              "source_account_id": "49",
-              "destination_account_id": "1",
+              "source_account_id": "12",
               "currency_id": "1",
-              "transaction_type": "in",
-              "category": "others",
+              "category": "income",
               "amount": "500000.00000000",
               "remark": "Test",
               "description": "Transaction test",
               "created_by": 1,
-              "reference_no": "CBT-20260527-000001",
+              "destination_account_id": 113,
+              "transaction_type": "in",
+              "reference_no": "CBTS-20260621-000001",
               "base_currency_amount": "250.00000000",
-              "transaction_datetime": "2026-05-27T05:55:45.000000Z",
-              "updated_at": "2026-05-27T05:55:45.000000Z",
-              "created_at": "2026-05-27T05:55:45.000000Z",
+              "transaction_datetime": "2026-06-21T03:42:46.000000Z",
+              "updated_at": "2026-06-21T03:42:46.000000Z",
+              "created_at": "2026-06-21T03:42:46.000000Z",
               "id": 1
             }
           }
