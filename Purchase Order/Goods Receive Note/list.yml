@@ -6,6 +6,31 @@ info:
 http:
   method: GET
   url: "{{baseUrl}}/v1/goods-receive-notes"
+  params:
+    - name: search
+      value: INW-GRN-26-6-22-0003
+      type: query
+      disabled: true
+    - name: status
+      value: pending,approved,rejected
+      type: query
+      disabled: true
+    - name: grn_date_from
+      value: ""
+      type: query
+      disabled: true
+    - name: grn_date_to
+      value: ""
+      type: query
+      disabled: true
+    - name: per_page
+      value: ""
+      type: query
+      disabled: true
+    - name: page
+      value: ""
+      type: query
+      disabled: true
   auth: inherit
 
 settings:
@@ -19,6 +44,31 @@ examples:
     request:
       url: "{{baseUrl}}/v1/goods-receive-notes"
       method: GET
+      params:
+        - name: search
+          value: INW-GRN-26-6-22-0003
+          type: query
+          disabled: true
+        - name: status
+          value: pending,approved,rejected
+          type: query
+          disabled: true
+        - name: grn_date_from
+          value: ""
+          type: query
+          disabled: true
+        - name: grn_date_to
+          value: ""
+          type: query
+          disabled: true
+        - name: per_page
+          value: ""
+          type: query
+          disabled: true
+        - name: page
+          value: ""
+          type: query
+          disabled: true
     response:
       status: 200
       statusText: OK
@@ -32,7 +82,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Sat, 30 May 2026 06:31:05 GMT
+          value: Mon, 22 Jun 2026 15:18:19 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -47,21 +97,47 @@ examples:
             },
             "data": [
               {
-                "id": 2,
-                "grn_no": "INW-GRN-26-5-30-0001",
+                "id": 3,
+                "grn_no": "INW-GRN-26-6-22-0003",
                 "grn_date": "2026-05-30",
                 "supplier": "Supplier Two",
-                "po_no": "INW-PO-26-5-30-0001",
-                "branch": "Mandalay Main Branch",
+                "po_no": "INW-PO-26-6-22-0003",
+                "branch": "Yangon Main Branch",
                 "warehouse_location": "Cold Warehouse",
-                "delivery_status": "not_delivered",
+                "delivery_status": "partially_delivered",
+                "total_amount": "304000.00",
+                "currency": "USD",
+                "status": "approved"
+              },
+              {
+                "id": 2,
+                "grn_no": "INW-GRN-26-6-22-0002",
+                "grn_date": "2026-05-30",
+                "supplier": "Supplier Two",
+                "po_no": "INW-PO-26-6-22-0002",
+                "branch": "Yangon Main Branch",
+                "warehouse_location": "Cold Warehouse",
+                "delivery_status": "partially_delivered",
                 "total_amount": "404000.00",
                 "currency": "USD",
-                "status": "pending"
+                "status": "approved"
+              },
+              {
+                "id": 1,
+                "grn_no": "INW-GRN-26-6-22-0001",
+                "grn_date": "2026-05-30",
+                "supplier": "Supplier Two",
+                "po_no": "INW-PO-26-6-22-0001",
+                "branch": "Yangon Main Branch",
+                "warehouse_location": "Cold Warehouse",
+                "delivery_status": "partially_delivered",
+                "total_amount": "404000.00",
+                "currency": "USD",
+                "status": "approved"
               }
             ],
             "meta": {
-              "total": 1,
+              "total": 3,
               "per_page": 20,
               "current_page": 1,
               "total_pages": 1

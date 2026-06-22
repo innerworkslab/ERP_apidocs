@@ -11,11 +11,9 @@ http:
       value: application/json
   params:
     - name: id
-      value: "2"
+      value: "1"
       type: path
-  auth:
-    type: bearer
-    token: "{{accessToken}}"
+  auth: inherit
 
 settings:
   encodeUrl: true
