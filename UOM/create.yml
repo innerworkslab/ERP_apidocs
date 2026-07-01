@@ -13,9 +13,9 @@ http:
     type: json
     data: |-
       {
-        "name": "Gram",
-        "code": "G",
-        "status": "inactive" // or inactive
+        "name": "Kilogram",
+        "code": "KG",
+        "status": "active" // or inactive
       }
   auth: inherit
 
