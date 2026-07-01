@@ -1,32 +1,15 @@
 info:
-  name: update
+  name: reject
   type: http
-  seq: 3
+  seq: 6
 
 http:
-  method: PUT
-  url: "{{baseUrl}}/v1/purchase-returns/:id"
+  method: PATCH
+  url: "{{baseUrl}}/v1/purchase-returns/:id/reject"
   params:
     - name: id
       value: "4"
       type: path
-  body:
-    type: json
-    data: |-
-      {
-        "goods_receive_note_id": 1,
-        "return_date": "2026-06-03",
-        "return_type": "fully_returned",
-        "remarks": "Updated PR from approved GRN",
-        "lines": [
-          {
-            "goods_receive_note_line_id": 1,
-            "return_quantity": 1,
-            "reason": "damaged",
-            "remarks": "Keep this line"
-          }
-        ]
-      }
   auth: inherit
 
 settings:
@@ -38,29 +21,12 @@ settings:
 examples:
   - name: example
     request:
-      url: "{{baseUrl}}/v1/purchase-returns/:id"
-      method: PUT
+      url: "{{baseUrl}}/v1/purchase-returns/:id/reject"
+      method: PATCH
       params:
         - name: id
           value: "4"
           type: path
-      body:
-        type: json
-        data: |-
-          {
-            "goods_receive_note_id": 1,
-            "return_date": "2026-06-03",
-            "return_type": "fully_returned",
-            "remarks": "Updated PR from approved GRN",
-            "lines": [
-              {
-                "goods_receive_note_line_id": 1,
-                "return_quantity": 1,
-                "reason": "damaged",
-                "remarks": "Keep this line"
-              }
-            ]
-          }
     response:
       status: 200
       statusText: OK
@@ -74,7 +40,7 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 01 Jul 2026 03:42:31 GMT
+          value: Wed, 01 Jul 2026 03:42:58 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -85,7 +51,7 @@ examples:
           {
             "response": {
               "status": "success",
-              "message": "Purchase return is updated successfully"
+              "message": "Purchase return rejected successfully"
             },
             "data": {
               "id": 4,
@@ -103,7 +69,7 @@ examples:
               "tax_amount": "2500.00",
               "total_amount": "52615.03",
               "remarks": "Updated PR from approved GRN",
-              "status": "pending",
+              "status": "rejected",
               "created_by": {
                 "id": 1,
                 "name": "Super Admin",
@@ -124,7 +90,7 @@ examples:
               "approved_by": null,
               "approved_at": null,
               "created_at": "2026-07-01T03:42:23.000000Z",
-              "updated_at": "2026-07-01T03:42:31.000000Z",
+              "updated_at": "2026-07-01T03:42:58.000000Z",
               "goods_receive_note": {
                 "id": 1,
                 "grn_no": "INW-GRN-26-7-1-0001",

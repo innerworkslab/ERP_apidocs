@@ -8,14 +8,14 @@ http:
   url: "{{baseUrl}}/v1/purchase-orders/:id/payment-status"
   params:
     - name: id
-      value: "3"
+      value: "1"
       type: path
   body:
     type: json
     data: |-
       {
-        "cashbook_id": 2,
-        "paid_amount": 10000
+        "cashbook_id": 1,
+        "paid_amount": 515000
       }
   auth: inherit
 

@@ -7,12 +7,32 @@ http:
   method: GET
   url: "{{baseUrl}}/v1/purchase-returns"
   params:
-    - name: goods_receive_note_id
-      value: ""
+    - name: search
+      value: return_no / grn no /
       type: query
       disabled: true
     - name: status
       value: pending
+      type: query
+      disabled: true
+    - name: return_date_from
+      value: ""
+      type: query
+      disabled: true
+    - name: return_date_to
+      value: ""
+      type: query
+      disabled: true
+    - name: return_type
+      value: ""
+      type: query
+      disabled: true
+    - name: per_page
+      value: ""
+      type: query
+      disabled: true
+    - name: page
+      value: ""
       type: query
       disabled: true
   auth: inherit
@@ -29,12 +49,32 @@ examples:
       url: "{{baseUrl}}/v1/purchase-returns"
       method: GET
       params:
-        - name: goods_receive_note_id
-          value: ""
+        - name: search
+          value: return_no / grn no /
           type: query
           disabled: true
         - name: status
           value: pending
+          type: query
+          disabled: true
+        - name: return_date_from
+          value: ""
+          type: query
+          disabled: true
+        - name: return_date_to
+          value: ""
+          type: query
+          disabled: true
+        - name: return_type
+          value: ""
+          type: query
+          disabled: true
+        - name: per_page
+          value: ""
+          type: query
+          disabled: true
+        - name: page
+          value: ""
           type: query
           disabled: true
     response:
@@ -46,11 +86,11 @@ examples:
         - name: connection
           value: close
         - name: x-powered-by
-          value: PHP/8.2.12
+          value: PHP/8.3.30
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Wed, 03 Jun 2026 04:28:22 GMT
+          value: Wed, 01 Jul 2026 03:41:39 GMT
         - name: content-type
           value: application/json
         - name: access-control-allow-origin
@@ -65,22 +105,53 @@ examples:
             },
             "data": [
               {
-                "id": 1,
-                "return_no": "INW-PR-26-6-3-0001",
-                "return_date": "2026-06-03",
-                "grn_no": "INW-GRN-26-6-3-0001",
-                "po_no": "INW-PO-26-6-3-0001",
-                "supplier": "Supplier One",
+                "id": 3,
+                "return_no": "INW-PR-26-7-1-0003",
+                "return_date": "2026-07-01",
+                "grn_no": "INW-GRN-26-7-1-0001",
+                "po_no": "INW-PO-26-7-1-0001",
+                "supplier": "Supplier Two",
                 "branch": "Yangon Main Branch",
                 "inventory": "Cold Warehouse",
                 "currency": "USD",
                 "return_type": "exchange",
-                "total_amount": "158983.33",
+                "exchange_type": "partial",
+                "total_amount": "157845.10",
                 "status": "pending"
+              },
+              {
+                "id": 2,
+                "return_no": "INW-PR-26-7-1-0002",
+                "return_date": "2026-07-01",
+                "grn_no": "INW-GRN-26-7-1-0001",
+                "po_no": "INW-PO-26-7-1-0001",
+                "supplier": "Supplier Two",
+                "branch": "Yangon Main Branch",
+                "inventory": "Cold Warehouse",
+                "currency": "USD",
+                "return_type": "exchange",
+                "exchange_type": "partial",
+                "total_amount": "157845.10",
+                "status": "approved"
+              },
+              {
+                "id": 1,
+                "return_no": "INW-PR-26-7-1-0001",
+                "return_date": "2026-07-01",
+                "grn_no": "INW-GRN-26-7-1-0001",
+                "po_no": "INW-PO-26-7-1-0001",
+                "supplier": "Supplier Two",
+                "branch": "Yangon Main Branch",
+                "inventory": "Cold Warehouse",
+                "currency": "USD",
+                "return_type": "fully_returned",
+                "exchange_type": null,
+                "total_amount": "789015.41",
+                "status": "approved"
               }
             ],
             "meta": {
-              "total": 1,
+              "total": 3,
               "per_page": 20,
               "current_page": 1,
               "total_pages": 1
