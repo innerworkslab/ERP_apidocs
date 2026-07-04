@@ -1,0 +1,71 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/delivery-providers"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "MGL",
+        "default_price": 15000
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/delivery-providers"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name": "MGL",
+            "default_price": 15000
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.3.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Sat, 04 Jul 2026 04:43:07 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Delivery Provider is created successfully"
+            },
+            "data": {
+              "name": "MGL",
+              "default_price": 15000,
+              "status": "active",
+              "created_by": 1,
+              "updated_at": "2026-07-04T04:43:07.000000Z",
+              "created_at": "2026-07-04T04:43:07.000000Z",
+              "id": 1
+            }
+          }
