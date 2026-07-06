@@ -1,0 +1,57 @@
+info:
+  name: pending
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/v1/sale-invoices/:id/pending"
+  params:
+    - name: id
+      value: "2"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/sale-invoices/:id/pending"
+      method: PATCH
+      params:
+        - name: id
+          value: "2"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.3.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 06 Jul 2026 04:34:21 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Sale invoice status updated successfully"
+            },
+            "data": []
+          }
