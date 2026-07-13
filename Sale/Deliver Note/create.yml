@@ -1,0 +1,364 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/deliver-notes"
+  body:
+    type: json
+    data: |-
+      {
+        "sale_invoice_id": 1,
+        "source_inventory_id": 1,
+        "delivery_date": "2026-07-13",
+        "delivery_provider_id": 1,
+        "receiver_name": "Mg Mg",
+        "receiver_phone": "09123456789",
+        "receiver_address": "Yangon",
+        "delivery_note": "Deliver before 5 PM",
+        "items": [
+          {
+            "sale_invoice_item_id": 1,
+            "product_id": 1,
+            "quantity": 5,
+            "remark": "Handle carefully"
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/v1/deliver-notes"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "sale_invoice_id": 1,
+            "source_inventory_id": 1,
+            "delivery_date": "2026-07-13",
+            "delivery_provider_id": 1,
+            "receiver_name": "Mg Mg",
+            "receiver_phone": "09123456789",
+            "receiver_address": "Yangon",
+            "delivery_note": "Deliver before 5 PM",
+            "items": [
+              {
+                "sale_invoice_item_id": 1,
+                "product_id": 1,
+                "quantity": 5,
+                "remark": "Handle carefully"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.3.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Mon, 13 Jul 2026 04:59:28 GMT
+        - name: content-type
+          value: application/json
+        - name: access-control-allow-origin
+          value: ""
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Deliver note is created successfully"
+            },
+            "data": {
+              "id": 1,
+              "deliver_note_no": "DN-20260713-0001",
+              "sale_invoice_id": 1,
+              "branch_id": 1,
+              "source_inventory_id": 1,
+              "customer_id": 1,
+              "currency_id": 1,
+              "delivery_provider_id": 1,
+              "delivery_date": "2026-07-13T00:00:00.000000Z",
+              "receiver_name": "Mg Mg",
+              "receiver_phone": "09123456789",
+              "receiver_address": "Yangon",
+              "delivery_note": "Deliver before 5 PM",
+              "status": "draft",
+              "created_at": "2026-07-13T04:59:28.000000Z",
+              "updated_at": "2026-07-13T04:59:28.000000Z",
+              "sale_invoice": {
+                "id": 1,
+                "invoice_number": "SI-20260713-0001",
+                "invoice_date": "2026-07-06T10:30:00.000000Z",
+                "branch_id": 1,
+                "inventory_id": 1,
+                "customer_id": 1,
+                "currency_id": 1,
+                "exchange_rate": "0.0005",
+                "selling_price_group_id": 1,
+                "payment_terms": "due_on_receipt",
+                "payment_due_date": "2026-07-06T00:00:00.000000Z",
+                "payment_status": "unpaid",
+                "status": "reserved",
+                "inventory_transaction_method": "FIFO",
+                "remarks": "First invoice",
+                "sell_tax_id": 1,
+                "sub_total": "200000.00",
+                "items_discount": "0.00",
+                "invoice_discount_type": "fixed",
+                "invoice_discount_amount": "0.00",
+                "tax_total": "10000.00",
+                "delivery_charge": "0.00",
+                "grand_total": "210000.00",
+                "paid_amount": "0.00",
+                "cashbook_id": null,
+                "created_at": "2026-07-13T04:51:44.000000Z",
+                "updated_at": "2026-07-13T04:53:47.000000Z",
+                "branch": {
+                  "id": 1,
+                  "prefix": "YGN",
+                  "name": "Yangon Main Branch",
+                  "address": "No.123, Pyay Road, Yangon",
+                  "latitude": "16.8409000",
+                  "longitude": "96.1735000",
+                  "city_id": 1,
+                  "state_id": 1,
+                  "mobile_phones": [
+                    "09987654321",
+                    "09123456789"
+                  ],
+                  "email": "ygn.branch@company.com",
+                  "website": "https://company.com",
+                  "facebook": "https://facebook.com/company",
+                  "status": "active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-07-13 04:47:04",
+                  "updated_at": "2026-07-13 04:47:04",
+                  "deleted_at": null
+                },
+                "inventory": {
+                  "id": 1,
+                  "name": "Cold Warehouse",
+                  "created_at": "2026-07-13T04:49:54.000000Z",
+                  "updated_at": "2026-07-13T04:49:54.000000Z"
+                },
+                "customer": {
+                  "id": 1,
+                  "code": "1-1-CUS-000001",
+                  "name": "John Doe",
+                  "company_name": "ABC Trading",
+                  "phone_number": "09123456789",
+                  "state_id": 1,
+                  "city_id": 2,
+                  "address": "Yangon",
+                  "bank_account_id": 1,
+                  "credit_limit": "500000.00",
+                  "opening": "10000.00",
+                  "customer_type_id": 1,
+                  "birthday": "1995-06-15T00:00:00.000000Z",
+                  "status": "Active",
+                  "created_by": 1,
+                  "updated_by": null,
+                  "created_at": "2026-07-13T04:47:32.000000Z",
+                  "updated_at": "2026-07-13T04:47:33.000000Z"
+                },
+                "currency": {
+                  "id": 1,
+                  "name": "US Dollar",
+                  "code": "USD",
+                  "symbol": "$",
+                  "exchange_rate": "0.0005",
+                  "is_base_currency": false,
+                  "last_exchange_rate_update": "2026-07-13T00:00:00.000000Z",
+                  "created_at": "2026-07-13T04:41:42.000000Z",
+                  "updated_at": "2026-07-13T04:41:42.000000Z"
+                }
+              },
+              "branch": {
+                "id": 1,
+                "prefix": "YGN",
+                "name": "Yangon Main Branch",
+                "address": "No.123, Pyay Road, Yangon",
+                "latitude": "16.8409000",
+                "longitude": "96.1735000",
+                "city_id": 1,
+                "state_id": 1,
+                "mobile_phones": [
+                  "09987654321",
+                  "09123456789"
+                ],
+                "email": "ygn.branch@company.com",
+                "website": "https://company.com",
+                "facebook": "https://facebook.com/company",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-07-13 04:47:04",
+                "updated_at": "2026-07-13 04:47:04",
+                "deleted_at": null
+              },
+              "source_inventory": {
+                "id": 1,
+                "name": "Cold Warehouse",
+                "created_at": "2026-07-13T04:49:54.000000Z",
+                "updated_at": "2026-07-13T04:49:54.000000Z"
+              },
+              "customer": {
+                "id": 1,
+                "code": "1-1-CUS-000001",
+                "name": "John Doe",
+                "company_name": "ABC Trading",
+                "phone_number": "09123456789",
+                "state_id": 1,
+                "city_id": 2,
+                "address": "Yangon",
+                "bank_account_id": 1,
+                "credit_limit": "500000.00",
+                "opening": "10000.00",
+                "customer_type_id": 1,
+                "birthday": "1995-06-15T00:00:00.000000Z",
+                "status": "Active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-07-13T04:47:32.000000Z",
+                "updated_at": "2026-07-13T04:47:33.000000Z"
+              },
+              "currency": {
+                "id": 1,
+                "name": "US Dollar",
+                "code": "USD",
+                "symbol": "$",
+                "exchange_rate": "0.0005",
+                "is_base_currency": false,
+                "last_exchange_rate_update": "2026-07-13T00:00:00.000000Z",
+                "created_at": "2026-07-13T04:41:42.000000Z",
+                "updated_at": "2026-07-13T04:41:42.000000Z"
+              },
+              "delivery_provider": {
+                "id": 1,
+                "name": "MGL",
+                "default_price": "15000.00",
+                "status": "active",
+                "created_by": 1,
+                "updated_by": null,
+                "created_at": "2026-07-13T04:51:28.000000Z",
+                "updated_at": "2026-07-13T04:51:28.000000Z"
+              },
+              "items": [
+                {
+                  "id": 1,
+                  "deliver_note_id": 1,
+                  "sale_invoice_item_id": 1,
+                  "product_id": 1,
+                  "uom_id": 1,
+                  "quantity": "5.00",
+                  "unit_price": "10000.00",
+                  "total_price": "50000.00",
+                  "remark": "Handle carefully",
+                  "created_at": "2026-07-13T04:59:28.000000Z",
+                  "updated_at": "2026-07-13T04:59:28.000000Z",
+                  "sale_invoice_item": {
+                    "id": 1,
+                    "sale_invoice_id": 1,
+                    "product_id": 1,
+                    "uom_id": 1,
+                    "quantity": "20.00",
+                    "unit_price": "10000.00",
+                    "discount_type": "fixed",
+                    "discount": "0.00",
+                    "tax": "10000.00",
+                    "total": "210000.00",
+                    "order_qty": "20.00",
+                    "reserved_qty": "20.00",
+                    "previously_deliver_qty": "0.00",
+                    "remaining_delivery_qty": "20.00",
+                    "remarks": "Line note",
+                    "created_at": "2026-07-13T04:51:44.000000Z",
+                    "updated_at": "2026-07-13T04:53:47.000000Z",
+                    "product": {
+                      "id": 1,
+                      "name": "Coffee Arabica",
+                      "sku": "PRD-000001",
+                      "image": "product_6a546e62601191.79089842.png",
+                      "image_path": "product/images/product_6a546e62601191.79089842.png",
+                      "image_url": "http://localhost/storage/product/images/product_6a546e62601191.79089842.png",
+                      "category_id": 1,
+                      "brand_id": 1,
+                      "alert_quantity": "10.00",
+                      "stock_uom_id": 1,
+                      "purchase_price": "2000.00",
+                      "purchase_currency_id": 1,
+                      "purchase_tax_id": 1,
+                      "purchase_uom_id": 1,
+                      "sale_price": "2500.00",
+                      "sale_currency_id": 1,
+                      "sale_tax_id": 1,
+                      "sale_uom_id": 1,
+                      "origin_country_id": 1,
+                      "created_by": 1,
+                      "updated_by": null,
+                      "status": "active",
+                      "created_at": "2026-07-13T04:49:39.000000Z",
+                      "updated_at": "2026-07-13T04:49:39.000000Z"
+                    }
+                  },
+                  "product": {
+                    "id": 1,
+                    "name": "Coffee Arabica",
+                    "sku": "PRD-000001",
+                    "image": "product_6a546e62601191.79089842.png",
+                    "image_path": "product/images/product_6a546e62601191.79089842.png",
+                    "image_url": "http://localhost/storage/product/images/product_6a546e62601191.79089842.png",
+                    "category_id": 1,
+                    "brand_id": 1,
+                    "alert_quantity": "10.00",
+                    "stock_uom_id": 1,
+                    "purchase_price": "2000.00",
+                    "purchase_currency_id": 1,
+                    "purchase_tax_id": 1,
+                    "purchase_uom_id": 1,
+                    "sale_price": "2500.00",
+                    "sale_currency_id": 1,
+                    "sale_tax_id": 1,
+                    "sale_uom_id": 1,
+                    "origin_country_id": 1,
+                    "created_by": 1,
+                    "updated_by": null,
+                    "status": "active",
+                    "created_at": "2026-07-13T04:49:39.000000Z",
+                    "updated_at": "2026-07-13T04:49:39.000000Z"
+                  },
+                  "uom": {
+                    "id": 1,
+                    "name": "Kilogram",
+                    "code": "KG",
+                    "status": "active",
+                    "created_by": 1,
+                    "updated_by": null,
+                    "deleted_at": null,
+                    "created_at": "2026-07-13 04:48:35",
+                    "updated_at": "2026-07-13 04:48:35"
+                  }
+                }
+              ]
+            }
+          }
